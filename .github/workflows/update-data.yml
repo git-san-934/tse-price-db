@@ -1,0 +1,43 @@
+name: 株価データ更新
+
+on:
+  schedule:
+    # UTC 8時 = 日本時間 17:00 (東証大引け後)。平日のみ。
+    - cron: "0 8 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 依存関係のインストール
+        run: pip install -r scripts/requirements.txt
+
+      - name: 株価を取得してデータベースを更新
+        run: python scripts/fetch_prices.py
+
+      - name: 変更があればコミットして push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/prices.db data/latest.json data/history.json; then
+            echo "変更なし"
+          else
+            git add data/prices.db data/latest.json data/history.json
+            git commit -m "chore: 株価データ更新 ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push
+          fi
