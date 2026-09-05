@@ -3,7 +3,7 @@
 
   const state = {
     items: [],
-    history: {},
+    historyCache: new Map(),
     sortKey: "code",
     sortAsc: true,
     filter: "",
@@ -140,19 +140,40 @@
     `;
   }
 
-  function openDetail(code) {
+  async function fetchHistory(code) {
+    if (state.historyCache.has(code)) return state.historyCache.get(code);
+    try {
+      const res = await fetch(`data/history/${encodeURIComponent(code)}.json`, { cache: "no-store" });
+      const rows = res.ok ? await res.json() : [];
+      state.historyCache.set(code, rows);
+      return rows;
+    } catch (err) {
+      console.error(err);
+      return [];
+    }
+  }
+
+  async function openDetail(code) {
     const item = state.items.find((r) => r.code === code);
-    const rows = state.history[code] || [];
     if (!item) return;
 
     detailTitle.textContent = `${item.code} ${item.name || ""}`.trim();
     detailReasons.textContent = (item.reasons || []).join(" / ");
+    detailChart.innerHTML = "";
+    detailTbody.innerHTML = `<tr><td colspan="8" class="loading">読み込み中...</td></tr>`;
+    detail.hidden = false;
+    detail.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    const rows = await fetchHistory(code);
+    if (detailTitle.textContent !== `${item.code} ${item.name || ""}`.trim()) return; // 別銘柄に切り替わっていたら破棄
+
     detailChart.innerHTML = buildChart(rows);
 
     const tailRows = rows.slice(-20).reverse();
-    detailTbody.innerHTML = tailRows
-      .map(
-        (r) => `
+    detailTbody.innerHTML = tailRows.length
+      ? tailRows
+          .map(
+            (r) => `
       <tr>
         <td>${r.date}</td>
         <td>${yenFmt(r.open)}</td>
@@ -163,38 +184,45 @@
         <td>${yenFmt(r.ma25)}</td>
         <td>${yenFmt(r.ma75)}</td>
       </tr>`
-      )
-      .join("");
-
-    detail.hidden = false;
-    detail.scrollIntoView({ behavior: "smooth", block: "start" });
+          )
+          .join("")
+      : `<tr><td colspan="8" class="empty">データがありません</td></tr>`;
   }
 
   detailClose.addEventListener("click", () => {
     detail.hidden = true;
   });
 
+  let filterTimer = null;
   filterInput.addEventListener("input", (e) => {
-    state.filter = e.target.value;
-    render();
+    const value = e.target.value;
+    clearTimeout(filterTimer);
+    filterTimer = setTimeout(() => {
+      state.filter = value;
+      render();
+    }, 120);
   });
 
   async function loadData() {
     try {
-      const [latestRes, historyRes] = await Promise.all([
-        fetch("data/latest.json", { cache: "no-store" }),
-        fetch("data/history.json", { cache: "no-store" }),
-      ]);
-      if (!latestRes.ok || !historyRes.ok) throw new Error("data fetch failed");
+      const latestRes = await fetch("data/latest.json", { cache: "no-store" });
+      if (!latestRes.ok) throw new Error("data fetch failed");
       const latest = await latestRes.json();
-      const history = await historyRes.json();
 
       state.items = latest.items || [];
-      state.history = history.history || {};
 
-      updatedAtEl.textContent = latest.updated_at
-        ? `最終更新: ${latest.updated_at.replace("T", " ")}`
-        : "";
+      const parts = [];
+      if (latest.updated_at) parts.push(`最終更新: ${latest.updated_at.replace("T", " ")}`);
+      if (
+        typeof latest.backfill_done === "number" &&
+        typeof latest.backfill_total === "number" &&
+        latest.backfill_done < latest.backfill_total
+      ) {
+        parts.push(
+          `初回データ取り込み中: ${latest.backfill_done.toLocaleString("ja-JP")} / ${latest.backfill_total.toLocaleString("ja-JP")} 銘柄`
+        );
+      }
+      updatedAtEl.textContent = parts.join(" ・ ");
 
       render();
     } catch (err) {

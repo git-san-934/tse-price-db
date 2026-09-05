@@ -5,13 +5,13 @@
 ```mermaid
 graph TD
   cron[GitHub Actions<br/>平日17時JST] --> fetch[scripts/fetch_prices.py]
-  universe[data/universe.csv<br/>銘柄マスタ] --> fetch
-  fetch -->|yfinance| yf[(Yahoo Finance)]
+  fetch -->|/listed/info| jq[(J-Quants API)]
+  fetch -->|/prices/daily_quotes| jq
   fetch -->|upsert| db[(data/prices.db<br/>SQLite)]
   fetch -->|書き出し| latest[data/latest.json]
-  fetch -->|書き出し| history[data/history.json]
+  fetch -->|書き出し| history[data/history/&lt;code&gt;.json]
   latest --> page[index.html + assets/]
-  history --> page
+  history -->|銘柄クリック時のみ| page
   page -->|GitHub Pages| user((利用者のブラウザ))
 ```
 
@@ -21,12 +21,15 @@ graph TD
 
 ## データモデル
 
-### data/universe.csv(固定・手動管理)
+### 銘柄マスタ(J-Quants `/listed/info` から自動同期)
 | フィールド | 型 | 説明 |
 |---|---|---|
-| code | string | 証券コード(例 "7203") |
-| name | string | 銘柄名 |
-| market | string | 市場区分(例 "プライム") |
+| code | string | 証券コード(J-Quantsが返す表記をそのまま使用) |
+| name | string | 銘柄名(CompanyName) |
+| market | string | 市場区分(MarketCodeName。例 "プライム") |
+
+手動管理のCSVは廃止。毎回の実行で全上場銘柄(プライム・スタンダード・グロース)を同期するため、
+新規上場・上場廃止が自動的に反映される。
 
 ### data/prices.db(SQLite・自動蓄積)
 
@@ -37,6 +40,7 @@ erDiagram
     string code PK
     string name
     string market
+    integer backfilled
   }
   prices {
     string code PK, FK
@@ -51,27 +55,28 @@ erDiagram
   }
 ```
 
-- `prices` は `(code, date)` を主キーとし、実行のたびに直近1年分を upsert する。
-- 過去に取得済みでも今回の取得期間(1年)より古い日付の行は削除しないため、運用を続けるほど蓄積される。
+- `open/high/low/close/volume` は J-Quants の調整済み株価(AdjustmentOpen等)。株式分割・併合を
+  考慮済みのため、長期の移動平均が分割で不連続にならない。
+- `stocks.backfilled` は初回の全期間取得が完了したかどうかのフラグ(0=未完了、1=完了)。
+- `prices` は `(code, date)` を主キーとし、upsert で蓄積し続ける(既存日付は上書き、削除はしない)。
 
-### data/latest.json(自動生成・フロントエンド用)
+### data/latest.json(自動生成・フロントエンド用・一覧表示に使用)
 | フィールド | 型 | 説明 |
 |---|---|---|
 | updated_at | string | 生成時刻(ISO8601, JST) |
+| backfill_done / backfill_total | integer | バックフィル済み銘柄数 / 全銘柄数 |
 | items[] | array | 銘柄ごとの最新値 |
 | items[].code / name / market | string | 銘柄情報 |
-| items[].date | string | 最新営業日 |
-| items[].open/high/low/close | number\|null | 当日OHLC |
+| items[].date | string\|null | 最新営業日(未取得の場合null) |
+| items[].open/high/low/close | number\|null | 当日OHLC(調整済み) |
 | items[].volume | integer\|null | 出来高 |
 | items[].ma25 / ma75 | number\|null | 25日/75日移動平均 |
-| items[].judgment | string | "高値圏" / "中立" / "安値圏" / "判定不可" / "取得失敗" |
+| items[].judgment | string | "高値圏" / "中立" / "安値圏" / "判定不可" / "未取得" |
 | items[].reasons[] | string[] | 判定理由の説明文 |
 
-### data/history.json(自動生成・フロントエンド用)
-| フィールド | 型 | 説明 |
-|---|---|---|
-| updated_at | string | 生成時刻 |
-| history | object | `{ 証券コード: [直近120営業日分の日足+MA25/MA75] }` |
+### data/history/&lt;code&gt;.json(自動生成・銘柄クリック時に個別取得)
+直近300営業日分の `{date, open, high, low, close, volume, ma25, ma75}` の配列。
+全銘柄分をまとめず1銘柄1ファイルにすることで、一覧表示時には読み込まれない。
 
 ## 判定ロジック(高値圏 / 中立 / 安値圏)
 - 終値 > MA25 かつ 終値 > MA75 → **高値圏**
@@ -96,10 +101,11 @@ graph LR
 
 | 関数 | 役割 |
 |---|---|
-| `loadData()` | `latest.json` / `history.json` を取得し `state` に格納 |
+| `loadData()` | `latest.json` を取得し `state` に格納(詳細履歴は含まない) |
 | `sortedFilteredItems()` | 検索語での絞り込みと現在のソートキーでの並び替え |
 | `render()` | 一覧テーブルの再描画 |
 | `setupSorting()` | 列見出しクリックでのソート切り替え |
+| `fetchHistory(code)` | `data/history/<code>.json` をクリック時に取得しキャッシュ |
 | `openDetail(code)` | 選択銘柄の詳細パネル(チャート・テーブル・判定理由)を表示 |
 | `buildChart(rows)` | 終値・MA25・MA75の折れ線をSVGパスとして生成(外部チャートライブラリ不使用) |
 
