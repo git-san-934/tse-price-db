@@ -5,8 +5,8 @@
 ```mermaid
 graph TD
   cron[GitHub Actions<br/>平日17時JST] --> fetch[scripts/fetch_prices.py]
-  fetch -->|/listed/info| jq[(J-Quants API)]
-  fetch -->|/prices/daily_quotes| jq
+  fetch -->|/v2/equities/master| jq[(J-Quants API)]
+  fetch -->|/v2/equities/bars/daily| jq
   fetch -->|upsert| db[(data/prices.db<br/>SQLite)]
   fetch -->|書き出し| latest[data/latest.json]
   fetch -->|書き出し| history[data/history/&lt;code&gt;.json]
@@ -21,7 +21,7 @@ graph TD
 
 ## データモデル
 
-### 銘柄マスタ(J-Quants `/listed/info` から自動同期)
+### 銘柄マスタ(J-Quants `/v2/equities/master` から自動同期)
 | フィールド | 型 | 説明 |
 |---|---|---|
 | code | string | 証券コード(J-Quantsが返す表記をそのまま使用) |
@@ -40,7 +40,6 @@ erDiagram
     string code PK
     string name
     string market
-    integer backfilled
   }
   prices {
     string code PK, FK
@@ -57,14 +56,15 @@ erDiagram
 
 - `open/high/low/close/volume` は J-Quants の調整済み株価(AdjustmentOpen等)。株式分割・併合を
   考慮済みのため、長期の移動平均が分割で不連続にならない。
-- `stocks.backfilled` は初回の全期間取得が完了したかどうかのフラグ(0=未完了、1=完了)。
 - `prices` は `(code, date)` を主キーとし、upsert で蓄積し続ける(既存日付は上書き、削除はしない)。
+- 実行のたびに全銘柄について「契約プランで取得可能な範囲を全部」取り直すため、
+  バックフィル専用のフラグは持たない(`docs/architecture.md`参照)。
 
 ### data/latest.json(自動生成・フロントエンド用・一覧表示に使用)
 | フィールド | 型 | 説明 |
 |---|---|---|
 | updated_at | string | 生成時刻(ISO8601, JST) |
-| backfill_done / backfill_total | integer | バックフィル済み銘柄数 / 全銘柄数 |
+| codes_with_data / codes_total | integer | データを取得できた銘柄数 / 全銘柄数 |
 | items[] | array | 銘柄ごとの最新値 |
 | items[].code / name / market | string | 銘柄情報 |
 | items[].date | string\|null | 最新営業日(未取得の場合null) |

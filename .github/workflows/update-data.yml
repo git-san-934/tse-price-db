@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 350
     env:
-      JQUANTS_MAIL: ${{ secrets.JQUANTS_MAIL }}
-      JQUANTS_PASSWORD: ${{ secrets.JQUANTS_PASSWORD }}
+      JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
+      JQUANTS_REQUESTS_PER_MINUTE: "5"
     steps:
       - uses: actions/checkout@v4
 

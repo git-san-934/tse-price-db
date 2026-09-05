@@ -214,12 +214,12 @@
       const parts = [];
       if (latest.updated_at) parts.push(`最終更新: ${latest.updated_at.replace("T", " ")}`);
       if (
-        typeof latest.backfill_done === "number" &&
-        typeof latest.backfill_total === "number" &&
-        latest.backfill_done < latest.backfill_total
+        typeof latest.codes_with_data === "number" &&
+        typeof latest.codes_total === "number" &&
+        latest.codes_with_data < latest.codes_total
       ) {
         parts.push(
-          `初回データ取り込み中: ${latest.backfill_done.toLocaleString("ja-JP")} / ${latest.backfill_total.toLocaleString("ja-JP")} 銘柄`
+          `データ取得済み: ${latest.codes_with_data.toLocaleString("ja-JP")} / ${latest.codes_total.toLocaleString("ja-JP")} 銘柄`
         );
       }
       updatedAtEl.textContent = parts.join(" ・ ");

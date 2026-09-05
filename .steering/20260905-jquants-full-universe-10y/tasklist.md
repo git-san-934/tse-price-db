@@ -7,7 +7,7 @@
 - [x] `assets/app.js` 更新(履歴の遅延読み込み、バックフィル進捗表示、検索デバウンス)
 - [x] 旧yfinanceデータ(`data/universe.csv`・旧`prices.db`・`latest.json`・`history.json`)の削除
 - [x] `docs/*.md` の更新
-- [ ] GitHub Actionsシークレット `JQUANTS_MAIL` / `JQUANTS_PASSWORD` の設定(ユーザー作業)
+- [ ] GitHub Actionsシークレット `JQUANTS_API_KEY` の設定(ユーザー作業)
 - [ ] 初回実行での動作確認(実APIレスポンスに合わせた微調整が必要になる可能性あり)
 - [ ] バックフィル完了までの手動再実行(必要な場合)
 
