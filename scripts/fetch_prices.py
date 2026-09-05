@@ -347,6 +347,7 @@ def main() -> None:
     api_key = os.environ["JQUANTS_API_KEY"]
     client = JQuantsClient(api_key, requests_per_minute=REQUESTS_PER_MINUTE)
 
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     ensure_schema(conn)
 
