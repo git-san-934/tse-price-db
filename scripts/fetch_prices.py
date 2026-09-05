@@ -118,15 +118,13 @@ def first_present(item: dict, *keys: str) -> str | None:
 def sync_universe(conn: sqlite3.Connection, client: JQuantsClient) -> None:
     info = client.listed_master()
     print(f"上場銘柄一覧: {len(info)} 件")
-    if info:
-        print(f"サンプル(1件目の生データ): {json.dumps(info[0], ensure_ascii=False)}")
     rows = []
     for item in info:
         code = first_present(item, "Code")
         if not code:
             continue
-        name = first_present(item, "CompanyName", "Name") or code
-        market = first_present(item, "MarketCodeName", "Market") or ""
+        name = first_present(item, "CoName") or code
+        market = first_present(item, "MktNm") or ""
         rows.append((code, name, market))
     conn.executemany(
         """
