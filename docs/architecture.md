@@ -7,6 +7,7 @@
 | フロントエンド | 素の HTML / CSS / JavaScript(ES2020) | フレームワーク・外部チャートライブラリ不使用(SVGを直接生成) |
 | 定期バッチ | GitHub Actions + Python 3.12 | `.github/workflows/update-data.yml` |
 | 株価取得 | J-Quants API v2(JPX公式) | `scripts/jquants_client.py`。requests依存。認証はAPIキー(`x-api-key`ヘッダー) |
+| 手動データ補完 | SBI証券等の株価CSV | `scripts/import_manual_csv.py`。`data/manual_csv/`へのpushで`.github/workflows/import-manual-csv.yml`が実行 |
 | 蓄積用データベース | SQLite(`data/prices.db`) | Pythonの標準ライブラリ `sqlite3` で読み書き |
 | フロントエンド用データ | JSON(`data/latest.json` + `data/history/<code>.json`) | Actionsが `prices.db` から生成。一覧は`latest.json`のみ、詳細は銘柄クリック時に個別取得 |
 | 銘柄マスタ | J-Quants `/v2/equities/master`(自動同期) | 全上場銘柄(プライム・スタンダード・グロース)を毎回同期。手動管理は不要 |
@@ -66,6 +67,20 @@
   続きは次回実行に引き継ぐ(`sync_state`テーブル)。
 - 将来的にLight以上のプランに切り替えた場合、CSV一括ダウンロード機能を使えばAPIレート制限を
   気にせず全期間を一括取得できる可能性があるが、Freeプランでは利用できないため現時点では未実装。
+
+## 手動CSV取り込み(SBI証券等)によるFreeプラン制限の回避
+- Freeプランの12週間遅延は有料プランへの契約なしには解消できないが、「特に気になる数銘柄だけ
+  最新化したい」というニーズには、証券会社が提供する個別銘柄CSVで補える。
+- `data/manual_csv/` フォルダにCSVがpushされると `scripts/import_manual_csv.py` が実行され、
+  該当銘柄の `prices` テーブルを upsert する(J-Quants由来の行と同じテーブルに混在させ、
+  日付が重複する場合は手動CSV側の値で上書きする)。
+- SBI証券の「株価CSVダウンロード」形式(日付,始値,高値,安値,終値,...,出来高,...)を前提とし、
+  ファイル名(`TimeChart<証券コード><yyyymmdd>.csv`)から証券コードを自動判定する。
+  移動平均はCSV記載の値を使わず、`db_common.recompute_ma`で自前計算し直すことで、
+  J-Quants由来のMA25/75と算出方法を統一する。
+- 文字コードはUTF-8(BOM付き)・Shift-JIS(CP932)の両方を試す(証券会社のCSVはShift-JISが多いため)。
+- この機構は特定の証券会社に依存しない設計(CSVの列位置とファイル名パターンのみに依存)だが、
+  現時点ではSBI証券の形式のみ動作確認済み。
 
 ## パフォーマンス要件
 - 初回表示: `latest.json`(全銘柄の最新値、数MB程度)の取得・描画を数秒以内に完了することを目標とする。

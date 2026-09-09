@@ -56,6 +56,22 @@ Standard以上ならレート上限が高いため1回の実行でほぼ全銘�
 - 銘柄数が多い場合、レート制限の関係で全銘柄が揃うまで数回の実行にまたがります。トップページの
   見出し下に「データ取得済み: n / 合計 銘柄」と進捗が表示されます。
 
+## 注目銘柄だけ最新化する(SBI証券などのCSV取り込み)
+
+Freeプランの12週間遅延を回避したい銘柄がある場合、証券会社(SBI証券など)から
+ダウンロードした個別銘柄の株価CSVを `data/manual_csv/` フォルダにアップロードすると、
+その銘柄だけJ-Quantsより新しい日付まで反映されます(有料プランへの契約は不要)。
+
+1. SBI証券のサイトで、個別銘柄の「株価CSVダウンロード」を行う
+   (ファイル名は "TimeChart証券コードyyyymmdd.csv" の形式。リネーム不要)
+2. このリポジトリの `data/manual_csv/` フォルダを開き、「Add file」→「Upload files」で
+   ダウンロードしたCSVをドラッグ&ドロップし、コミットする
+3. 自動的にGitHub Actionsが動き、数分後にその銘柄の最新データがサイトに反映される
+
+全銘柄を毎日これで更新するのは非現実的なので、あくまで「特に気になる数銘柄だけ
+手動で新鮮にする」用途を想定しています。それ以外の銘柄は引き続きJ-Quantsが
+自動更新します。詳しくは `data/manual_csv/README.md` を参照してください。
+
 ## 銘柄の追加・削除
 
 銘柄マスタはJ-Quantsの上場銘柄一覧から毎回自動同期されるため、手動管理は不要です。
@@ -91,10 +107,14 @@ python -m http.server
 
 - `index.html` / `assets/` — 一覧・詳細画面(素のHTML/CSS/JS)
 - `scripts/jquants_client.py` — J-Quants API認証・呼び出しの薄いクライアント
-- `scripts/fetch_prices.py` — 取得・移動平均計算・SQLite更新・JSON書き出し
+- `scripts/db_common.py` — SQLiteスキーマ・移動平均計算・JSON書き出し(共通ロジック)
+- `scripts/fetch_prices.py` — J-Quantsからの自動取得・SQLite更新
+- `scripts/import_manual_csv.py` — SBI証券等の手動CSV取り込み
 - `data/prices.db` — 蓄積用SQLiteデータベース(Actionsが自動更新。銘柄マスタも含む)
 - `data/latest.json` — 一覧表示用(Actionsが自動生成)
 - `data/history/<code>.json` — 銘柄別詳細表示用(Actionsが自動生成。クリック時にのみ読み込まれる)
+- `data/manual_csv/` — 手動CSVのアップロード先(利用者が配置。README参照)
 - `.github/workflows/update-data.yml` — 定期実行(平日17時JST)・手動実行
+- `.github/workflows/import-manual-csv.yml` — 手動CSVアップロード時の自動取り込み
 - `docs/` — 永続的な設計ドキュメント
 - `.steering/` — 開発作業ごとの記録
