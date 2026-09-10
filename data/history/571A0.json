@@ -1,0 +1,142 @@
+[
+ {
+  "date": "2026-05-27",
+  "open": 502.0,
+  "high": 521.5,
+  "low": 500.5,
+  "close": 500.5,
+  "volume": 500,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-05-28",
+  "open": 510.5,
+  "high": 510.5,
+  "low": 500.0,
+  "close": 500.0,
+  "volume": 300,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-05-29",
+  "open": 501.3,
+  "high": 501.3,
+  "low": 501.3,
+  "close": 501.3,
+  "volume": 110,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-01",
+  "open": 500.8,
+  "high": 500.8,
+  "low": 500.2,
+  "close": 500.2,
+  "volume": 40,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-03",
+  "open": 500.9,
+  "high": 500.9,
+  "low": 500.8,
+  "close": 500.8,
+  "volume": 60,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-04",
+  "open": 510.8,
+  "high": 510.8,
+  "low": 500.1,
+  "close": 500.1,
+  "volume": 110,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-05",
+  "open": 500.7,
+  "high": 500.9,
+  "low": 500.7,
+  "close": 500.8,
+  "volume": 550,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-08",
+  "open": 500.7,
+  "high": 500.8,
+  "low": 500.7,
+  "close": 500.7,
+  "volume": 730,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-09",
+  "open": 500.1,
+  "high": 500.1,
+  "low": 500.1,
+  "close": 500.1,
+  "volume": 20,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-12",
+  "open": 500.8,
+  "high": 500.8,
+  "low": 500.8,
+  "close": 500.8,
+  "volume": 20,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-15",
+  "open": 501.0,
+  "high": 501.0,
+  "low": 501.0,
+  "close": 501.0,
+  "volume": 20,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-16",
+  "open": 501.1,
+  "high": 501.1,
+  "low": 500.9,
+  "close": 500.9,
+  "volume": 30,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-17",
+  "open": 501.0,
+  "high": 501.1,
+  "low": 501.0,
+  "close": 501.1,
+  "volume": 380,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-06-18",
+  "open": 501.1,
+  "high": 501.2,
+  "low": 500.9,
+  "close": 501.2,
+  "volume": 630,
+  "ma25": null,
+  "ma75": null
+ }
+]
