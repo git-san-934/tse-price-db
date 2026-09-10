@@ -7,10 +7,14 @@ graph TD
   cron[GitHub Actions<br/>平日17時JST] --> fetch[scripts/fetch_prices.py]
   fetch -->|yf.download 200銘柄ずつ| yf[(Yahoo Finance)]
   fetch -->|upsert| db[(data/prices.db<br/>SQLite)]
+  fetch -->|yf.download 週足 5年分| yf
+  fetch -->|upsert| dbw[(data/prices_weekly.db<br/>SQLite)]
   fetch -->|書き出し| latest[data/latest.json]
   fetch -->|書き出し| history[data/history/&lt;code&gt;.json]
+  fetch -->|書き出し| historyw[data/history_weekly/&lt;code&gt;.json]
   latest --> page[index.html + assets/]
   history -->|銘柄クリック時のみ| page
+  historyw -->|「5年」ボタン選択時のみ| page
   page -->|GitHub Pages| user((利用者のブラウザ))
   csv[data/manual_csv/*.csv<br/>SBI証券等] -->|push時| importer[scripts/import_manual_csv.py]
   importer --> db
@@ -81,6 +85,27 @@ erDiagram
 直近120営業日分の `{date, open, high, low, close, volume, ma25, ma75}` の配列。
 全銘柄分をまとめず1銘柄1ファイルにすることで、一覧表示時には読み込まれない。
 
+### data/prices_weekly.db(SQLite・自動蓄積・5年分チャート用)
+
+```mermaid
+erDiagram
+  prices_weekly {
+    string code PK
+    string date PK
+    real close
+    integer volume
+  }
+```
+
+- 週次(1週間に1点)の終値・出来高のみを保持する軽量な別データベース。日次の
+  `data/prices.db`とはファイルを分け、サイズ予算を独立させている
+  (`docs/architecture.md`の「5年分チャート」を参照)。
+- 保持期間は約5年(`db_common.WEEKLY_RETENTION_DAYS`、既定1825日)。移動平均は保持しない。
+
+### data/history_weekly/&lt;code&gt;.json(自動生成・「5年」ボタン選択時に個別取得)
+直近約5年(260週)分の `{date, close, volume}` の配列。`data/history/<code>.json`とは
+別ファイルで、銘柄詳細パネルの期間切り替えで「5年」を選んだときだけ読み込まれる。
+
 ## 判定ロジック(高値圏 / 中立 / 安値圏)
 - 終値 > MA25 かつ 終値 > MA75 → **高値圏**
 - 終値 < MA25 かつ 終値 < MA75 → **安値圏**
@@ -98,7 +123,9 @@ graph LR
   detail -->|×ボタン| list
 ```
 
-単一ページ。一覧テーブルの下に、選択した銘柄の詳細パネル(チャート+直近20営業日テーブル)を表示する。
+単一ページ。一覧テーブルの下に、選択した銘柄の詳細パネル(期間切り替えボタン+チャート+
+直近20営業日テーブル)を表示する。期間切り替え(「6ヶ月」「5年」)はチャートのみに影響し、
+直近20営業日テーブルは常に日次データを表示する。
 
 ## コンポーネント設計(assets/app.js)
 
@@ -108,9 +135,11 @@ graph LR
 | `sortedFilteredItems()` | 検索語での絞り込みと現在のソートキーでの並び替え |
 | `render()` | 一覧テーブルの再描画 |
 | `setupSorting()` | 列見出しクリックでのソート切り替え |
-| `fetchHistory(code)` | `data/history/<code>.json` をクリック時に取得しキャッシュ |
-| `openDetail(code)` | 選択銘柄の詳細パネル(チャート・テーブル・判定理由)を表示 |
-| `buildChart(rows)` | 終値・MA25・MA75の折れ線をSVGパスとして生成(外部チャートライブラリ不使用) |
+| `fetchHistory(code, period)` | `period`("6mo"/"5y")に応じて`data/history/<code>.json`または`data/history_weekly/<code>.json`を取得しキャッシュ |
+| `openDetail(code)` | 選択銘柄の詳細パネル(期間ボタン・チャート・テーブル・判定理由)を表示 |
+| `loadDetailChart()` | 現在の`state.period`でチャートのみ再取得・再描画(期間ボタン切り替え時) |
+| `loadDetailTable()` | 直近20営業日テーブルを日次データで取得・再描画(期間切り替えの影響を受けない) |
+| `buildChart(rows)` | 終値・MA25・MA75の折れ線をSVGパスとして生成(外部チャートライブラリ不使用。週次データはMA25/MA75キーを持たないため終値のみ描画される) |
 
 ## 定期バッチ(scripts/fetch_prices.py)
 `docs/architecture.md` を参照。

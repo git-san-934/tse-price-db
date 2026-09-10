@@ -27,9 +27,14 @@ https://git-san-934.github.io/tse-price-db/
 - 取得結果は `data/prices.db`(SQLite)に蓄積され、25日/75日移動平均も計算して保存します。
   GitHubの1ファイル100MB制限を超えないよう、約200日より古いデータは毎回自動削除しています
   (全銘柄×2年分だと約227MBになり上限を超えるため)。
+- あわせて、5年分チャート表示用に週次(終値・出来高のみ)の株価を`data/prices_weekly.db`
+  (別ファイル)に取得・蓄積します。週次×終値のみなのでファイルサイズは軽く抑えられます。
 - 同時に、Webページ用の軽い `data/latest.json`(全銘柄の最新値)と、銘柄クリック時にだけ取得する
-  `data/history/<code>.json`(直近120営業日)を書き出し、コミット・pushします。
+  `data/history/<code>.json`(直近120営業日)・`data/history_weekly/<code>.json`(直近5年・週次)を
+  書き出し、コミット・pushします。
 - `index.html` はこれらを読み込んで、一覧・ソート・絞り込み・銘柄別詳細を表示します(サーバー不要)。
+  銘柄詳細では「6ヶ月」「5年」の期間切り替えボタンでチャートの表示期間を選べます
+  (5年表示は週次データのため終値の折れ線のみで、移動平均線は表示されません)。
 
 ## 銘柄マスタについて
 
@@ -90,9 +95,11 @@ yfinanceはYahoo Financeの非公式ラッパーです。Yahoo側の仕様変更
 - `scripts/db_common.py` — SQLiteスキーマ・移動平均計算・JSON書き出し(共通ロジック)
 - `scripts/fetch_prices.py` — yfinanceからの自動取得・SQLite更新
 - `scripts/import_manual_csv.py` — SBI証券等の手動CSV取り込み
-- `data/prices.db` — 蓄積用SQLiteデータベース(Actionsが自動更新。銘柄マスタも含む)
+- `data/prices.db` — 蓄積用SQLiteデータベース(Actionsが自動更新。銘柄マスタも含む。直近約200日分)
+- `data/prices_weekly.db` — 5年分チャート用の週次SQLiteデータベース(Actionsが自動更新。終値・出来高のみ)
 - `data/latest.json` — 一覧表示用(Actionsが自動生成)
-- `data/history/<code>.json` — 銘柄別詳細表示用(Actionsが自動生成。クリック時にのみ読み込まれる)
+- `data/history/<code>.json` — 銘柄別詳細表示用・6ヶ月チャート(Actionsが自動生成。クリック時にのみ読み込まれる)
+- `data/history_weekly/<code>.json` — 銘柄別詳細表示用・5年チャート(Actionsが自動生成。「5年」ボタン選択時にのみ読み込まれる)
 - `data/manual_csv/` — 手動CSVのアップロード先(利用者が配置。README参照)
 - `.github/workflows/update-data.yml` — 定期実行(平日17時JST)・手動実行
 - `.github/workflows/import-manual-csv.yml` — 手動CSVアップロード時の自動取り込み

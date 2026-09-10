@@ -7,6 +7,8 @@
     sortKey: "code",
     sortAsc: true,
     filter: "",
+    period: "6mo",
+    currentCode: null,
   };
 
   const tbody = document.getElementById("stock-tbody");
@@ -18,6 +20,9 @@
   const detailChart = document.getElementById("detail-chart");
   const detailTbody = document.getElementById("detail-tbody");
   const detailClose = document.getElementById("detail-close");
+  const periodButtons = document.querySelectorAll(".period-btn");
+  const legendMa25 = document.getElementById("legend-ma25");
+  const legendMa75 = document.getElementById("legend-ma75");
 
   const numberFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP"));
   const yenFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
@@ -140,12 +145,17 @@
     `;
   }
 
-  async function fetchHistory(code) {
-    if (state.historyCache.has(code)) return state.historyCache.get(code);
+  async function fetchHistory(code, period) {
+    const key = `${period}:${code}`;
+    if (state.historyCache.has(key)) return state.historyCache.get(key);
+    const path =
+      period === "5y"
+        ? `data/history_weekly/${encodeURIComponent(code)}.json`
+        : `data/history/${encodeURIComponent(code)}.json`;
     try {
-      const res = await fetch(`data/history/${encodeURIComponent(code)}.json`, { cache: "no-store" });
+      const res = await fetch(path, { cache: "no-store" });
       const rows = res.ok ? await res.json() : [];
-      state.historyCache.set(code, rows);
+      state.historyCache.set(key, rows);
       return rows;
     } catch (err) {
       console.error(err);
@@ -153,21 +163,28 @@
     }
   }
 
-  async function openDetail(code) {
-    const item = state.items.find((r) => r.code === code);
-    if (!item) return;
+  function syncPeriodButtons() {
+    periodButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.period === state.period);
+    });
+    const showMa = state.period !== "5y";
+    legendMa25.hidden = !showMa;
+    legendMa75.hidden = !showMa;
+  }
 
-    detailTitle.textContent = `${item.code} ${item.name || ""}`.trim();
-    detailReasons.textContent = (item.reasons || []).join(" / ");
+  async function loadDetailChart() {
+    const code = state.currentCode;
     detailChart.innerHTML = "";
-    detailTbody.innerHTML = `<tr><td colspan="8" class="loading">読み込み中...</td></tr>`;
-    detail.hidden = false;
-    detail.scrollIntoView({ behavior: "smooth", block: "start" });
-
-    const rows = await fetchHistory(code);
-    if (detailTitle.textContent !== `${item.code} ${item.name || ""}`.trim()) return; // 別銘柄に切り替わっていたら破棄
-
+    const rows = await fetchHistory(code, state.period);
+    if (state.currentCode !== code) return; // 別銘柄・別期間に切り替わっていたら破棄
     detailChart.innerHTML = buildChart(rows);
+  }
+
+  async function loadDetailTable() {
+    const code = state.currentCode;
+    detailTbody.innerHTML = `<tr><td colspan="8" class="loading">読み込み中...</td></tr>`;
+    const rows = await fetchHistory(code, "6mo");
+    if (state.currentCode !== code) return;
 
     const tailRows = rows.slice(-20).reverse();
     detailTbody.innerHTML = tailRows.length
@@ -189,8 +206,32 @@
       : `<tr><td colspan="8" class="empty">データがありません</td></tr>`;
   }
 
+  async function openDetail(code) {
+    const item = state.items.find((r) => r.code === code);
+    if (!item) return;
+
+    state.currentCode = code;
+    detailTitle.textContent = `${item.code} ${item.name || ""}`.trim();
+    detailReasons.textContent = (item.reasons || []).join(" / ");
+    syncPeriodButtons();
+    detail.hidden = false;
+    detail.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    await Promise.all([loadDetailChart(), loadDetailTable()]);
+  }
+
+  periodButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (state.period === btn.dataset.period || !state.currentCode) return;
+      state.period = btn.dataset.period;
+      syncPeriodButtons();
+      loadDetailChart();
+    });
+  });
+
   detailClose.addEventListener("click", () => {
     detail.hidden = true;
+    state.currentCode = null;
   });
 
   let filterTimer = null;

@@ -141,7 +141,7 @@ def main() -> None:
     conn.commit()
 
     if affected_codes:
-        export_json(conn, source="J-Quants API v2 (JPX) + 手動CSV(SBI証券等)")
+        export_json(conn, source="Yahoo Finance (yfinance) + 手動CSV(SBI証券等)")
 
     conn.close()
     print(f"手動CSV取り込み完了: {len(affected_codes)}銘柄を更新しました")

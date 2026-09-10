@@ -18,16 +18,24 @@ DB_PATH = ROOT / "data" / "prices.db"
 LATEST_JSON = ROOT / "data" / "latest.json"
 HISTORY_DIR = ROOT / "data" / "history"
 
+# 5年分チャート用の週次データ(別ファイル。日次DBとファイルサイズ予算を分離するため)。
+WEEKLY_DB_PATH = ROOT / "data" / "prices_weekly.db"
+HISTORY_WEEKLY_DIR = ROOT / "data" / "history_weekly"
+
 JST = timezone(timedelta(hours=9))
 
 MA_SHORT_WINDOW = 25
 MA_LONG_WINDOW = 75
 HISTORY_ROWS = 120
+WEEKLY_HISTORY_ROWS = 260  # 約5年分(52週 × 5年)
 
 # data/prices.db をGitHubの1ファイル100MB上限に収めるための保持期間。
 # 全銘柄(約4,449)×保持日数がそのままファイルサイズに比例するため、上限に
 # 対して十分な余裕を持たせている(実測: 全銘柄×2年分で約227MB → 100MB超過)。
 PRUNE_RETENTION_DAYS = 200
+
+# data/prices_weekly.db の保持期間(約5年)。週次×終値のみなので日次DBよりずっと軽い。
+WEEKLY_RETENTION_DAYS = 1825
 
 
 def ensure_schema(conn: sqlite3.Connection) -> None:
@@ -56,6 +64,20 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
         )
         """
     )
+def ensure_weekly_schema(conn: sqlite3.Connection) -> None:
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS prices_weekly (
+            code TEXT NOT NULL,
+            date TEXT NOT NULL,
+            close REAL,
+            volume INTEGER,
+            PRIMARY KEY (code, date)
+        )
+        """
+    )
+
+
 def recompute_ma(conn: sqlite3.Connection, code: str) -> None:
     df = pd.read_sql_query(
         "SELECT date, close FROM prices WHERE code = ? ORDER BY date", conn, params=(code,)
@@ -88,6 +110,15 @@ def prune_old_prices(conn: sqlite3.Connection) -> None:
     conn.commit()
     conn.execute("VACUUM")
     print(f"古いデータを削除しました: {deleted}行({cutoff}より前)")
+
+
+def prune_old_weekly_prices(conn: sqlite3.Connection) -> None:
+    """WEEKLY_RETENTION_DAYSより古い行を削除し、VACUUMでファイルサイズを実際に縮小する。"""
+    cutoff = (datetime.now(JST) - timedelta(days=WEEKLY_RETENTION_DAYS)).strftime("%Y-%m-%d")
+    deleted = conn.execute("DELETE FROM prices_weekly WHERE date < ?", (cutoff,)).rowcount
+    conn.commit()
+    conn.execute("VACUUM")
+    print(f"[週次] 古いデータを削除しました: {deleted}行({cutoff}より前)")
 
 
 def judge(close: float, ma25: float | None, ma75: float | None) -> tuple[str, list[str]]:
@@ -199,3 +230,35 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
         encoding="utf-8",
     )
     print(f"書き出し完了: {LATEST_JSON}, {HISTORY_DIR}/*.json ({len(stocks)}銘柄)")
+
+
+def export_weekly_json(conn: sqlite3.Connection, codes: list[str]) -> None:
+    """5年分チャート用の週次データを銘柄ごとにJSON書き出しする({date, close, volume}の配列)。
+
+    日次のdata/history/<code>.jsonとは別ディレクトリに書き出す(MA25/MA75は含まない。
+    週次のMAは意味合いが異なるため、5年チャートでは終値の折れ線のみ表示する設計)。
+    """
+    HISTORY_WEEKLY_DIR.mkdir(parents=True, exist_ok=True)
+    count = 0
+    for code in codes:
+        df = pd.read_sql_query(
+            "SELECT date, close, volume FROM prices_weekly WHERE code = ? ORDER BY date",
+            conn,
+            params=(code,),
+        )
+        if df.empty:
+            continue
+        tail = df.tail(WEEKLY_HISTORY_ROWS)
+        rows = [
+            {
+                "date": r.date,
+                "close": round(float(r.close), 1),
+                "volume": None if pd.isna(r.volume) else int(r.volume),
+            }
+            for r in tail.itertuples()
+        ]
+        (HISTORY_WEEKLY_DIR / f"{code}.json").write_text(
+            json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+        count += 1
+    print(f"[週次] 書き出し完了: {HISTORY_WEEKLY_DIR}/*.json ({count}銘柄)")

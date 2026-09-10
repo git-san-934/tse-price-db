@@ -28,6 +28,11 @@ GitHubは1ファイル100MBを超えるとpushを拒否するため、`db_common
 あわせて、Webページ用の軽量なファイルも書き出す:
 - data/latest.json        : 銘柄ごとの最新1件(値幅・出来高・移動平均・高値/安値圏の判定)
 - data/history/<code>.json: 銘柄ごとの直近 HISTORY_ROWS 営業日分(詳細チャート用。クリック時に個別取得)
+
+## 5年分チャート(週次データ)について
+日次DB(data/prices.db)は直近約200日しか保持しないため、5年分をそのまま表示すると
+GitHubの100MB制限を超える。そこで週次(終値・出来高のみ)の別データベース
+(data/prices_weekly.db)を用意し、5年分の値動きを軽量に保持する。
 """
 
 from __future__ import annotations
@@ -35,11 +40,23 @@ from __future__ import annotations
 import sqlite3
 import time
 
+import pandas as pd
 import yfinance as yf
 
-from db_common import DB_PATH, ensure_schema, export_json, prune_old_prices, recompute_ma
+from db_common import (
+    DB_PATH,
+    WEEKLY_DB_PATH,
+    ensure_schema,
+    ensure_weekly_schema,
+    export_json,
+    export_weekly_json,
+    prune_old_prices,
+    prune_old_weekly_prices,
+    recompute_ma,
+)
 
 PERIOD = "6mo"
+WEEKLY_PERIOD = "5y"
 BATCH_SIZE = 200
 BATCH_PAUSE_SECONDS = 2.0
 
@@ -75,6 +92,26 @@ def upsert_code_frame(conn: sqlite3.Connection, code: str, df) -> bool:
         INSERT OR REPLACE INTO prices (code, date, open, high, low, close, volume)
         VALUES (?, ?, ?, ?, ?, ?, ?)
         """,
+        rows,
+    )
+    return True
+
+
+def upsert_code_frame_weekly(conn: sqlite3.Connection, code: str, df) -> bool:
+    df = df[["Close", "Volume"]].dropna(subset=["Close"])
+    if df.empty:
+        return False
+    rows = [
+        (
+            code,
+            idx.strftime("%Y-%m-%d"),
+            float(r.Close),
+            None if pd.isna(r.Volume) else int(r.Volume),
+        )
+        for idx, r in zip(df.index, df.itertuples())
+    ]
+    conn.executemany(
+        "INSERT OR REPLACE INTO prices_weekly (code, date, close, volume) VALUES (?, ?, ?, ?)",
         rows,
     )
     return True
@@ -125,6 +162,49 @@ def sync_prices(conn: sqlite3.Connection) -> None:
     print(f"株価取得できた銘柄: {ok_count} / {len(codes)}")
 
 
+def sync_weekly_prices(conn: sqlite3.Connection, codes: list[str]) -> None:
+    if not codes:
+        print("[週次] 銘柄マスタが空のため取得をスキップします")
+        return
+
+    symbol_by_code = {code: to_yf_symbol(code) for code in codes}
+    batches = chunked(codes, BATCH_SIZE)
+    print(f"[週次] {len(codes)}銘柄を{len(batches)}バッチに分けて5年分の週足を取得します")
+
+    ok_count = 0
+    for batch_index, batch_codes in enumerate(batches, start=1):
+        symbols = [symbol_by_code[c] for c in batch_codes]
+        try:
+            frame = yf.download(
+                symbols,
+                period=WEEKLY_PERIOD,
+                interval="1wk",
+                group_by="ticker",
+                auto_adjust=True,
+                threads=True,
+                progress=False,
+            )
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [週次] バッチ{batch_index}/{len(batches)}: 取得失敗 ({exc})")
+            continue
+
+        batch_ok = 0
+        for code in batch_codes:
+            symbol = symbol_by_code[code]
+            try:
+                df = frame[symbol] if len(symbols) > 1 else frame
+            except (KeyError, TypeError):
+                continue
+            if upsert_code_frame_weekly(conn, code, df):
+                batch_ok += 1
+        conn.commit()
+        ok_count += batch_ok
+        print(f"  [週次] バッチ{batch_index}/{len(batches)}: {batch_ok}/{len(batch_codes)}銘柄取得")
+        time.sleep(BATCH_PAUSE_SECONDS)
+
+    print(f"[週次] 株価取得できた銘柄: {ok_count} / {len(codes)}")
+
+
 def main() -> None:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
@@ -134,7 +214,15 @@ def main() -> None:
     prune_old_prices(conn)
     export_json(conn, source="Yahoo Finance (yfinance)")
 
+    codes = [r[0] for r in conn.execute("SELECT code FROM stocks ORDER BY code")]
     conn.close()
+
+    weekly_conn = sqlite3.connect(WEEKLY_DB_PATH)
+    ensure_weekly_schema(weekly_conn)
+    sync_weekly_prices(weekly_conn, codes)
+    prune_old_weekly_prices(weekly_conn)
+    export_weekly_json(weekly_conn, codes)
+    weekly_conn.close()
 
 
 if __name__ == "__main__":

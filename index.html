@@ -52,11 +52,15 @@
       <button type="button" id="detail-close" class="detail-close" aria-label="閉じる">×</button>
       <h2 id="detail-title"></h2>
       <p id="detail-reasons" class="reasons"></p>
+      <div class="period-toggle" role="group" aria-label="チャート表示期間">
+        <button type="button" class="period-btn active" data-period="6mo">6ヶ月</button>
+        <button type="button" class="period-btn" data-period="5y">5年</button>
+      </div>
       <svg id="detail-chart" class="chart" viewBox="0 0 640 220" preserveAspectRatio="none"></svg>
       <div class="chart-legend">
         <span><i class="dot dot-close"></i>終値</span>
-        <span><i class="dot dot-ma25"></i>MA25</span>
-        <span><i class="dot dot-ma75"></i>MA75</span>
+        <span id="legend-ma25"><i class="dot dot-ma25"></i>MA25</span>
+        <span id="legend-ma75"><i class="dot dot-ma75"></i>MA75</span>
       </div>
       <div class="detail-table-scroll">
         <table id="detail-table">
@@ -71,8 +75,8 @@
     </div>
 
     <footer>
-      データ提供元: J-Quants API (JPX)。株式分割等を調整済みの株価を使用しています。投資助言ではありません。売買判断はご自身の責任で行ってください。<br />
-      GitHub Actions が平日17時(JST)頃に自動更新します。銘柄一覧はJ-Quantsから自動同期しています。
+      データ提供元: Yahoo Finance(yfinance)。株式分割等を調整済みの株価を使用しています。投資助言ではありません。売買判断はご自身の責任で行ってください。<br />
+      GitHub Actions が平日17時(JST)頃に自動更新します。銘柄一覧は開発時に取得したものを土台としており、自動同期はしていません。
     </footer>
   </div>
 
