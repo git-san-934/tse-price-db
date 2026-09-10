@@ -22,7 +22,12 @@ JST = timezone(timedelta(hours=9))
 
 MA_SHORT_WINDOW = 25
 MA_LONG_WINDOW = 75
-HISTORY_ROWS = 300
+HISTORY_ROWS = 120
+
+# data/prices.db をGitHubの1ファイル100MB上限に収めるための保持期間。
+# 全銘柄(約4,449)×保持日数がそのままファイルサイズに比例するため、上限に
+# 対して十分な余裕を持たせている(実測: 全銘柄×2年分で約227MB → 100MB超過)。
+PRUNE_RETENTION_DAYS = 200
 
 
 def ensure_schema(conn: sqlite3.Connection) -> None:
@@ -71,6 +76,18 @@ def recompute_ma(conn: sqlite3.Connection, code: str) -> None:
             for r in df.itertuples()
         ],
     )
+
+
+def prune_old_prices(conn: sqlite3.Connection) -> None:
+    """PRUNE_RETENTION_DAYSより古い行を削除し、VACUUMでファイルサイズを実際に縮小する。
+
+    SQLiteはDELETEしただけではファイルサイズが減らないため、VACUUMが必須。
+    """
+    cutoff = (datetime.now(JST) - timedelta(days=PRUNE_RETENTION_DAYS)).strftime("%Y-%m-%d")
+    deleted = conn.execute("DELETE FROM prices WHERE date < ?", (cutoff,)).rowcount
+    conn.commit()
+    conn.execute("VACUUM")
+    print(f"古いデータを削除しました: {deleted}行({cutoff}より前)")
 
 
 def judge(close: float, ma25: float | None, ma75: float | None) -> tuple[str, list[str]]:

@@ -57,10 +57,11 @@ erDiagram
 
 - `open/high/low/close/volume` は yfinance の調整済み株価(`auto_adjust=True`)。株式分割・配当を
   考慮済みのため、長期の移動平均が分割で不連続にならない。
-- `prices` は `(code, date)` を主キーとし、upsert で蓄積し続ける(既存日付は上書き、削除はしない)。
-- 実行のたびに全銘柄について直近2年分を取り直すため、バックフィル専用のフラグは持たない
-  (`docs/architecture.md`参照)。手動CSV取り込み(`import_manual_csv.py`)も同じテーブルに
-  upsertする。
+- `prices` は `(code, date)` を主キーとし、upsert で蓄積する。ただしGitHubの100MB
+  ファイルサイズ制限に収めるため、`PRUNE_RETENTION_DAYS`(既定200日)より古い行は
+  毎回の実行時に削除される(`docs/architecture.md`の「データベースのサイズ管理」参照)。
+- 実行のたびに全銘柄について直近6か月分を取り直すため、バックフィル専用のフラグは持たない。
+  手動CSV取り込み(`import_manual_csv.py`)も同じテーブルにupsertする。
 
 ### data/latest.json(自動生成・フロントエンド用・一覧表示に使用)
 | フィールド | 型 | 説明 |
@@ -77,7 +78,7 @@ erDiagram
 | items[].reasons[] | string[] | 判定理由の説明文 |
 
 ### data/history/&lt;code&gt;.json(自動生成・銘柄クリック時に個別取得)
-直近300営業日分の `{date, open, high, low, close, volume, ma25, ma75}` の配列。
+直近120営業日分の `{date, open, high, low, close, volume, ma25, ma75}` の配列。
 全銘柄分をまとめず1銘柄1ファイルにすることで、一覧表示時には読み込まれない。
 
 ## 判定ロジック(高値圏 / 中立 / 安値圏)

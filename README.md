@@ -21,12 +21,14 @@ https://git-san-934.github.io/tse-price-db/
 
 ## 仕組み
 
-- 平日17時(JST)頃、GitHub Actions が yfinance(Yahoo Finance)経由で全銘柄の直近2年分の
+- 平日17時(JST)頃、GitHub Actions が yfinance(Yahoo Finance)経由で全銘柄の直近6か月分の
   日次OHLCV(株式分割等調整済み)を取得します。レート制限がないため、毎回全銘柄を
   一括更新できます(200銘柄ずつバッチ処理)。
 - 取得結果は `data/prices.db`(SQLite)に蓄積され、25日/75日移動平均も計算して保存します。
+  GitHubの1ファイル100MB制限を超えないよう、約200日より古いデータは毎回自動削除しています
+  (全銘柄×2年分だと約227MBになり上限を超えるため)。
 - 同時に、Webページ用の軽い `data/latest.json`(全銘柄の最新値)と、銘柄クリック時にだけ取得する
-  `data/history/<code>.json`(直近300営業日)を書き出し、コミット・pushします。
+  `data/history/<code>.json`(直近120営業日)を書き出し、コミット・pushします。
 - `index.html` はこれらを読み込んで、一覧・ソート・絞り込み・銘柄別詳細を表示します(サーバー不要)。
 
 ## 銘柄マスタについて

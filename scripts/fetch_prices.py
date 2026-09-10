@@ -17,8 +17,13 @@ J-Quantsで過去に取得した銘柄一覧(約4,449銘柄・日本語社名つ
 
 ## 価格について
 yfinanceの`auto_adjust=True`で取得する(株式分割・配当を考慮した調整済み値)。
-直近2年分を毎回取得し直して upsert するため、過去の分割等があっても
+直近6か月分を毎回取得し直して upsert するため、過去の分割等があっても
 移動平均が不連続にならず、取得漏れや訂正も自然に自己修復される。
+
+## データベースのサイズについて
+全銘柄(約4,449)×保持期間がそのまま`data/prices.db`のファイルサイズに比例する。
+GitHubは1ファイル100MBを超えるとpushを拒否するため、`db_common.PRUNE_RETENTION_DAYS`
+より古い行を毎回削除している(実測: 全銘柄×2年分で約227MBとなり上限超過した)。
 
 あわせて、Webページ用の軽量なファイルも書き出す:
 - data/latest.json        : 銘柄ごとの最新1件(値幅・出来高・移動平均・高値/安値圏の判定)
@@ -32,9 +37,9 @@ import time
 
 import yfinance as yf
 
-from db_common import DB_PATH, ensure_schema, export_json, recompute_ma
+from db_common import DB_PATH, ensure_schema, export_json, prune_old_prices, recompute_ma
 
-PERIOD = "2y"
+PERIOD = "6mo"
 BATCH_SIZE = 200
 BATCH_PAUSE_SECONDS = 2.0
 
@@ -126,6 +131,7 @@ def main() -> None:
     ensure_schema(conn)
 
     sync_prices(conn)
+    prune_old_prices(conn)
     export_json(conn, source="Yahoo Finance (yfinance)")
 
     conn.close()
