@@ -4,12 +4,7 @@ on:
   schedule:
     # UTC 8時 = 日本時間 17:00 (東証大引け後)。平日のみ。
     - cron: "0 8 * * 1-5"
-  workflow_dispatch:
-    inputs:
-      run_budget_minutes:
-        description: "今回の実行で株価取得に使う時間(分)。全銘柄が早く揃う代わりに実行時間が伸びる"
-        required: false
-        default: "20"
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -21,11 +16,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
-    env:
-      JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
-      JQUANTS_REQUESTS_PER_MINUTE: "5"
-      RUN_BUDGET_MINUTES: ${{ inputs.run_budget_minutes || '20' }}
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 

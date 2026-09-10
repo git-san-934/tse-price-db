@@ -1,6 +1,6 @@
 """data/prices.db(SQLite)の共通スキーマ・移動平均計算・JSON書き出しロジック。
 
-scripts/fetch_prices.py(J-Quants自動取得)と
+scripts/fetch_prices.py(yfinanceからの自動取得)と
 scripts/import_manual_csv.py(SBI証券などの手動CSV取り込み)の両方から使われる。
 """
 
@@ -51,11 +51,6 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
         )
         """
     )
-    conn.execute(
-        "CREATE TABLE IF NOT EXISTS sync_state (key TEXT PRIMARY KEY, value TEXT)"
-    )
-
-
 def recompute_ma(conn: sqlite3.Connection, code: str) -> None:
     df = pd.read_sql_query(
         "SELECT date, close FROM prices WHERE code = ? ORDER BY date", conn, params=(code,)

@@ -5,14 +5,15 @@
 ```mermaid
 graph TD
   cron[GitHub Actions<br/>平日17時JST] --> fetch[scripts/fetch_prices.py]
-  fetch -->|/v2/equities/master| jq[(J-Quants API)]
-  fetch -->|/v2/equities/bars/daily| jq
+  fetch -->|yf.download 200銘柄ずつ| yf[(Yahoo Finance)]
   fetch -->|upsert| db[(data/prices.db<br/>SQLite)]
   fetch -->|書き出し| latest[data/latest.json]
   fetch -->|書き出し| history[data/history/&lt;code&gt;.json]
   latest --> page[index.html + assets/]
   history -->|銘柄クリック時のみ| page
   page -->|GitHub Pages| user((利用者のブラウザ))
+  csv[data/manual_csv/*.csv<br/>SBI証券等] -->|push時| importer[scripts/import_manual_csv.py]
+  importer --> db
 ```
 
 - バックエンドサーバーは存在しない。ブラウザが直接読むのは軽量な JSON 2ファイルのみ。
@@ -21,15 +22,15 @@ graph TD
 
 ## データモデル
 
-### 銘柄マスタ(J-Quants `/v2/equities/master` から自動同期)
+### 銘柄マスタ(静的、`stocks`テーブル)
 | フィールド | 型 | 説明 |
 |---|---|---|
-| code | string | 証券コード(J-Quantsが返す表記をそのまま使用) |
-| name | string | 銘柄名(CompanyName) |
-| market | string | 市場区分(MarketCodeName。例 "プライム") |
+| code | string | 証券コード(5桁表記。例 "13010" は 1301 のこと。末尾が桁揃え用のパディング) |
+| name | string | 銘柄名(日本語) |
+| market | string | 市場区分(例 "プライム") |
 
-手動管理のCSVは廃止。毎回の実行で全上場銘柄(プライム・スタンダード・グロース)を同期するため、
-新規上場・上場廃止が自動的に反映される。
+開発時にJ-Quants APIから一度取得した約4,449銘柄を土台としており、以後の自動同期はない
+(`docs/architecture.md`の「銘柄マスタが静的である理由」を参照)。
 
 ### data/prices.db(SQLite・自動蓄積)
 
@@ -54,11 +55,12 @@ erDiagram
   }
 ```
 
-- `open/high/low/close/volume` は J-Quants の調整済み株価(AdjustmentOpen等)。株式分割・併合を
+- `open/high/low/close/volume` は yfinance の調整済み株価(`auto_adjust=True`)。株式分割・配当を
   考慮済みのため、長期の移動平均が分割で不連続にならない。
 - `prices` は `(code, date)` を主キーとし、upsert で蓄積し続ける(既存日付は上書き、削除はしない)。
-- 実行のたびに全銘柄について「契約プランで取得可能な範囲を全部」取り直すため、
-  バックフィル専用のフラグは持たない(`docs/architecture.md`参照)。
+- 実行のたびに全銘柄について直近2年分を取り直すため、バックフィル専用のフラグは持たない
+  (`docs/architecture.md`参照)。手動CSV取り込み(`import_manual_csv.py`)も同じテーブルに
+  upsertする。
 
 ### data/latest.json(自動生成・フロントエンド用・一覧表示に使用)
 | フィールド | 型 | 説明 |
