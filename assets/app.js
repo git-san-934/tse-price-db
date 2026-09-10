@@ -111,9 +111,9 @@
     const padBottom = 10;
     const values = [];
     rows.forEach((r) => {
-      if (r.close !== null) values.push(r.close);
-      if (r.ma25 !== null) values.push(r.ma25);
-      if (r.ma75 !== null) values.push(r.ma75);
+      if (r.close != null) values.push(r.close);
+      if (r.ma25 != null) values.push(r.ma25);
+      if (r.ma75 != null) values.push(r.ma75);
     });
     if (values.length === 0) return "";
     const min = Math.min(...values);
