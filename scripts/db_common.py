@@ -64,6 +64,11 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
         )
         """
     )
+    existing_columns = {row[1] for row in conn.execute("PRAGMA table_info(stocks)")}
+    if "shares_outstanding" not in existing_columns:
+        conn.execute("ALTER TABLE stocks ADD COLUMN shares_outstanding INTEGER")
+    if "shares_updated_at" not in existing_columns:
+        conn.execute("ALTER TABLE stocks ADD COLUMN shares_updated_at TEXT")
 def ensure_weekly_schema(conn: sqlite3.Connection) -> None:
     conn.execute(
         """
@@ -140,11 +145,13 @@ def judge(close: float, ma25: float | None, ma75: float | None) -> tuple[str, li
 
 def export_json(conn: sqlite3.Connection, source: str) -> None:
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
-    stocks = conn.execute("SELECT code, name, market FROM stocks ORDER BY code").fetchall()
+    stocks = conn.execute(
+        "SELECT code, name, market, shares_outstanding FROM stocks ORDER BY code"
+    ).fetchall()
 
     latest_items = []
     codes_with_data = 0
-    for code, name, market in stocks:
+    for code, name, market, shares_outstanding in stocks:
         df = pd.read_sql_query(
             "SELECT date, open, high, low, close, volume, ma25, ma75 "
             "FROM prices WHERE code = ? ORDER BY date",
@@ -163,6 +170,8 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
                     "low": None,
                     "close": None,
                     "volume": None,
+                    "market_cap": None,
+                    "turnover": None,
                     "ma25": None,
                     "ma75": None,
                     "judgment": "未取得",
@@ -177,6 +186,13 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
         ma75 = None if pd.isna(last["ma75"]) else float(last["ma75"])
         judgment, reasons = judge(float(last["close"]), ma25, ma75)
 
+        close = float(last["close"])
+        volume = None if pd.isna(last["volume"]) else int(last["volume"])
+        market_cap = (
+            None if shares_outstanding is None else round(close * shares_outstanding)
+        )
+        turnover = None if volume is None else round(close * volume)
+
         latest_items.append(
             {
                 "code": code,
@@ -186,8 +202,10 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
                 "open": round(float(last["open"]), 1),
                 "high": round(float(last["high"]), 1),
                 "low": round(float(last["low"]), 1),
-                "close": round(float(last["close"]), 1),
-                "volume": None if pd.isna(last["volume"]) else int(last["volume"]),
+                "close": round(close, 1),
+                "volume": volume,
+                "market_cap": market_cap,
+                "turnover": turnover,
                 "ma25": None if ma25 is None else round(ma25, 1),
                 "ma75": None if ma75 is None else round(ma75, 1),
                 "judgment": judgment,

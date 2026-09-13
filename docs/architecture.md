@@ -5,7 +5,7 @@
 |---|---|---|
 | ホスティング | GitHub Pages(main / root を配信) | 静的のみ。ビルド工程なし |
 | フロントエンド | 素の HTML / CSS / JavaScript(ES2020) | フレームワーク・外部チャートライブラリ不使用(SVGを直接生成) |
-| 定期バッチ | GitHub Actions + Python 3.12 | `.github/workflows/update-data.yml` |
+| 定期バッチ | GitHub Actions + Python 3.12 | 日次: `.github/workflows/update-data.yml`、月次(発行済株式数): `.github/workflows/update-shares.yml` |
 | 株価取得 | Yahoo Finance(yfinance) | 登録・費用不要。非公式ラッパーのため仕様変更リスクは許容している |
 | 手動データ補完 | SBI証券等の株価CSV | `scripts/import_manual_csv.py`。`data/manual_csv/`へのpushで`.github/workflows/import-manual-csv.yml`が実行 |
 | 蓄積用データベース | SQLite(`data/prices.db`) | Pythonの標準ライブラリ `sqlite3` で読み書き |
@@ -67,6 +67,27 @@ J-Quants API(無料プランでも`/v2/equities/master`は利用可能)で一度
 - フロントエンドの銘柄詳細パネルに「6ヶ月」「5年」の期間切り替えボタンを設け、
   「5年」選択時は`data/history_weekly/<code>.json`を取得してチャートだけを
   差し替える(直近20営業日テーブルは切り替えの影響を受けず、常に日次データを表示する)。
+
+## 発行済株式数・時価総額(月次バッチによる個別取得)
+- 一覧に時価総額を表示するには発行済株式数が必要だが、yfinanceでは`yf.download`の
+  バッチ取得(複数銘柄を1リクエストでまとめて取得)では発行済株式数を取得できず、
+  銘柄ごとの個別リクエスト(`yf.Ticker(symbol).fast_info`)が必要になる。
+- 約4,449銘柄すべてを**毎日**個別取得すると、Yahoo Finance側のレート制限や
+  ブロックのリスクが高く、既存の「バッチ取得のみで完結する」という
+  `fetch_prices.py`の安定性を損なう恐れがある。
+- 発行済株式数は株価と異なり日々変動するものではないため、`scripts/
+  fetch_shares_outstanding.py`という別スクリプトに分離し、`.github/workflows/
+  update-shares.yml`で**月次**(毎月1日)+手動実行のみ動かす設計にした。
+  個別取得は`ThreadPoolExecutor`で緩やかに並列化しつつ、リクエスト間に
+  スリープを挟んでYahoo側への負荷を抑える。
+- 日次の`fetch_prices.py`は変更せず、追加の個別リクエストを一切行わない。
+  時価総額(`market_cap` = 終値 × `stocks.shares_outstanding`)は、
+  `db_common.export_json`が`latest.json`書き出し時に算出するだけであり、
+  発行済株式数の取得自体は月次バッチが担う。
+- 月次ワークフローも同じ`data/prices.db`を書き換えるため、日次ワークフローと
+  `concurrency.group: update-data`を共有し、同時実行によるpush競合を避けている。
+- あわせて、追加取得不要で算出できる売買代金(`turnover` = 終値 × 出来高)も
+  同じタイミングで一覧に追加した。
 
 ## 手動CSV取り込み(SBI証券等)によるさらなる鮮度向上
 - yfinanceは通常翌営業日には反映されるが、それでも特定の銘柄をより新しい

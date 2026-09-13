@@ -26,6 +26,10 @@
 
   const numberFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP"));
   const yenFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
+  const okuFmt = (n) =>
+    n === null || n === undefined
+      ? "―"
+      : (n / 1e8).toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
   function badgeClass(judgment) {
     if (judgment === "高値圏") return "badge-high";
@@ -57,7 +61,7 @@
   function render() {
     const rows = sortedFilteredItems();
     if (rows.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="11" class="empty">該当する銘柄がありません</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="13" class="empty">該当する銘柄がありません</td></tr>`;
       return;
     }
     tbody.innerHTML = rows
@@ -72,6 +76,8 @@
         <td>${yenFmt(r.low)}</td>
         <td>${yenFmt(r.close)}</td>
         <td>${numberFmt(r.volume)}</td>
+        <td>${okuFmt(r.marketCap)}</td>
+        <td>${numberFmt(r.turnover)}</td>
         <td>${yenFmt(r.ma25)}</td>
         <td>${yenFmt(r.ma75)}</td>
         <td><span class="badge ${badgeClass(r.judgment)}">${r.judgment}</span></td>
@@ -250,7 +256,10 @@
       if (!latestRes.ok) throw new Error("data fetch failed");
       const latest = await latestRes.json();
 
-      state.items = latest.items || [];
+      state.items = (latest.items || []).map((item) => ({
+        ...item,
+        marketCap: item.market_cap,
+      }));
 
       const parts = [];
       if (latest.updated_at) parts.push(`最終更新: ${latest.updated_at.replace("T", " ")}`);
@@ -267,7 +276,7 @@
 
       render();
     } catch (err) {
-      tbody.innerHTML = `<tr><td colspan="11" class="empty">データの読み込みに失敗しました。まだ初回のデータ更新(GitHub Actions)が実行されていない可能性があります。</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="13" class="empty">データの読み込みに失敗しました。まだ初回のデータ更新(GitHub Actions)が実行されていない可能性があります。</td></tr>`;
       updatedAtEl.textContent = "";
       console.error(err);
     }
