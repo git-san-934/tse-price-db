@@ -83,6 +83,17 @@ header p { color: var(--text-sub); font-size: 0.92rem; margin-top: 0.4rem; }
 .badge-low { color: var(--low); background: var(--low-bg); }
 .badge-neutral { color: var(--neutral); background: var(--neutral-bg); }
 
+.table-scroll-top {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg);
+}
+.table-scroll-top-inner { height: 1px; }
+
 .table-scroll, .detail-table-scroll {
   overflow-x: auto;
   background: var(--card-bg);
@@ -95,7 +106,8 @@ table { border-collapse: collapse; width: 100%; font-size: 0.85rem; white-space:
 
 thead th {
   position: sticky;
-  top: 0;
+  top: 14px;
+  z-index: 1;
   background: var(--card-bg);
   cursor: pointer;
   text-align: right;
@@ -114,6 +126,23 @@ tbody td:nth-child(1), tbody td:nth-child(2) { text-align: left; }
 tbody tr:last-child td { border-bottom: none; }
 tbody tr:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); cursor: pointer; }
 .loading, .empty { text-align: center; color: var(--text-sub); padding: 2rem; }
+
+.to-top-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.to-top-btn:hover { background: color-mix(in srgb, var(--accent) 10%, var(--card-bg)); }
 
 .detail {
   margin-top: 1.5rem;

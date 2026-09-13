@@ -23,6 +23,11 @@
   const periodButtons = document.querySelectorAll(".period-btn");
   const legendMa25 = document.getElementById("legend-ma25");
   const legendMa75 = document.getElementById("legend-ma75");
+  const tableScroll = document.getElementById("table-scroll");
+  const tableScrollTop = document.getElementById("table-scroll-top");
+  const tableScrollTopInner = document.getElementById("table-scroll-top-inner");
+  const stockTable = document.getElementById("stock-table");
+  const toTopBtn = document.getElementById("to-top-btn");
 
   const numberFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP"));
   const yenFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
@@ -62,6 +67,7 @@
     const rows = sortedFilteredItems();
     if (rows.length === 0) {
       tbody.innerHTML = `<tr><td colspan="13" class="empty">該当する銘柄がありません</td></tr>`;
+      syncTableScrollWidth();
       return;
     }
     tbody.innerHTML = rows
@@ -92,6 +98,47 @@
     document.querySelectorAll("thead th[data-key]").forEach((th) => {
       th.classList.toggle("sorted", th.dataset.key === state.sortKey);
       th.classList.toggle("asc", th.dataset.key === state.sortKey && state.sortAsc);
+    });
+
+    syncTableScrollWidth();
+  }
+
+  function syncTableScrollWidth() {
+    tableScrollTopInner.style.width = `${stockTable.scrollWidth}px`;
+  }
+
+  function setupScrollSync() {
+    let syncing = false;
+    tableScrollTop.addEventListener("scroll", () => {
+      if (syncing) return;
+      syncing = true;
+      tableScroll.scrollLeft = tableScrollTop.scrollLeft;
+      syncing = false;
+    });
+    tableScroll.addEventListener("scroll", () => {
+      if (syncing) return;
+      syncing = true;
+      tableScrollTop.scrollLeft = tableScroll.scrollLeft;
+      syncing = false;
+    });
+
+    let resizeTimer = null;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(syncTableScrollWidth, 120);
+    });
+  }
+
+  function setupToTopButton() {
+    window.addEventListener(
+      "scroll",
+      () => {
+        toTopBtn.hidden = window.scrollY < 400;
+      },
+      { passive: true }
+    );
+    toTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
@@ -283,5 +330,7 @@
   }
 
   setupSorting();
+  setupScrollSync();
+  setupToTopButton();
   loadData();
 })();

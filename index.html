@@ -6,7 +6,7 @@
   <title>東証株価データベース</title>
   <meta name="description" content="東証銘柄の日次OHLCVを毎日自動取得し、25日/75日移動平均つきで一覧表示するダッシュボード" />
   <meta name="theme-color" content="#f7f5f0" />
-  <link rel="stylesheet" href="assets/style.css?v=20260913a" />
+  <link rel="stylesheet" href="assets/style.css?v=20260913b" />
 </head>
 <body>
   <div class="wrap">
@@ -25,7 +25,8 @@
       </div>
     </div>
 
-    <div class="table-scroll">
+    <div class="table-scroll-top" id="table-scroll-top"><div class="table-scroll-top-inner" id="table-scroll-top-inner"></div></div>
+    <div class="table-scroll" id="table-scroll">
       <table id="stock-table">
         <thead>
           <tr>
@@ -76,12 +77,14 @@
       </div>
     </div>
 
+    <button type="button" id="to-top-btn" class="to-top-btn" aria-label="先頭へ戻る" hidden>▲ 先頭へ</button>
+
     <footer>
       データ提供元: Yahoo Finance(yfinance)。株式分割等を調整済みの株価を使用しています。投資助言ではありません。売買判断はご自身の責任で行ってください。<br />
       GitHub Actions が平日17時(JST)頃に自動更新します。銘柄一覧は開発時に取得したものを土台としており、自動同期はしていません。
     </footer>
   </div>
 
-  <script src="assets/app.js?v=20260913a"></script>
+  <script src="assets/app.js?v=20260913b"></script>
 </body>
 </html>
