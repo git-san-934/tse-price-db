@@ -18,6 +18,10 @@ graph TD
   page -->|GitHub Pages| user((利用者のブラウザ))
   csv[data/manual_csv/*.csv<br/>SBI証券等] -->|push時| importer[scripts/import_manual_csv.py]
   importer --> db
+  cronm[GitHub Actions<br/>月次] --> shares[scripts/fetch_shares_outstanding.py]
+  shares -->|Ticker.fast_info 個別取得| yf
+  shares -->|update shares_outstanding| db
+  shares -->|再書き出し| latest
 ```
 
 - バックエンドサーバーは存在しない。ブラウザが直接読むのは軽量な JSON 2ファイルのみ。
@@ -32,6 +36,8 @@ graph TD
 | code | string | 証券コード(5桁表記。例 "13010" は 1301 のこと。末尾が桁揃え用のパディング) |
 | name | string | 銘柄名(日本語) |
 | market | string | 市場区分(例 "プライム") |
+| shares_outstanding | integer\|null | 発行済株式数。`scripts/fetch_shares_outstanding.py`が月次で個別取得(未取得はnull) |
+| shares_updated_at | string\|null | 発行済株式数の取得日(YYYY-MM-DD) |
 
 開発時にJ-Quants APIから一度取得した約4,449銘柄を土台としており、以後の自動同期はない
 (`docs/architecture.md`の「銘柄マスタが静的である理由」を参照)。
@@ -45,6 +51,8 @@ erDiagram
     string code PK
     string name
     string market
+    integer shares_outstanding
+    string shares_updated_at
   }
   prices {
     string code PK, FK
@@ -77,6 +85,8 @@ erDiagram
 | items[].date | string\|null | 最新営業日(未取得の場合null) |
 | items[].open/high/low/close | number\|null | 当日OHLC(調整済み) |
 | items[].volume | integer\|null | 出来高 |
+| items[].market_cap | number\|null | 時価総額(円)。終値×発行済株式数。発行済株式数が未取得の場合null |
+| items[].turnover | number\|null | 売買代金(円)。終値×出来高 |
 | items[].ma25 / ma75 | number\|null | 25日/75日移動平均 |
 | items[].judgment | string | "高値圏" / "中立" / "安値圏" / "判定不可" / "未取得" |
 | items[].reasons[] | string[] | 判定理由の説明文 |
@@ -127,11 +137,15 @@ graph LR
 直近20営業日テーブル)を表示する。期間切り替え(「6ヶ月」「5年」)はチャートのみに影響し、
 直近20営業日テーブルは常に日次データを表示する。
 
+一覧テーブルには時価総額(億円単位)・売買代金の列を持つ。これらは`latest.json`の
+`market_cap`/`turnover`を元に算出・表示するが、詳細パネル(直近20営業日テーブル・
+チャート)には含めない(スコープは一覧行のみ)。
+
 ## コンポーネント設計(assets/app.js)
 
 | 関数 | 役割 |
 |---|---|
-| `loadData()` | `latest.json` を取得し `state` に格納(詳細履歴は含まない) |
+| `loadData()` | `latest.json` を取得し `state` に格納。`market_cap`を`marketCap`にマッピング(詳細履歴は含まない) |
 | `sortedFilteredItems()` | 検索語での絞り込みと現在のソートキーでの並び替え |
 | `render()` | 一覧テーブルの再描画 |
 | `setupSorting()` | 列見出しクリックでのソート切り替え |
@@ -141,5 +155,5 @@ graph LR
 | `loadDetailTable()` | 直近20営業日テーブルを日次データで取得・再描画(期間切り替えの影響を受けない) |
 | `buildChart(rows)` | 終値・MA25・MA75の折れ線をSVGパスとして生成(外部チャートライブラリ不使用。週次データはMA25/MA75キーを持たないため終値のみ描画される) |
 
-## 定期バッチ(scripts/fetch_prices.py)
+## 定期バッチ(scripts/fetch_prices.py / scripts/fetch_shares_outstanding.py)
 `docs/architecture.md` を参照。

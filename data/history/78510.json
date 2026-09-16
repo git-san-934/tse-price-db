@@ -28,5 +28,35 @@
   "volume": 700,
   "ma25": null,
   "ma75": null
+ },
+ {
+  "date": "2026-09-14",
+  "open": 187.0,
+  "high": 188.0,
+  "low": 178.0,
+  "close": 180.0,
+  "volume": 4500,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-09-15",
+  "open": 180.0,
+  "high": 180.0,
+  "low": 177.0,
+  "close": 180.0,
+  "volume": 4300,
+  "ma25": null,
+  "ma75": null
+ },
+ {
+  "date": "2026-09-16",
+  "open": 180.0,
+  "high": 182.0,
+  "low": 176.0,
+  "close": 179.0,
+  "volume": 3900,
+  "ma25": null,
+  "ma75": null
  }
 ]

@@ -1,1302 +1,1302 @@
 [
  {
-  "date": "2021-09-20",
-  "close": 680.3,
-  "volume": 44300
- },
- {
   "date": "2021-09-27",
-  "close": 705.8,
-  "volume": 110400
+  "close": 1017038656.0,
+  "volume": 0
  },
  {
   "date": "2021-10-04",
-  "close": 693.5,
-  "volume": 124900
+  "close": 999262912.0,
+  "volume": 0
  },
  {
   "date": "2021-10-11",
-  "close": 697.0,
-  "volume": 33700
+  "close": 1004341568.0,
+  "volume": 0
  },
  {
   "date": "2021-10-18",
-  "close": 681.2,
-  "volume": 30100
+  "close": 981486784.0,
+  "volume": 0
  },
  {
   "date": "2021-10-25",
-  "close": 689.1,
-  "volume": 28600
+  "close": 992914304.0,
+  "volume": 0
  },
  {
   "date": "2021-11-01",
-  "close": 693.5,
-  "volume": 25000
+  "close": 999262912.0,
+  "volume": 0
  },
  {
   "date": "2021-11-08",
-  "close": 697.0,
-  "volume": 83800
+  "close": 1004341568.0,
+  "volume": 0
  },
  {
   "date": "2021-11-15",
-  "close": 685.6,
-  "volume": 182600
+  "close": 987835456.0,
+  "volume": 0
  },
  {
   "date": "2021-11-22",
-  "close": 671.5,
-  "volume": 37500
+  "close": 967520064.0,
+  "volume": 0
  },
  {
   "date": "2021-11-29",
-  "close": 679.4,
-  "volume": 77900
+  "close": 978947520.0,
+  "volume": 0
  },
  {
   "date": "2021-12-06",
-  "close": 669.7,
-  "volume": 32500
+  "close": 964980608.0,
+  "volume": 0
  },
  {
   "date": "2021-12-13",
-  "close": 650.3,
-  "volume": 37600
+  "close": 937047040.0,
+  "volume": 0
  },
  {
   "date": "2021-12-20",
-  "close": 635.3,
-  "volume": 41100
+  "close": 915461824.0,
+  "volume": 0
  },
  {
   "date": "2021-12-27",
-  "close": 655.6,
-  "volume": 40100
+  "close": 944665216.0,
+  "volume": 0
  },
  {
   "date": "2022-01-03",
-  "close": 635.3,
-  "volume": 24800
+  "close": 915461824.0,
+  "volume": 0
  },
  {
   "date": "2022-01-10",
-  "close": 645.0,
-  "volume": 18800
+  "close": 929428672.0,
+  "volume": 0
  },
  {
   "date": "2022-01-17",
-  "close": 625.6,
-  "volume": 30300
+  "close": 901494976.0,
+  "volume": 0
  },
  {
   "date": "2022-01-24",
-  "close": 627.4,
-  "volume": 40600
+  "close": 904034432.0,
+  "volume": 0
  },
  {
   "date": "2022-01-31",
-  "close": 637.1,
-  "volume": 19000
+  "close": 918001216.0,
+  "volume": 0
  },
  {
   "date": "2022-02-07",
-  "close": 647.7,
-  "volume": 20700
+  "close": 933237824.0,
+  "volume": 0
  },
  {
   "date": "2022-02-14",
-  "close": 645.9,
-  "volume": 38200
+  "close": 930698432.0,
+  "volume": 0
  },
  {
   "date": "2022-02-21",
-  "close": 659.1,
-  "volume": 43500
+  "close": 949744000.0,
+  "volume": 0
  },
  {
   "date": "2022-02-28",
-  "close": 655.6,
-  "volume": 41400
+  "close": 944665216.0,
+  "volume": 0
  },
  {
   "date": "2022-03-07",
-  "close": 628.3,
-  "volume": 53700
+  "close": 905304192.0,
+  "volume": 0
  },
  {
   "date": "2022-03-14",
-  "close": 675.9,
-  "volume": 63800
+  "close": 973868608.0,
+  "volume": 0
  },
  {
   "date": "2022-03-21",
-  "close": 677.6,
-  "volume": 46900
+  "close": 976407936.0,
+  "volume": 0
  },
  {
   "date": "2022-03-28",
-  "close": 695.3,
-  "volume": 59000
+  "close": 1001802176.0,
+  "volume": 0
  },
  {
   "date": "2022-04-04",
-  "close": 692.6,
-  "volume": 63600
+  "close": 997993024.0,
+  "volume": 0
  },
  {
   "date": "2022-04-11",
-  "close": 688.2,
-  "volume": 31000
+  "close": 991644544.0,
+  "volume": 0
  },
  {
   "date": "2022-04-18",
-  "close": 690.0,
-  "volume": 30600
+  "close": 994183936.0,
+  "volume": 0
  },
  {
   "date": "2022-04-25",
-  "close": 698.8,
-  "volume": 56400
+  "close": 1006881024.0,
+  "volume": 0
  },
  {
   "date": "2022-05-02",
-  "close": 698.8,
-  "volume": 16900
+  "close": 1006881024.0,
+  "volume": 0
  },
  {
   "date": "2022-05-09",
-  "close": 698.8,
-  "volume": 58900
+  "close": 1006881024.0,
+  "volume": 0
  },
  {
   "date": "2022-05-16",
-  "close": 523.4,
-  "volume": 582800
+  "close": 754208512.0,
+  "volume": 0
  },
  {
   "date": "2022-05-23",
-  "close": 551.6,
-  "volume": 219900
+  "close": 794839296.0,
+  "volume": 0
  },
  {
   "date": "2022-05-30",
-  "close": 578.1,
-  "volume": 304000
+  "close": 832930560.0,
+  "volume": 0
  },
  {
   "date": "2022-06-06",
-  "close": 539.3,
-  "volume": 196700
+  "close": 777063296.0,
+  "volume": 0
  },
  {
   "date": "2022-06-13",
-  "close": 490.8,
-  "volume": 137500
+  "close": 707229248.0,
+  "volume": 0
  },
  {
   "date": "2022-06-20",
-  "close": 506.7,
-  "volume": 121100
+  "close": 730084032.0,
+  "volume": 0
  },
  {
   "date": "2022-06-27",
-  "close": 561.8,
-  "volume": 742600
+  "close": 809574336.0,
+  "volume": 0
  },
  {
   "date": "2022-07-04",
-  "close": 581.6,
-  "volume": 185100
+  "close": 838071360.0,
+  "volume": 0
  },
  {
   "date": "2022-07-11",
-  "close": 583.4,
-  "volume": 166800
+  "close": 840661952.0,
+  "volume": 0
  },
  {
   "date": "2022-07-18",
-  "close": 638.3,
-  "volume": 218000
+  "close": 919676416.0,
+  "volume": 0
  },
  {
   "date": "2022-07-25",
-  "close": 641.0,
-  "volume": 196400
+  "close": 923562432.0,
+  "volume": 0
  },
  {
   "date": "2022-08-01",
-  "close": 617.6,
-  "volume": 91900
+  "close": 889884032.0,
+  "volume": 0
  },
  {
   "date": "2022-08-08",
-  "close": 630.2,
-  "volume": 153100
+  "close": 908018624.0,
+  "volume": 0
  },
  {
   "date": "2022-08-15",
-  "close": 581.6,
-  "volume": 271800
+  "close": 838071360.0,
+  "volume": 0
  },
  {
   "date": "2022-08-22",
-  "close": 580.7,
-  "volume": 114600
+  "close": 836776064.0,
+  "volume": 0
  },
  {
   "date": "2022-08-29",
-  "close": 543.0,
-  "volume": 96200
+  "close": 782372672.0,
+  "volume": 0
  },
  {
   "date": "2022-09-05",
-  "close": 559.1,
-  "volume": 67100
+  "close": 805688448.0,
+  "volume": 0
  },
  {
   "date": "2022-09-12",
-  "close": 540.3,
-  "volume": 91900
+  "close": 778486784.0,
+  "volume": 0
  },
  {
   "date": "2022-09-19",
-  "close": 534.0,
-  "volume": 42200
+  "close": 769419456.0,
+  "volume": 0
  },
  {
   "date": "2022-09-26",
-  "close": 534.0,
-  "volume": 97100
+  "close": 769419456.0,
+  "volume": 0
  },
  {
   "date": "2022-10-03",
-  "close": 525.9,
-  "volume": 65100
+  "close": 757761536.0,
+  "volume": 0
  },
  {
   "date": "2022-10-10",
-  "close": 525.0,
-  "volume": 71900
+  "close": 756466304.0,
+  "volume": 0
  },
  {
   "date": "2022-10-17",
-  "close": 522.3,
-  "volume": 71200
+  "close": 752580352.0,
+  "volume": 0
  },
  {
   "date": "2022-10-24",
-  "close": 498.0,
-  "volume": 157500
+  "close": 717606784.0,
+  "volume": 0
  },
  {
   "date": "2022-10-31",
-  "close": 495.3,
-  "volume": 58800
+  "close": 713720640.0,
+  "volume": 0
  },
  {
   "date": "2022-11-07",
-  "close": 505.2,
-  "volume": 103100
+  "close": 727969280.0,
+  "volume": 0
  },
  {
   "date": "2022-11-14",
-  "close": 533.1,
-  "volume": 198400
+  "close": 768124224.0,
+  "volume": 0
  },
  {
   "date": "2022-11-21",
-  "close": 554.7,
-  "volume": 129800
+  "close": 799211840.0,
+  "volume": 0
  },
  {
   "date": "2022-11-28",
-  "close": 562.7,
-  "volume": 267300
+  "close": 810869632.0,
+  "volume": 0
  },
  {
   "date": "2022-12-05",
-  "close": 525.0,
-  "volume": 119400
+  "close": 756466304.0,
+  "volume": 0
  },
  {
   "date": "2022-12-12",
-  "close": 517.8,
-  "volume": 113600
+  "close": 746103744.0,
+  "volume": 0
  },
  {
   "date": "2022-12-19",
-  "close": 497.1,
-  "volume": 167400
+  "close": 716311360.0,
+  "volume": 0
  },
  {
   "date": "2022-12-26",
-  "close": 484.5,
-  "volume": 146800
+  "close": 698176960.0,
+  "volume": 0
  },
  {
   "date": "2023-01-02",
-  "close": 468.4,
-  "volume": 81500
+  "close": 674861184.0,
+  "volume": 0
  },
  {
   "date": "2023-01-09",
-  "close": 455.8,
-  "volume": 98200
+  "close": 656726656.0,
+  "volume": 0
  },
  {
   "date": "2023-01-16",
-  "close": 498.9,
-  "volume": 239100
+  "close": 718902016.0,
+  "volume": 0
  },
  {
   "date": "2023-01-23",
-  "close": 507.0,
-  "volume": 209300
+  "close": 730559936.0,
+  "volume": 0
  },
  {
   "date": "2023-01-30",
-  "close": 501.6,
-  "volume": 238100
+  "close": 722787968.0,
+  "volume": 0
  },
  {
   "date": "2023-02-06",
-  "close": 516.9,
-  "volume": 151900
+  "close": 744808384.0,
+  "volume": 0
  },
  {
   "date": "2023-02-13",
-  "close": 505.2,
-  "volume": 331900
+  "close": 727969280.0,
+  "volume": 0
  },
  {
   "date": "2023-02-20",
-  "close": 529.5,
-  "volume": 203000
+  "close": 762942912.0,
+  "volume": 0
  },
  {
   "date": "2023-02-27",
-  "close": 536.7,
-  "volume": 165800
+  "close": 773305408.0,
+  "volume": 0
  },
  {
   "date": "2023-03-06",
-  "close": 539.4,
-  "volume": 94700
+  "close": 777191360.0,
+  "volume": 0
  },
  {
   "date": "2023-03-13",
-  "close": 513.3,
-  "volume": 149000
+  "close": 739627136.0,
+  "volume": 0
  },
  {
   "date": "2023-03-20",
-  "close": 562.7,
-  "volume": 210200
+  "close": 810869632.0,
+  "volume": 0
  },
  {
   "date": "2023-03-27",
-  "close": 555.6,
-  "volume": 144300
+  "close": 800507136.0,
+  "volume": 0
  },
  {
   "date": "2023-04-03",
-  "close": 545.7,
-  "volume": 113800
+  "close": 786258624.0,
+  "volume": 0
  },
  {
   "date": "2023-04-10",
-  "close": 632.0,
-  "volume": 244900
+  "close": 910609216.0,
+  "volume": 0
  },
  {
   "date": "2023-04-17",
-  "close": 594.2,
-  "volume": 281200
+  "close": 856205760.0,
+  "volume": 0
  },
  {
   "date": "2023-04-24",
-  "close": 605.0,
-  "volume": 207200
+  "close": 871749632.0,
+  "volume": 0
  },
  {
   "date": "2023-05-01",
-  "close": 609.5,
-  "volume": 37300
+  "close": 878226240.0,
+  "volume": 0
  },
  {
   "date": "2023-05-08",
-  "close": 676.0,
-  "volume": 300000
+  "close": 974079936.0,
+  "volume": 0
  },
  {
   "date": "2023-05-15",
-  "close": 567.2,
-  "volume": 500600
+  "close": 817346240.0,
+  "volume": 0
  },
  {
   "date": "2023-05-22",
-  "close": 580.7,
-  "volume": 457100
+  "close": 836776064.0,
+  "volume": 0
  },
  {
   "date": "2023-05-29",
-  "close": 629.3,
-  "volume": 223300
+  "close": 906723264.0,
+  "volume": 0
  },
  {
   "date": "2023-06-05",
-  "close": 623.9,
-  "volume": 165300
+  "close": 898951424.0,
+  "volume": 0
  },
  {
   "date": "2023-06-12",
-  "close": 611.3,
-  "volume": 112100
+  "close": 880816896.0,
+  "volume": 0
  },
  {
   "date": "2023-06-19",
-  "close": 603.2,
-  "volume": 199700
+  "close": 869158976.0,
+  "volume": 0
  },
  {
   "date": "2023-06-26",
-  "close": 618.7,
-  "volume": 123100
+  "close": 891442752.0,
+  "volume": 0
  },
  {
   "date": "2023-07-03",
-  "close": 704.2,
-  "volume": 399800
+  "close": 1014628928.0,
+  "volume": 0
  },
  {
   "date": "2023-07-10",
-  "close": 665.5,
-  "volume": 252300
+  "close": 958996416.0,
+  "volume": 0
  },
  {
   "date": "2023-07-17",
-  "close": 643.5,
-  "volume": 108200
+  "close": 927206464.0,
+  "volume": 0
  },
  {
   "date": "2023-07-24",
-  "close": 635.2,
-  "volume": 154700
+  "close": 915285248.0,
+  "volume": 0
  },
  {
   "date": "2023-07-31",
-  "close": 606.7,
-  "volume": 141400
+  "close": 874223232.0,
+  "volume": 0
  },
  {
   "date": "2023-08-07",
-  "close": 627.9,
-  "volume": 95500
+  "close": 904688640.0,
+  "volume": 0
  },
  {
   "date": "2023-08-14",
-  "close": 622.3,
-  "volume": 412400
+  "close": 896741120.0,
+  "volume": 0
  },
  {
   "date": "2023-08-21",
-  "close": 717.0,
-  "volume": 393700
+  "close": 1033172992.0,
+  "volume": 0
  },
  {
   "date": "2023-08-28",
-  "close": 710.6,
-  "volume": 448700
+  "close": 1023900928.0,
+  "volume": 0
  },
  {
   "date": "2023-09-04",
-  "close": 682.1,
-  "volume": 308600
+  "close": 982838912.0,
+  "volume": 0
  },
  {
   "date": "2023-09-11",
-  "close": 749.2,
-  "volume": 272500
+  "close": 1079533184.0,
+  "volume": 0
  },
  {
   "date": "2023-09-18",
-  "close": 792.4,
-  "volume": 298300
+  "close": 1141788416.0,
+  "volume": 0
  },
  {
   "date": "2023-09-25",
-  "close": 746.4,
-  "volume": 215200
+  "close": 1075559424.0,
+  "volume": 0
  },
  {
   "date": "2023-10-02",
-  "close": 766.7,
-  "volume": 283200
+  "close": 1104700416.0,
+  "volume": 0
  },
  {
   "date": "2023-10-09",
-  "close": 729.9,
-  "volume": 189400
+  "close": 1051716992.0,
+  "volume": 0
  },
  {
   "date": "2023-10-16",
-  "close": 728.1,
-  "volume": 152600
+  "close": 1049067968.0,
+  "volume": 0
  },
  {
   "date": "2023-10-23",
-  "close": 743.7,
-  "volume": 152200
+  "close": 1071585856.0,
+  "volume": 0
  },
  {
   "date": "2023-10-30",
-  "close": 754.7,
-  "volume": 215900
+  "close": 1087480576.0,
+  "volume": 0
  },
  {
   "date": "2023-11-06",
-  "close": 729.0,
-  "volume": 118200
+  "close": 1050392384.0,
+  "volume": 0
  },
  {
   "date": "2023-11-13",
-  "close": 620.5,
-  "volume": 274300
+  "close": 894091968.0,
+  "volume": 0
  },
  {
   "date": "2023-11-20",
-  "close": 567.2,
-  "volume": 179000
+  "close": 817266304.0,
+  "volume": 0
  },
  {
   "date": "2023-11-27",
-  "close": 579.1,
-  "volume": 174500
+  "close": 834485888.0,
+  "volume": 0
  },
  {
   "date": "2023-12-04",
-  "close": 554.3,
-  "volume": 222900
+  "close": 798722112.0,
+  "volume": 0
  },
  {
   "date": "2023-12-11",
-  "close": 534.1,
-  "volume": 148200
+  "close": 769581504.0,
+  "volume": 0
  },
  {
   "date": "2023-12-18",
-  "close": 534.1,
-  "volume": 81200
+  "close": 769581504.0,
+  "volume": 0
  },
  {
   "date": "2023-12-25",
-  "close": 530.5,
-  "volume": 164100
+  "close": 764353344.0,
+  "volume": 0
  },
  {
   "date": "2024-01-01",
-  "close": 523.0,
-  "volume": 107000
+  "close": 753663040.0,
+  "volume": 0
  },
  {
   "date": "2024-01-08",
-  "close": 525.8,
-  "volume": 108300
+  "close": 757671936.0,
+  "volume": 0
  },
  {
   "date": "2024-01-15",
-  "close": 524.0,
-  "volume": 79500
+  "close": 754999360.0,
+  "volume": 0
  },
  {
   "date": "2024-01-22",
-  "close": 543.4,
-  "volume": 162000
+  "close": 783061312.0,
+  "volume": 0
  },
  {
   "date": "2024-01-29",
-  "close": 542.5,
-  "volume": 154900
+  "close": 781724928.0,
+  "volume": 0
  },
  {
   "date": "2024-02-05",
-  "close": 547.2,
-  "volume": 187700
+  "close": 788406336.0,
+  "volume": 0
  },
  {
   "date": "2024-02-12",
-  "close": 568.5,
-  "volume": 684500
+  "close": 819140800.0,
+  "volume": 0
  },
  {
   "date": "2024-02-19",
-  "close": 639.9,
-  "volume": 348400
+  "close": 922034496.0,
+  "volume": 0
  },
  {
   "date": "2024-02-26",
-  "close": 675.1,
-  "volume": 500500
+  "close": 972813248.0,
+  "volume": 0
  },
  {
   "date": "2024-03-04",
-  "close": 630.6,
-  "volume": 246000
+  "close": 908671744.0,
+  "volume": 0
  },
  {
   "date": "2024-03-11",
-  "close": 696.5,
-  "volume": 293100
+  "close": 1003547776.0,
+  "volume": 0
  },
  {
   "date": "2024-03-18",
-  "close": 673.3,
-  "volume": 139200
+  "close": 970140672.0,
+  "volume": 0
  },
  {
   "date": "2024-03-25",
-  "close": 709.4,
-  "volume": 157100
+  "close": 1022255744.0,
+  "volume": 0
  },
  {
   "date": "2024-04-01",
-  "close": 651.9,
-  "volume": 111700
+  "close": 939406208.0,
+  "volume": 0
  },
  {
   "date": "2024-04-08",
-  "close": 664.9,
-  "volume": 88600
+  "close": 958114112.0,
+  "volume": 0
  },
  {
   "date": "2024-04-15",
-  "close": 630.6,
-  "volume": 167900
+  "close": 908671744.0,
+  "volume": 0
  },
  {
   "date": "2024-04-22",
-  "close": 619.5,
-  "volume": 167400
+  "close": 892636288.0,
+  "volume": 0
  },
  {
   "date": "2024-04-29",
-  "close": 630.6,
-  "volume": 74100
+  "close": 908671744.0,
+  "volume": 0
  },
  {
   "date": "2024-05-06",
-  "close": 652.9,
-  "volume": 83300
+  "close": 940742464.0,
+  "volume": 0
  },
  {
   "date": "2024-05-13",
-  "close": 639.0,
-  "volume": 383800
+  "close": 920698240.0,
+  "volume": 0
  },
  {
   "date": "2024-05-20",
-  "close": 630.6,
-  "volume": 116700
+  "close": 908671744.0,
+  "volume": 0
  },
  {
   "date": "2024-05-27",
-  "close": 636.2,
-  "volume": 73700
+  "close": 916689408.0,
+  "volume": 0
  },
  {
   "date": "2024-06-03",
-  "close": 626.0,
-  "volume": 54100
+  "close": 901990336.0,
+  "volume": 0
  },
  {
   "date": "2024-06-10",
-  "close": 610.2,
-  "volume": 132600
+  "close": 879273472.0,
+  "volume": 0
  },
  {
   "date": "2024-06-17",
-  "close": 603.7,
-  "volume": 123100
+  "close": 869919552.0,
+  "volume": 0
  },
  {
   "date": "2024-06-24",
-  "close": 626.9,
-  "volume": 126800
+  "close": 903266048.0,
+  "volume": 0
  },
  {
   "date": "2024-07-01",
-  "close": 618.3,
-  "volume": 158400
+  "close": 890967488.0,
+  "volume": 0
  },
  {
   "date": "2024-07-08",
-  "close": 625.0,
-  "volume": 151300
+  "close": 900533120.0,
+  "volume": 0
  },
  {
   "date": "2024-07-15",
-  "close": 649.6,
-  "volume": 120000
+  "close": 936062464.0,
+  "volume": 0
  },
  {
   "date": "2024-07-22",
-  "close": 608.8,
-  "volume": 108600
+  "close": 877302336.0,
+  "volume": 0
  },
  {
   "date": "2024-07-29",
-  "close": 538.7,
-  "volume": 293900
+  "close": 776180288.0,
+  "volume": 0
  },
  {
   "date": "2024-08-05",
-  "close": 544.4,
-  "volume": 302400
+  "close": 784379392.0,
+  "volume": 0
  },
  {
   "date": "2024-08-12",
-  "close": 506.4,
-  "volume": 782300
+  "close": 729718784.0,
+  "volume": 0
  },
  {
   "date": "2024-08-19",
-  "close": 503.6,
-  "volume": 277900
+  "close": 725619200.0,
+  "volume": 0
  },
  {
   "date": "2024-08-26",
-  "close": 544.4,
-  "volume": 232500
+  "close": 784379392.0,
+  "volume": 0
  },
  {
   "date": "2024-09-02",
-  "close": 488.4,
-  "volume": 524000
+  "close": 703755008.0,
+  "volume": 0
  },
  {
   "date": "2024-09-09",
-  "close": 498.8,
-  "volume": 123200
+  "close": 718786624.0,
+  "volume": 0
  },
  {
   "date": "2024-09-16",
-  "close": 521.6,
-  "volume": 112500
+  "close": 751582976.0,
+  "volume": 0
  },
  {
   "date": "2024-09-23",
-  "close": 576.6,
-  "volume": 1344000
+  "close": 830840832.0,
+  "volume": 0
  },
  {
   "date": "2024-09-30",
-  "close": 552.9,
-  "volume": 290900
+  "close": 796678080.0,
+  "volume": 0
  },
  {
   "date": "2024-10-07",
-  "close": 533.0,
-  "volume": 127000
+  "close": 767981248.0,
+  "volume": 0
  },
  {
   "date": "2024-10-14",
-  "close": 522.5,
-  "volume": 67000
+  "close": 752949504.0,
+  "volume": 0
  },
  {
   "date": "2024-10-21",
-  "close": 504.5,
-  "volume": 127800
+  "close": 726985728.0,
+  "volume": 0
  },
  {
   "date": "2024-10-28",
-  "close": 496.0,
-  "volume": 206000
+  "close": 714687104.0,
+  "volume": 0
  },
  {
   "date": "2024-11-04",
-  "close": 498.8,
-  "volume": 78300
+  "close": 718786624.0,
+  "volume": 0
  },
  {
   "date": "2024-11-11",
-  "close": 507.4,
-  "volume": 211300
+  "close": 731085248.0,
+  "volume": 0
  },
  {
   "date": "2024-11-18",
-  "close": 528.2,
-  "volume": 115300
+  "close": 761148672.0,
+  "volume": 0
  },
  {
   "date": "2024-11-25",
-  "close": 545.3,
-  "volume": 161300
+  "close": 785745920.0,
+  "volume": 0
  },
  {
   "date": "2024-12-02",
-  "close": 540.6,
-  "volume": 74500
+  "close": 778913344.0,
+  "volume": 0
  },
  {
   "date": "2024-12-09",
-  "close": 528.2,
-  "volume": 104000
+  "close": 761148672.0,
+  "volume": 0
  },
  {
   "date": "2024-12-16",
-  "close": 522.5,
-  "volume": 70600
+  "close": 752949504.0,
+  "volume": 0
  },
  {
   "date": "2024-12-23",
-  "close": 522.7,
-  "volume": 134000
+  "close": 753202176.0,
+  "volume": 0
  },
  {
   "date": "2024-12-30",
-  "close": 529.4,
-  "volume": 21000
+  "close": 762894080.0,
+  "volume": 0
  },
  {
   "date": "2025-01-06",
-  "close": 518.9,
-  "volume": 70800
+  "close": 747663872.0,
+  "volume": 0
  },
  {
   "date": "2025-01-13",
-  "close": 507.3,
-  "volume": 67700
+  "close": 731049152.0,
+  "volume": 0
  },
  {
   "date": "2025-01-20",
-  "close": 523.7,
-  "volume": 40300
+  "close": 754586688.0,
+  "volume": 0
  },
  {
   "date": "2025-01-27",
-  "close": 509.3,
-  "volume": 214200
+  "close": 733818304.0,
+  "volume": 0
  },
  {
   "date": "2025-02-03",
-  "close": 521.8,
-  "volume": 54500
+  "close": 751817600.0,
+  "volume": 0
  },
  {
   "date": "2025-02-10",
-  "close": 511.2,
-  "volume": 95300
+  "close": 736587392.0,
+  "volume": 0
  },
  {
   "date": "2025-02-17",
-  "close": 507.3,
-  "volume": 84100
+  "close": 731049152.0,
+  "volume": 0
  },
  {
   "date": "2025-02-24",
-  "close": 506.4,
-  "volume": 41300
+  "close": 729664576.0,
+  "volume": 0
  },
  {
   "date": "2025-03-03",
-  "close": 501.6,
-  "volume": 41900
+  "close": 722741824.0,
+  "volume": 0
  },
  {
   "date": "2025-03-10",
-  "close": 501.6,
-  "volume": 66100
+  "close": 722741824.0,
+  "volume": 0
  },
  {
   "date": "2025-03-17",
-  "close": 511.2,
-  "volume": 104800
+  "close": 736587392.0,
+  "volume": 0
  },
  {
   "date": "2025-03-24",
-  "close": 509.3,
-  "volume": 82800
+  "close": 733818304.0,
+  "volume": 0
  },
  {
   "date": "2025-03-31",
-  "close": 481.4,
-  "volume": 153300
+  "close": 693665984.0,
+  "volume": 0
  },
  {
   "date": "2025-04-07",
-  "close": 466.0,
-  "volume": 162700
+  "close": 671512896.0,
+  "volume": 0
  },
  {
   "date": "2025-04-14",
-  "close": 477.6,
-  "volume": 58600
+  "close": 688127680.0,
+  "volume": 0
  },
  {
   "date": "2025-04-21",
-  "close": 489.1,
-  "volume": 42300
+  "close": 704742464.0,
+  "volume": 0
  },
  {
   "date": "2025-04-28",
-  "close": 481.4,
-  "volume": 46800
+  "close": 693665984.0,
+  "volume": 0
  },
  {
   "date": "2025-05-05",
-  "close": 481.4,
-  "volume": 63400
+  "close": 693665984.0,
+  "volume": 0
  },
  {
   "date": "2025-05-12",
-  "close": 475.6,
-  "volume": 113100
+  "close": 685358592.0,
+  "volume": 0
  },
  {
   "date": "2025-05-19",
-  "close": 480.4,
-  "volume": 54200
+  "close": 692281408.0,
+  "volume": 0
  },
  {
   "date": "2025-05-26",
-  "close": 498.7,
-  "volume": 175700
+  "close": 718588032.0,
+  "volume": 0
  },
  {
   "date": "2025-06-02",
-  "close": 522.7,
-  "volume": 246500
+  "close": 753202176.0,
+  "volume": 0
  },
  {
   "date": "2025-06-09",
-  "close": 521.8,
-  "volume": 174600
+  "close": 751817600.0,
+  "volume": 0
  },
  {
   "date": "2025-06-16",
-  "close": 525.6,
-  "volume": 161000
+  "close": 757355840.0,
+  "volume": 0
  },
  {
   "date": "2025-06-23",
-  "close": 542.8,
-  "volume": 453000
+  "close": 782202752.0,
+  "volume": 0
  },
  {
   "date": "2025-06-30",
-  "close": 535.9,
-  "volume": 183800
+  "close": 772247424.0,
+  "volume": 0
  },
  {
   "date": "2025-07-07",
-  "close": 551.7,
-  "volume": 181300
+  "close": 795002432.0,
+  "volume": 0
  },
  {
   "date": "2025-07-14",
-  "close": 537.9,
-  "volume": 76800
+  "close": 775091840.0,
+  "volume": 0
  },
  {
   "date": "2025-07-21",
-  "close": 553.7,
-  "volume": 150400
+  "close": 797846848.0,
+  "volume": 0
  },
  {
   "date": "2025-07-28",
-  "close": 566.5,
-  "volume": 139200
+  "close": 816335232.0,
+  "volume": 0
  },
  {
   "date": "2025-08-04",
-  "close": 579.4,
-  "volume": 174700
+  "close": 834823680.0,
+  "volume": 0
  },
  {
   "date": "2025-08-11",
-  "close": 613.9,
-  "volume": 881100
+  "close": 884600256.0,
+  "volume": 0
  },
  {
   "date": "2025-08-18",
-  "close": 671.2,
-  "volume": 409000
+  "close": 967087040.0,
+  "volume": 0
  },
  {
   "date": "2025-08-25",
-  "close": 730.4,
-  "volume": 449900
+  "close": 1052418240.0,
+  "volume": 0
  },
  {
   "date": "2025-09-01",
-  "close": 779.7,
-  "volume": 1029400
+  "close": 1123527680.0,
+  "volume": 0
  },
  {
   "date": "2025-09-08",
-  "close": 742.2,
-  "volume": 485500
+  "close": 1069484544.0,
+  "volume": 0
  },
  {
   "date": "2025-09-15",
-  "close": 741.2,
-  "volume": 208000
+  "close": 1068062336.0,
+  "volume": 0
  },
  {
   "date": "2025-09-22",
-  "close": 749.1,
-  "volume": 91200
+  "close": 1079439744.0,
+  "volume": 0
  },
  {
   "date": "2025-09-29",
-  "close": 751.1,
-  "volume": 162400
+  "close": 1082284160.0,
+  "volume": 0
  },
  {
   "date": "2025-10-06",
-  "close": 739.3,
-  "volume": 110600
+  "close": 1065217920.0,
+  "volume": 0
  },
  {
   "date": "2025-10-13",
-  "close": 740.2,
-  "volume": 96900
+  "close": 1066640064.0,
+  "volume": 0
  },
  {
   "date": "2025-10-20",
-  "close": 740.2,
-  "volume": 73500
+  "close": 1066640064.0,
+  "volume": 0
  },
  {
   "date": "2025-10-27",
-  "close": 730.4,
-  "volume": 65400
+  "close": 1052418240.0,
+  "volume": 0
  },
  {
   "date": "2025-11-03",
-  "close": 686.0,
-  "volume": 102000
+  "close": 988419840.0,
+  "volume": 0
  },
  {
   "date": "2025-11-10",
-  "close": 839.9,
-  "volume": 487100
+  "close": 1210280960.0,
+  "volume": 0
  },
  {
   "date": "2025-11-17",
-  "close": 870.5,
-  "volume": 302500
+  "close": 1254368768.0,
+  "volume": 0
  },
  {
   "date": "2025-11-24",
-  "close": 881.4,
-  "volume": 97400
+  "close": 1270012928.0,
+  "volume": 0
  },
  {
   "date": "2025-12-01",
-  "close": 846.8,
-  "volume": 115400
+  "close": 1220236416.0,
+  "volume": 0
  },
  {
   "date": "2025-12-08",
-  "close": 804.4,
-  "volume": 130600
+  "close": 1159082240.0,
+  "volume": 0
  },
  {
   "date": "2025-12-15",
-  "close": 838.0,
-  "volume": 117700
+  "close": 1207436672.0,
+  "volume": 0
  },
  {
   "date": "2025-12-22",
-  "close": 835.0,
-  "volume": 108200
+  "close": 1203170048.0,
+  "volume": 0
  },
  {
   "date": "2025-12-29",
-  "close": 872.0,
-  "volume": 44100
+  "close": 1256484096.0,
+  "volume": 0
  },
  {
   "date": "2026-01-05",
-  "close": 883.0,
-  "volume": 105700
+  "close": 1272334336.0,
+  "volume": 0
  },
  {
   "date": "2026-01-12",
-  "close": 898.0,
-  "volume": 185200
+  "close": 1293948160.0,
+  "volume": 0
  },
  {
   "date": "2026-01-19",
-  "close": 868.0,
-  "volume": 101300
+  "close": 1250720512.0,
+  "volume": 0
  },
  {
   "date": "2026-01-26",
-  "close": 931.0,
-  "volume": 131600
+  "close": 1341498496.0,
+  "volume": 0
  },
  {
   "date": "2026-02-02",
-  "close": 924.0,
-  "volume": 233800
+  "close": 1331412096.0,
+  "volume": 0
  },
  {
   "date": "2026-02-09",
-  "close": 926.0,
-  "volume": 240900
+  "close": 1334293888.0,
+  "volume": 0
  },
  {
   "date": "2026-02-16",
-  "close": 978.0,
-  "volume": 461400
+  "close": 1409221888.0,
+  "volume": 0
  },
  {
   "date": "2026-02-23",
-  "close": 1001.0,
-  "volume": 85800
+  "close": 1442363136.0,
+  "volume": 0
  },
  {
   "date": "2026-03-02",
-  "close": 993.0,
-  "volume": 174400
+  "close": 1430835712.0,
+  "volume": 0
  },
  {
   "date": "2026-03-09",
-  "close": 967.0,
-  "volume": 169700
+  "close": 1393371776.0,
+  "volume": 0
  },
  {
   "date": "2026-03-16",
-  "close": 952.0,
-  "volume": 103000
+  "close": 1371757952.0,
+  "volume": 0
  },
  {
   "date": "2026-03-23",
-  "close": 903.0,
-  "volume": 156400
+  "close": 1301152768.0,
+  "volume": 0
  },
  {
   "date": "2026-03-30",
-  "close": 892.0,
-  "volume": 174300
+  "close": 1285302656.0,
+  "volume": 0
  },
  {
   "date": "2026-04-06",
-  "close": 943.0,
-  "volume": 128200
+  "close": 1358789632.0,
+  "volume": 0
  },
  {
   "date": "2026-04-13",
-  "close": 927.0,
-  "volume": 92100
+  "close": 1335734912.0,
+  "volume": 0
  },
  {
   "date": "2026-04-20",
-  "close": 912.0,
-  "volume": 86900
+  "close": 1314121088.0,
+  "volume": 0
  },
  {
   "date": "2026-04-27",
-  "close": 990.0,
-  "volume": 232200
+  "close": 1426513024.0,
+  "volume": 0
  },
  {
   "date": "2026-05-04",
-  "close": 999.0,
-  "volume": 59200
+  "close": 1439481216.0,
+  "volume": 0
  },
  {
   "date": "2026-05-11",
-  "close": 1315.0,
-  "volume": 1282000
+  "close": 1894812672.0,
+  "volume": 0
  },
  {
   "date": "2026-05-18",
-  "close": 1316.0,
-  "volume": 769400
+  "close": 1896253568.0,
+  "volume": 0
  },
  {
   "date": "2026-05-25",
-  "close": 1316.0,
-  "volume": 701400
+  "close": 1896253568.0,
+  "volume": 0
  },
  {
   "date": "2026-06-01",
-  "close": 1317.0,
-  "volume": 867600
+  "close": 1897694464.0,
+  "volume": 0
  },
  {
   "date": "2026-06-08",
-  "close": 1317.0,
-  "volume": 302800
+  "close": 1897694464.0,
+  "volume": 0
  },
  {
   "date": "2026-06-15",
-  "close": 1316.0,
-  "volume": 369100
+  "close": 1896253568.0,
+  "volume": 0
  },
  {
   "date": "2026-06-22",
-  "close": 1305.0,
-  "volume": 417000
+  "close": 1880403456.0,
+  "volume": 0
  },
  {
   "date": "2026-06-29",
-  "close": 1306.0,
-  "volume": 172200
+  "close": 1881844352.0,
+  "volume": 0
  },
  {
   "date": "2026-07-06",
-  "close": 1309.0,
-  "volume": 76000
+  "close": 1886167168.0,
+  "volume": 0
  },
  {
   "date": "2026-07-13",
-  "close": 1306.0,
-  "volume": 74200
+  "close": 1881844352.0,
+  "volume": 0
  },
  {
   "date": "2026-07-20",
-  "close": 1307.0,
-  "volume": 41200
+  "close": 1883285248.0,
+  "volume": 0
  },
  {
   "date": "2026-07-27",
-  "close": 1307.0,
-  "volume": 73000
+  "close": 1883285248.0,
+  "volume": 0
  },
  {
   "date": "2026-08-03",
-  "close": 1307.0,
-  "volume": 19600
+  "close": 1883285248.0,
+  "volume": 0
  },
  {
   "date": "2026-08-10",
-  "close": 1307.0,
-  "volume": 29100
+  "close": 1883285248.0,
+  "volume": 0
  },
  {
   "date": "2026-08-17",
-  "close": 1307.0,
-  "volume": 27800
+  "close": 1883285248.0,
+  "volume": 0
  },
  {
   "date": "2026-08-24",
-  "close": 1308.0,
-  "volume": 22800
+  "close": 1884726272.0,
+  "volume": 0
  },
  {
   "date": "2026-08-31",
-  "close": 1309.0,
-  "volume": 47800
+  "close": 1886167168.0,
+  "volume": 0
  },
  {
   "date": "2026-09-07",
+  "close": 1886167168.0,
+  "volume": 0
+ },
+ {
+  "date": "2026-09-14",
   "close": 1309.0,
-  "volume": 71500
+  "volume": 15900
  }
 ]

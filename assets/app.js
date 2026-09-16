@@ -24,9 +24,18 @@
   const periodButtons = document.querySelectorAll(".period-btn");
   const legendMa25 = document.getElementById("legend-ma25");
   const legendMa75 = document.getElementById("legend-ma75");
+  const tableScroll = document.getElementById("table-scroll");
+  const tableScrollTop = document.getElementById("table-scroll-top");
+  const tableScrollTopInner = document.getElementById("table-scroll-top-inner");
+  const stockTable = document.getElementById("stock-table");
+  const toTopBtn = document.getElementById("to-top-btn");
 
   const numberFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP"));
   const yenFmt = (n) => (n === null || n === undefined ? "―" : n.toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
+  const okuFmt = (n) =>
+    n === null || n === undefined
+      ? "―"
+      : (n / 1e8).toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
   function badgeClass(judgment) {
     if (judgment === "高値圏") return "badge-high";
@@ -58,7 +67,8 @@
   function render() {
     const rows = sortedFilteredItems();
     if (rows.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="11" class="empty">該当する銘柄がありません</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="13" class="empty">該当する銘柄がありません</td></tr>`;
+      syncTableScrollWidth();
       return;
     }
     tbody.innerHTML = rows
@@ -73,6 +83,8 @@
         <td>${yenFmt(r.low)}</td>
         <td>${yenFmt(r.close)}</td>
         <td>${numberFmt(r.volume)}</td>
+        <td>${okuFmt(r.marketCap)}</td>
+        <td>${numberFmt(r.turnover)}</td>
         <td>${yenFmt(r.ma25)}</td>
         <td>${yenFmt(r.ma75)}</td>
         <td><span class="badge ${badgeClass(r.judgment)}">${r.judgment}</span></td>
@@ -87,6 +99,47 @@
     document.querySelectorAll("thead th[data-key]").forEach((th) => {
       th.classList.toggle("sorted", th.dataset.key === state.sortKey);
       th.classList.toggle("asc", th.dataset.key === state.sortKey && state.sortAsc);
+    });
+
+    syncTableScrollWidth();
+  }
+
+  function syncTableScrollWidth() {
+    tableScrollTopInner.style.width = `${stockTable.scrollWidth}px`;
+  }
+
+  function setupScrollSync() {
+    let syncing = false;
+    tableScrollTop.addEventListener("scroll", () => {
+      if (syncing) return;
+      syncing = true;
+      tableScroll.scrollLeft = tableScrollTop.scrollLeft;
+      syncing = false;
+    });
+    tableScroll.addEventListener("scroll", () => {
+      if (syncing) return;
+      syncing = true;
+      tableScrollTop.scrollLeft = tableScroll.scrollLeft;
+      syncing = false;
+    });
+
+    let resizeTimer = null;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(syncTableScrollWidth, 120);
+    });
+  }
+
+  function setupToTopButton() {
+    window.addEventListener(
+      "scroll",
+      () => {
+        toTopBtn.hidden = window.scrollY < 400;
+      },
+      { passive: true }
+    );
+    toTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
@@ -242,11 +295,15 @@
 
   function exportCsv() {
     const rows = sortedFilteredItems();
-    const header = ["コード", "銘柄名", "日付", "始値", "高値", "安値", "終値", "出来高", "MA25", "MA75", "判定"];
+    const header = [
+      "コード", "銘柄名", "日付", "始値", "高値", "安値", "終値", "出来高",
+      "時価総額(億円)", "売買代金", "MA25", "MA75", "判定",
+    ];
     const lines = [header.map(csvField).join(",")];
     rows.forEach((r) => {
+      const marketCapOku = r.marketCap == null ? null : r.marketCap / 1e8;
       lines.push(
-        [r.code, r.name, r.date, r.open, r.high, r.low, r.close, r.volume, r.ma25, r.ma75, r.judgment]
+        [r.code, r.name, r.date, r.open, r.high, r.low, r.close, r.volume, marketCapOku, r.turnover, r.ma25, r.ma75, r.judgment]
           .map(csvField)
           .join(",")
       );
@@ -283,7 +340,10 @@
       if (!latestRes.ok) throw new Error("data fetch failed");
       const latest = await latestRes.json();
 
-      state.items = latest.items || [];
+      state.items = (latest.items || []).map((item) => ({
+        ...item,
+        marketCap: item.market_cap,
+      }));
 
       const parts = [];
       if (latest.updated_at) parts.push(`最終更新: ${latest.updated_at.replace("T", " ")}`);
@@ -300,12 +360,14 @@
 
       render();
     } catch (err) {
-      tbody.innerHTML = `<tr><td colspan="11" class="empty">データの読み込みに失敗しました。まだ初回のデータ更新(GitHub Actions)が実行されていない可能性があります。</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="13" class="empty">データの読み込みに失敗しました。まだ初回のデータ更新(GitHub Actions)が実行されていない可能性があります。</td></tr>`;
       updatedAtEl.textContent = "";
       console.error(err);
     }
   }
 
   setupSorting();
+  setupScrollSync();
+  setupToTopButton();
   loadData();
 })();
