@@ -1,8 +1,8 @@
-name: 発行済株式数更新
+name: 発行済株式数・EPS更新
 
 on:
   schedule:
-    # UTC 8時(JST17時) の毎月1日。低頻度実行(発行済株式数は日々変動しないため)。
+    # UTC 8時(JST17時) の毎月1日。低頻度実行(発行済株式数・EPSは日々変動しないため)。
     - cron: "0 8 1 * *"
   workflow_dispatch: {}
 
@@ -28,7 +28,7 @@ jobs:
       - name: 依存関係のインストール
         run: pip install -r scripts/requirements.txt
 
-      - name: 発行済株式数を取得してデータベースを更新
+      - name: 発行済株式数・EPSを取得してデータベースを更新
         working-directory: scripts
         run: python fetch_shares_outstanding.py
 
@@ -40,6 +40,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "変更なし"
           else
-            git commit -m "chore: 発行済株式数更新 ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git commit -m "chore: 発行済株式数・EPS更新 ($(date -u +%Y-%m-%dT%H:%MZ))"
             git push
           fi
