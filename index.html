@@ -6,7 +6,7 @@
   <title>東証株価データベース</title>
   <meta name="description" content="東証銘柄の日次OHLCVを毎日自動取得し、25日/75日移動平均つきで一覧表示するダッシュボード" />
   <meta name="theme-color" content="#f7f5f0" />
-  <link rel="stylesheet" href="assets/style.css?v=20260916c" />
+  <link rel="stylesheet" href="assets/style.css?v=20260916d" />
 </head>
 <body>
   <div class="wrap">
@@ -42,13 +42,15 @@
             <th data-key="marketCap">時価総額(億円)</th>
             <th data-key="turnover">売買代金</th>
             <th data-key="per">PER(倍)</th>
+            <th data-key="pbr">PBR(倍)</th>
+            <th data-key="dividendYield">配当利回り(%)</th>
             <th data-key="ma25">MA25</th>
             <th data-key="ma75">MA75</th>
             <th data-key="judgment">判定</th>
           </tr>
         </thead>
         <tbody id="stock-tbody">
-          <tr><td colspan="14" class="loading">データを読み込んでいます...</td></tr>
+          <tr><td colspan="16" class="loading">データを読み込んでいます...</td></tr>
         </tbody>
       </table>
     </div>
@@ -87,6 +89,6 @@
     </footer>
   </div>
 
-  <script src="assets/app.js?v=20260916c"></script>
+  <script src="assets/app.js?v=20260916d"></script>
 </body>
 </html>
