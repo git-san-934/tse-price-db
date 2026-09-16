@@ -71,6 +71,19 @@ header p { color: var(--text-sub); font-size: 0.92rem; margin-top: 0.4rem; }
 
 .legend { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
+.export-btn {
+  padding: 0.55rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.export-btn:hover { filter: brightness(1.08); }
+
 .badge {
   display: inline-block;
   padding: 0.2rem 0.65rem;

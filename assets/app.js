@@ -14,6 +14,7 @@
   const tbody = document.getElementById("stock-tbody");
   const updatedAtEl = document.getElementById("updated-at");
   const filterInput = document.getElementById("filter");
+  const exportCsvBtn = document.getElementById("export-csv");
   const detail = document.getElementById("detail");
   const detailTitle = document.getElementById("detail-title");
   const detailReasons = document.getElementById("detail-reasons");
@@ -233,6 +234,38 @@
     detail.hidden = true;
     state.currentCode = null;
   });
+
+  function csvField(value) {
+    const s = value === null || value === undefined ? "" : String(value);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  }
+
+  function exportCsv() {
+    const rows = sortedFilteredItems();
+    const header = ["コード", "銘柄名", "日付", "始値", "高値", "安値", "終値", "出来高", "MA25", "MA75", "判定"];
+    const lines = [header.map(csvField).join(",")];
+    rows.forEach((r) => {
+      lines.push(
+        [r.code, r.name, r.date, r.open, r.high, r.low, r.close, r.volume, r.ma25, r.ma75, r.judgment]
+          .map(csvField)
+          .join(",")
+      );
+    });
+    const csv = "﻿" + lines.join("\r\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const now = new Date();
+    const stamp = now.toISOString().slice(0, 10).replace(/-/g, "");
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `tse-price-db_${stamp}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  exportCsvBtn.addEventListener("click", exportCsv);
 
   let filterTimer = null;
   filterInput.addEventListener("input", (e) => {
