@@ -40,6 +40,10 @@
     n === null || n === undefined
       ? "―"
       : `${n.toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}倍`;
+  const dividendYieldFmt = (n) =>
+    n === null || n === undefined
+      ? "―"
+      : `${n.toLocaleString("ja-JP", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`;
 
   function badgeClass(judgment) {
     if (judgment === "高値圏") return "badge-high";
@@ -71,7 +75,7 @@
   function render() {
     const rows = sortedFilteredItems();
     if (rows.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="14" class="empty">該当する銘柄がありません</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="16" class="empty">該当する銘柄がありません</td></tr>`;
       syncTableScrollWidth();
       return;
     }
@@ -90,6 +94,8 @@
         <td>${okuFmt(r.marketCap)}</td>
         <td>${numberFmt(r.turnover)}</td>
         <td>${perFmt(r.per)}</td>
+        <td>${perFmt(r.pbr)}</td>
+        <td>${dividendYieldFmt(r.dividendYield)}</td>
         <td>${yenFmt(r.ma25)}</td>
         <td>${yenFmt(r.ma75)}</td>
         <td><span class="badge ${badgeClass(r.judgment)}">${r.judgment}</span></td>
@@ -302,13 +308,13 @@
     const rows = sortedFilteredItems();
     const header = [
       "コード", "銘柄名", "日付", "始値", "高値", "安値", "終値", "出来高",
-      "時価総額(億円)", "売買代金", "PER(倍)", "MA25", "MA75", "判定",
+      "時価総額(億円)", "売買代金", "PER(倍)", "PBR(倍)", "配当利回り(%)", "MA25", "MA75", "判定",
     ];
     const lines = [header.map(csvField).join(",")];
     rows.forEach((r) => {
       const marketCapOku = r.marketCap == null ? null : r.marketCap / 1e8;
       lines.push(
-        [r.code, r.name, r.date, r.open, r.high, r.low, r.close, r.volume, marketCapOku, r.turnover, r.per, r.ma25, r.ma75, r.judgment]
+        [r.code, r.name, r.date, r.open, r.high, r.low, r.close, r.volume, marketCapOku, r.turnover, r.per, r.pbr, r.dividendYield, r.ma25, r.ma75, r.judgment]
           .map(csvField)
           .join(",")
       );
@@ -348,6 +354,7 @@
       state.items = (latest.items || []).map((item) => ({
         ...item,
         marketCap: item.market_cap,
+        dividendYield: item.dividend_yield,
       }));
 
       const parts = [];
@@ -365,7 +372,7 @@
 
       render();
     } catch (err) {
-      tbody.innerHTML = `<tr><td colspan="14" class="empty">データの読み込みに失敗しました。まだ初回のデータ更新(GitHub Actions)が実行されていない可能性があります。</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="16" class="empty">データの読み込みに失敗しました。まだ初回のデータ更新(GitHub Actions)が実行されていない可能性があります。</td></tr>`;
       updatedAtEl.textContent = "";
       console.error(err);
     }

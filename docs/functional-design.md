@@ -20,7 +20,7 @@ graph TD
   importer --> db
   cronm[GitHub Actions<br/>月次] --> shares[scripts/fetch_shares_outstanding.py]
   shares -->|Ticker.info 個別取得| yf
-  shares -->|update shares_outstanding/trailing_eps| db
+  shares -->|update shares_outstanding/trailing_eps/book_value_per_share/dividend_rate| db
   shares -->|再書き出し| latest
 ```
 
@@ -37,8 +37,10 @@ graph TD
 | name | string | 銘柄名(日本語) |
 | market | string | 市場区分(例 "プライム") |
 | shares_outstanding | integer\|null | 発行済株式数。`scripts/fetch_shares_outstanding.py`が月次で個別取得(未取得はnull) |
-| shares_updated_at | string\|null | 発行済株式数・EPSの取得日(YYYY-MM-DD、両者は同じ処理でまとめて取得するため共通) |
+| shares_updated_at | string\|null | 発行済株式数・EPS・BPS・配当の取得日(YYYY-MM-DD、いずれも同じ処理でまとめて取得するため共通) |
 | trailing_eps | real\|null | 1株当たり利益(実績、trailingEps)。PER算出用。`scripts/fetch_shares_outstanding.py`が月次で個別取得(未取得はnull) |
+| book_value_per_share | real\|null | 1株当たり純資産(BPS、bookValue)。PBR算出用。同スクリプトが月次で個別取得(未取得はnull) |
+| dividend_rate | real\|null | 1株当たり年間配当額(実績優先、なければ予想)。配当利回り算出用。同スクリプトが月次で個別取得(未取得はnull) |
 
 開発時にJ-Quants APIから一度取得した約4,449銘柄を土台としており、以後の自動同期はない
 (`docs/architecture.md`の「銘柄マスタが静的である理由」を参照)。
@@ -55,6 +57,8 @@ erDiagram
     integer shares_outstanding
     string shares_updated_at
     real trailing_eps
+    real book_value_per_share
+    real dividend_rate
   }
   prices {
     string code PK, FK
@@ -90,6 +94,8 @@ erDiagram
 | items[].market_cap | number\|null | 時価総額(円)。終値×発行済株式数。発行済株式数が未取得の場合null |
 | items[].turnover | number\|null | 売買代金(円)。終値×出来高 |
 | items[].per | number\|null | PER(株価収益率、倍)。終値÷EPS(trailing_eps)。EPSが未取得または0以下(赤字)の場合null |
+| items[].pbr | number\|null | PBR(株価純資産倍率、倍)。終値÷BPS(book_value_per_share)。BPSが未取得または0以下(債務超過)の場合null |
+| items[].dividend_yield | number\|null | 配当利回り(%)。1株当たり年間配当額(dividend_rate)÷終値×100。配当額が未取得の場合null(無配銘柄は0.0) |
 | items[].ma25 / ma75 | number\|null | 25日/75日移動平均 |
 | items[].judgment | string | "高値圏" / "中立" / "安値圏" / "判定不可" / "未取得" |
 | items[].reasons[] | string[] | 判定理由の説明文 |
@@ -140,15 +146,15 @@ graph LR
 直近20営業日テーブル)を表示する。期間切り替え(「6ヶ月」「5年」)はチャートのみに影響し、
 直近20営業日テーブルは常に日次データを表示する。
 
-一覧テーブルには時価総額(億円単位)・売買代金・PERの列を持つ。これらは`latest.json`の
-`market_cap`/`turnover`/`per`を元に算出・表示するが、詳細パネル(直近20営業日テーブル・
-チャート)には含めない(スコープは一覧行のみ)。
+一覧テーブルには時価総額(億円単位)・売買代金・PER・PBR・配当利回りの列を持つ。これらは
+`latest.json`の`market_cap`/`turnover`/`per`/`pbr`/`dividend_yield`を元に算出・表示するが、
+詳細パネル(直近20営業日テーブル・チャート)には含めない(スコープは一覧行のみ)。
 
 ## コンポーネント設計(assets/app.js)
 
 | 関数 | 役割 |
 |---|---|
-| `loadData()` | `latest.json` を取得し `state` に格納。`market_cap`を`marketCap`にマッピング(`per`はキー名が同じためマッピング不要。詳細履歴は含まない) |
+| `loadData()` | `latest.json` を取得し `state` に格納。`market_cap`→`marketCap`、`dividend_yield`→`dividendYield`にマッピング(`per`/`pbr`はキー名が同じためマッピング不要。詳細履歴は含まない) |
 | `sortedFilteredItems()` | 検索語での絞り込みと現在のソートキーでの並び替え |
 | `render()` | 一覧テーブルの再描画 |
 | `setupSorting()` | 列見出しクリックでのソート切り替え |

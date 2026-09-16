@@ -73,6 +73,13 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
         # PER算出用の1株当たり利益(実績ベース)。shares_outstandingと同じく
         # scripts/fetch_shares_outstanding.pyが低頻度(月次)で個別取得する。
         conn.execute("ALTER TABLE stocks ADD COLUMN trailing_eps REAL")
+    if "book_value_per_share" not in existing_columns:
+        # PBR算出用の1株当たり純資産(BPS)。同じくfetch_shares_outstanding.pyが取得する。
+        conn.execute("ALTER TABLE stocks ADD COLUMN book_value_per_share REAL")
+    if "dividend_rate" not in existing_columns:
+        # 配当利回り算出用の1株当たり年間配当額(実績優先、なければ予想)。
+        # 同じくfetch_shares_outstanding.pyが取得する。
+        conn.execute("ALTER TABLE stocks ADD COLUMN dividend_rate REAL")
 def ensure_weekly_schema(conn: sqlite3.Connection) -> None:
     conn.execute(
         """
@@ -150,12 +157,21 @@ def judge(close: float, ma25: float | None, ma75: float | None) -> tuple[str, li
 def export_json(conn: sqlite3.Connection, source: str) -> None:
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
     stocks = conn.execute(
-        "SELECT code, name, market, shares_outstanding, trailing_eps FROM stocks ORDER BY code"
+        "SELECT code, name, market, shares_outstanding, trailing_eps, "
+        "book_value_per_share, dividend_rate FROM stocks ORDER BY code"
     ).fetchall()
 
     latest_items = []
     codes_with_data = 0
-    for code, name, market, shares_outstanding, trailing_eps in stocks:
+    for (
+        code,
+        name,
+        market,
+        shares_outstanding,
+        trailing_eps,
+        book_value_per_share,
+        dividend_rate,
+    ) in stocks:
         df = pd.read_sql_query(
             "SELECT date, open, high, low, close, volume, ma25, ma75 "
             "FROM prices WHERE code = ? ORDER BY date",
@@ -177,6 +193,8 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
                     "market_cap": None,
                     "turnover": None,
                     "per": None,
+                    "pbr": None,
+                    "dividend_yield": None,
                     "ma25": None,
                     "ma75": None,
                     "judgment": "未取得",
@@ -204,6 +222,18 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
             if trailing_eps is None or trailing_eps <= 0
             else round(close / trailing_eps, 1)
         )
+        # PBR(株価純資産倍率) = 終値 / 1株当たり純資産(BPS)。債務超過(BPS<=0)の
+        # 銘柄はPBRの意味をなさないため、PERと同様にnull(「―」表示)にする。
+        pbr = (
+            None
+            if book_value_per_share is None or book_value_per_share <= 0
+            else round(close / book_value_per_share, 1)
+        )
+        # 配当利回り(%) = 1株当たり年間配当額 / 終値 × 100。無配銘柄はdividend_rateが
+        # 未取得(None)のためnullになる(0円配当そのものは有効な値として0.0%を表示する)。
+        dividend_yield = (
+            None if dividend_rate is None else round(dividend_rate / close * 100, 2)
+        )
 
         latest_items.append(
             {
@@ -219,6 +249,8 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
                 "market_cap": market_cap,
                 "turnover": turnover,
                 "per": per,
+                "pbr": pbr,
+                "dividend_yield": dividend_yield,
                 "ma25": None if ma25 is None else round(ma25, 1),
                 "ma75": None if ma75 is None else round(ma75, 1),
                 "judgment": judgment,
