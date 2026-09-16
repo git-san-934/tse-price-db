@@ -69,6 +69,10 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
         conn.execute("ALTER TABLE stocks ADD COLUMN shares_outstanding INTEGER")
     if "shares_updated_at" not in existing_columns:
         conn.execute("ALTER TABLE stocks ADD COLUMN shares_updated_at TEXT")
+    if "trailing_eps" not in existing_columns:
+        # PER算出用の1株当たり利益(実績ベース)。shares_outstandingと同じく
+        # scripts/fetch_shares_outstanding.pyが低頻度(月次)で個別取得する。
+        conn.execute("ALTER TABLE stocks ADD COLUMN trailing_eps REAL")
 def ensure_weekly_schema(conn: sqlite3.Connection) -> None:
     conn.execute(
         """
@@ -146,12 +150,12 @@ def judge(close: float, ma25: float | None, ma75: float | None) -> tuple[str, li
 def export_json(conn: sqlite3.Connection, source: str) -> None:
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
     stocks = conn.execute(
-        "SELECT code, name, market, shares_outstanding FROM stocks ORDER BY code"
+        "SELECT code, name, market, shares_outstanding, trailing_eps FROM stocks ORDER BY code"
     ).fetchall()
 
     latest_items = []
     codes_with_data = 0
-    for code, name, market, shares_outstanding in stocks:
+    for code, name, market, shares_outstanding, trailing_eps in stocks:
         df = pd.read_sql_query(
             "SELECT date, open, high, low, close, volume, ma25, ma75 "
             "FROM prices WHERE code = ? ORDER BY date",
@@ -172,6 +176,7 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
                     "volume": None,
                     "market_cap": None,
                     "turnover": None,
+                    "per": None,
                     "ma25": None,
                     "ma75": None,
                     "judgment": "未取得",
@@ -192,6 +197,13 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
             None if shares_outstanding is None else round(close * shares_outstanding)
         )
         turnover = None if volume is None else round(close * volume)
+        # PER(株価収益率) = 終値 / 1株当たり利益。赤字(EPS<=0)の銘柄はPERの意味を
+        # なさないため、実務の慣行にならい未取得と同様に null(「―」表示)にする。
+        per = (
+            None
+            if trailing_eps is None or trailing_eps <= 0
+            else round(close / trailing_eps, 1)
+        )
 
         latest_items.append(
             {
@@ -206,6 +218,7 @@ def export_json(conn: sqlite3.Connection, source: str) -> None:
                 "volume": volume,
                 "market_cap": market_cap,
                 "turnover": turnover,
+                "per": per,
                 "ma25": None if ma25 is None else round(ma25, 1),
                 "ma75": None if ma75 is None else round(ma75, 1),
                 "judgment": judgment,
