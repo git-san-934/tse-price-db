@@ -326,7 +326,7 @@
     const stamp = now.toISOString().slice(0, 10).replace(/-/g, "");
     const a = document.createElement("a");
     a.href = url;
-    a.download = `tse-price-db_${stamp}.csv`;
+    a.download = `tse-price-db_${stamp}.txt`;
     document.body.appendChild(a);
     a.click();
     a.remove();
