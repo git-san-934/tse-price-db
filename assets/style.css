@@ -50,6 +50,10 @@ h1 { font-size: 1.6rem; letter-spacing: 0.02em; }
 header p { color: var(--text-sub); font-size: 0.92rem; margin-top: 0.4rem; }
 .updated { font-size: 0.8rem; }
 
+.backlink { font-size: 0.85rem; margin-top: 0.6rem; }
+.backlink a { color: var(--accent); text-decoration: none; }
+.backlink a:hover { text-decoration: underline; }
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;

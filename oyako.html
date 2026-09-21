@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>親子上場ウォッチリスト</title>
+  <meta name="description" content="東証に上場している親会社と上場子会社の組み合わせを、持株比率・基準日・出所つきでまとめた一覧" />
+  <meta name="theme-color" content="#f7f5f0" />
+  <link rel="stylesheet" href="assets/style.css?v=20260921a" />
+  <link rel="stylesheet" href="assets/oyako.css?v=20260921a" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>親子上場ウォッチリスト</h1>
+      <p>東証に上場している親会社が、同じく東証に上場している会社の株式を持っている組み合わせの一覧です。</p>
+      <p class="updated" id="updated-at">読み込み中...</p>
+      <p class="backlink"><a href="index.html">← 東証株価データベース</a></p>
+    </header>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="toolbar">
+      <input type="search" id="filter" placeholder="会社名・証券コードで絞り込み" autocomplete="off" />
+      <div class="legend" id="cat-filter">
+        <button type="button" class="chip" data-cat="" aria-pressed="true">すべて</button>
+        <button type="button" class="chip" data-cat="連結子会社(50%超)" aria-pressed="false">50%超</button>
+        <button type="button" class="chip" data-cat="持分法適用など(20〜50%)" aria-pressed="false">20〜50%</button>
+        <button type="button" class="chip" data-cat="比率未確認" aria-pressed="false">未確認</button>
+      </div>
+      <select id="sort" aria-label="並べ替え">
+        <option value="ratio">持株比率が高い順</option>
+        <option value="mcap">子会社の時価総額が大きい順</option>
+        <option value="pmcap">親会社の時価総額が大きい順</option>
+        <option value="code">証券コード順</option>
+      </select>
+    </div>
+
+    <p class="count" id="count"></p>
+
+    <div class="table-scroll">
+      <table id="oyako-table">
+        <thead>
+          <tr>
+            <th>区分</th>
+            <th>上場子会社</th>
+            <th class="num">時価総額</th>
+            <th class="num">PBR</th>
+            <th>上場親会社</th>
+            <th class="num">親の時価総額</th>
+            <th class="num">持株比率</th>
+            <th>基準日・出所</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody id="oyako-body"></tbody>
+      </table>
+    </div>
+
+    <section class="prose">
+      <h2>この一覧の作り方</h2>
+      <h3>対象にしたもの</h3>
+      <ul>
+        <li>親会社・子会社の<strong>両方が東証に上場</strong>していること。<code>data/prices.db</code> の銘柄マスタ(2026年9月5日時点)に両方が載っていて、2026年9月中旬まで売買が続いていることを確認しています。</li>
+        <li>親会社の持株比率が<strong>おおむね20%以上</strong>であること。20%未満の関連会社は対象外です。</li>
+        <li>直接の保有者が非上場の中間持株会社でも、その上を上場会社までたどれる場合は対象にし、備考にその旨を記載しています。</li>
+      </ul>
+      <h3>対象にしなかったもの</h3>
+      <ul>
+        <li>親会社が海外上場・非上場の場合(例: MonotaRO の筆頭株主は米グレインジャー)。</li>
+        <li>名証・札証・福証のみに上場している会社どうしの組み合わせ。</li>
+        <li>REIT・投資法人・ETF。</li>
+      </ul>
+      <h3>区分の意味</h3>
+      <p>「50%超」は親会社の保有が過半数のもの、「20〜50%」は持分法適用会社・その他の関係会社の水準です。50%を割っていても、退職給付信託やグループ会社との合算で過半数になるもの、会社が実質支配力基準で連結子会社と公表しているものは「50%超」に入れ、内訳を備考に書いています。</p>
+
+      <h2>確認できなかったこと・注意点</h2>
+      <ul>
+        <li><strong>網羅はできていません。</strong>東証の資料では上場子会社は2025年7月時点で215社です。2025〜2026年の完全子会社化を差し引いても、まだ数十組の取りこぼしがあるとみられます。特に地銀グループ、20〜50%の持分法適用会社、東京プロマーケット銘柄は手つかずです。</li>
+        <li><strong>比率の種類が揃っていません。</strong>多くは有価証券報告書の「大株主の状況」にある所有株式数の割合で、議決権ベースの数値とは一致しません。</li>
+        <li><strong>基準日はまちまちです。</strong>2026年3月31日が最多ですが、出所ページが年しか表示していないものは「2026年」とだけ記載しています。</li>
+        <li><strong>比率を確認できなかった組み合わせがあります。</strong>「未確認」で絞り込むと出ます。</li>
+        <li><strong>進行中のTOBは反映しきれていません。</strong>気づいたものは備考に書いていますが、各社の適時開示を網羅的に確認したわけではありません。</li>
+      </ul>
+
+      <h2>調べた結果、除外した組み合わせ</h2>
+      <p>候補には挙がったものの、資本関係が解消済みだったり、そもそも関係を確認できなかったものです。</p>
+      <ul id="excluded"></ul>
+
+      <h2>データファイル</h2>
+      <p>このページのもとデータは <a href="data/oyako-jojo.json">data/oyako-jojo.json</a>、表計算ソフト用は <a href="data/oyako-jojo.csv">data/oyako-jojo.csv</a> です。株価・時価総額・PBRは <code>data/prices.db</code> の2026年9月18日終値から算出しています。</p>
+      <p class="disclaimer">投資助言ではありません。売買の判断はご自身で行ってください。</p>
+    </section>
+  </div>
+  <script src="assets/oyako.js?v=20260921a"></script>
+</body>
+</html>
