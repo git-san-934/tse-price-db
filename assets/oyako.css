@@ -1,0 +1,98 @@
+/* 親子上場ウォッチリスト(oyako.html)専用のスタイル。共通部分は style.css を使う */
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.stats div {
+  flex: 1 1 8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.stats strong {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats span { font-size: 0.75rem; color: var(--text-sub); }
+
+.chip {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-sub);
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+#sort {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.count { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 0.5rem; }
+
+#oyako-table { min-width: 60rem; }
+#oyako-table th,
+#oyako-table td { text-align: left; vertical-align: top; }
+#oyako-table .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+#oyako-table .name { font-weight: 600; }
+#oyako-table .sub { display: block; font-size: 0.72rem; color: var(--text-sub); font-weight: 400; }
+#oyako-table .ratio { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+#oyako-table .note { font-size: 0.75rem; color: var(--text-sub); max-width: 22rem; }
+#oyako-table a { color: var(--accent); font-size: 0.75rem; }
+
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.tag-major { background: var(--low-bg); color: var(--low); }
+.tag-minor { background: var(--neutral-bg); color: var(--neutral); }
+.tag-unknown { background: var(--high-bg); color: var(--high); }
+
+.prose { margin-top: 2.5rem; max-width: 46rem; }
+.prose h2 { font-size: 1.15rem; margin: 2rem 0 0.6rem; }
+.prose h3 { font-size: 0.95rem; margin: 1.2rem 0 0.4rem; color: var(--text-sub); }
+.prose p { font-size: 0.88rem; margin-bottom: 0.6rem; }
+.prose ul { margin: 0 0 0.6rem 1.2rem; }
+.prose li { font-size: 0.88rem; margin-bottom: 0.4rem; }
+.prose code {
+  background: var(--neutral-bg);
+  padding: 0.05rem 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+}
+.prose a { color: var(--accent); }
+.disclaimer { color: var(--text-sub); font-size: 0.8rem; margin-top: 1.2rem; }
+
+#excluded li .why { color: var(--text-sub); }
+
+@media (max-width: 640px) {
+  .stats strong { font-size: 1.25rem; }
+  #oyako-table .note { max-width: 14rem; }
+}

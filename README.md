@@ -74,6 +74,26 @@ cd ..
 python -m http.server
 ```
 
+## 親子上場ウォッチリスト
+
+`oyako.html` は、東証に上場している親会社が同じく東証上場の会社の株式を持っている
+組み合わせ(親子上場)の一覧ページです。トップページのヘッダーからリンクしています。
+
+- 親会社・上場子会社・親会社の持株比率・基準日・出所・備考を一覧表示します。
+- 区分(50%超 / 20〜50% / 比率未確認)での絞り込み、会社名・コードでの検索、
+  持株比率・時価総額での並べ替えができます。
+- 上場が続いているかどうかは、このリポジトリの銘柄マスタ(`data/prices.db` の
+  `stocks` テーブル)と直近の株価で判定しています。銘柄マスタに無い銘柄は
+  上場廃止とみなして除外しています。
+- 持株比率は各社IR・有価証券報告書などの公開情報に基づく手作業の調査結果です。
+  **自動更新はされません。**株価の日次更新とは独立したスナップショットです。
+- 網羅はできていません。東証の資料では上場子会社は2025年7月時点で215社であり、
+  地銀グループや持分法適用会社を中心に取りこぼしがあります。判断基準と
+  確認できなかったことはページ内に明記しています。
+
+データを更新したいときは `data/oyako-jojo.json`(ページが読む)と
+`data/oyako-jojo.csv`(表計算ソフト用)を差し替えます。
+
 ## 高値圏/安値圏の判定ロジック
 
 - 終値が25日移動平均・75日移動平均の**両方を上回っている** → 高値圏
@@ -92,6 +112,7 @@ yfinanceはYahoo Financeの非公式ラッパーです。Yahoo側の仕様変更
 ## ファイル構成
 
 - `index.html` / `assets/` — 一覧・詳細画面(素のHTML/CSS/JS)
+- `oyako.html` / `assets/oyako.css` / `assets/oyako.js` — 親子上場ウォッチリスト(後述)
 - `scripts/db_common.py` — SQLiteスキーマ・移動平均計算・JSON書き出し(共通ロジック)
 - `scripts/fetch_prices.py` — yfinanceからの自動取得・SQLite更新
 - `scripts/import_manual_csv.py` — SBI証券等の手動CSV取り込み
@@ -101,6 +122,7 @@ yfinanceはYahoo Financeの非公式ラッパーです。Yahoo側の仕様変更
 - `data/history/<code>.json` — 銘柄別詳細表示用・6ヶ月チャート(Actionsが自動生成。クリック時にのみ読み込まれる)
 - `data/history_weekly/<code>.json` — 銘柄別詳細表示用・5年チャート(Actionsが自動生成。「5年」ボタン選択時にのみ読み込まれる)
 - `data/manual_csv/` — 手動CSVのアップロード先(利用者が配置。README参照)
+- `data/oyako-jojo.json` / `data/oyako-jojo.csv` — 親子上場の一覧データ(手作業のスナップショット)
 - `.github/workflows/update-data.yml` — 定期実行(平日17時JST)・手動実行
 - `.github/workflows/import-manual-csv.yml` — 手動CSVアップロード時の自動取り込み
 - `docs/` — 永続的な設計ドキュメント
