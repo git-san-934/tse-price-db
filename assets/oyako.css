@@ -53,6 +53,12 @@
 
 .count { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 0.5rem; }
 
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
 #oyako-table { min-width: 60rem; }
 #oyako-table th,
 #oyako-table td { text-align: left; vertical-align: top; }
