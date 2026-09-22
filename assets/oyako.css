@@ -55,9 +55,10 @@
 
 .table-scroll-top {
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 0;
-  height: 1rem;
+  height: 15px;
 }
 
 .table-scroll-top::before {
