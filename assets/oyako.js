@@ -63,6 +63,11 @@
     if (state.sort === 'mcap') return (b.mcap || 0) - (a.mcap || 0);
     if (state.sort === 'pmcap') return (b.parent_mcap || 0) - (a.parent_mcap || 0);
     if (state.sort === 'code') return a.code.localeCompare(b.code);
+    if (state.sort === 'score') {
+      var sa = parseFloat(scoreMap[a.code]) || -1;
+      var sb = parseFloat(scoreMap[b.code]) || -1;
+      return sb - sa;
+    }
     var ra = a.ratio === null || a.ratio === undefined ? -1 : a.ratio;
     var rb = b.ratio === null || b.ratio === undefined ? -1 : b.ratio;
     return rb - ra;
