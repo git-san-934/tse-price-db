@@ -14,6 +14,7 @@
   var excludedEl = document.getElementById('excluded');
   var updatedEl = document.getElementById('updated-at');
   var tableScrollTop = document.getElementById('table-scroll-top');
+  var tableScrollTopContent = document.getElementById('table-scroll-top-content');
   var tableScrollBottom = document.getElementById('table-scroll-bottom');
 
   // Sync scroll between top and bottom
@@ -24,6 +25,15 @@
   tableScrollBottom.addEventListener('scroll', function () {
     tableScrollTop.scrollLeft = tableScrollBottom.scrollLeft;
   });
+
+  // Update top scroll container width based on table width
+  function updateScrollTopWidth() {
+    var table = document.getElementById('oyako-table');
+    if (table && tableScrollTopContent) {
+      tableScrollTopContent.style.width = table.scrollWidth + 'px';
+      tableScrollTopContent.style.height = '1px';
+    }
+  }
 
   function num(value) {
     if (value === null || value === undefined) return '―';
@@ -86,6 +96,8 @@
         '<td class="note">' + escapeHtml(row.note || '') + '</td>' +
         '</tr>';
     }).join('');
+
+    updateScrollTopWidth();
   }
 
   function renderStats() {
@@ -255,6 +267,7 @@
       renderStats();
       renderExcluded();
       render();
+      setTimeout(updateScrollTopWidth, 0);
     })
     .catch(function (error) {
       updatedEl.textContent = error.message;

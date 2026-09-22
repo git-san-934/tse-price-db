@@ -58,13 +58,10 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 0;
-  height: 15px;
+  height: 17px;
 }
 
-.table-scroll-top::before {
-  content: '';
-  display: block;
-  width: 60rem;
+.table-scroll-top > div {
   height: 1px;
 }
 
