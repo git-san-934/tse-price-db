@@ -1,9 +1,11 @@
-// 親子上場ウォッチリスト(oyako.html)。data/oyako-jojo.json を読み込んで一覧を描画する。
+// 親子上場ウォッチリスト(oyako.html)。data/oyako-jojo.json と data/dissolution-rankings.csv を読み込んで一覧と予測ランキングを描画する。
 (function () {
   'use strict';
 
   var DATA_URL = 'data/oyako-jojo.json';
-  var state = { pairs: [], excluded: [], category: '', term: '', sort: 'ratio' };
+  var RANKING_URL = 'data/dissolution-rankings.csv';
+  var state = { pairs: [], excluded: [], category: '', term: '', sort: 'ratio', currentView: 'list' };
+  var rankingState = { allData: [], term: '', sort: 'score' };
 
   var tbody = document.getElementById('oyako-body');
   var countEl = document.getElementById('count');
@@ -115,6 +117,115 @@
     render();
   });
 
+  // Ranking functions
+  function parseRankingCSV(csv) {
+    var lines = csv.trim().split('\n');
+    var headers = lines[0].split(',');
+    var data = [];
+    for (var i = 1; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
+      var obj = {};
+      var values = lines[i].split(',');
+      headers.forEach(function (h, idx) {
+        obj[h] = values[idx] || '';
+      });
+      data.push(obj);
+    }
+    return data;
+  }
+
+  function renderRankings() {
+    var rankingsEl = document.getElementById('rankings');
+    var rankingInfoEl = document.getElementById('ranking-info');
+    var filtered = filterRankingData(rankingState.term);
+
+    if (rankingState.sort === 'mcap') {
+      filtered.sort(function (a, b) {
+        return (parseFloat(b['時価総額(億円)']) || 0) - (parseFloat(a['時価総額(億円)']) || 0);
+      });
+    }
+
+    rankingInfoEl.textContent = filtered.length + ' 組を表示中(全 ' + rankingState.allData.length + ' 組)';
+    rankingsEl.innerHTML = filtered.slice(0, 50).map(function (row) {
+      return '<div class="rank-card">' +
+        '<div class="rank-number">' + escapeHtml(row['順位']) + '</div>' +
+        '<div class="rank-info">' +
+          '<div class="rank-title">' +
+            escapeHtml(row['子会社名']) +
+            '<span class="rank-score">スコア ' + escapeHtml(row['スコア']) + '</span>' +
+          '</div>' +
+          '<div class="rank-code">' +
+            escapeHtml(row['子会社コード']) + ' / ' + escapeHtml(row['市場']) + ' 市場<br>' +
+            '親会社: ' + escapeHtml(row['親会社']) + ' (' + escapeHtml(row['親会社コード']) + ')' +
+          '</div>' +
+          '<div class="rank-reason">' +
+            '<strong>理由：</strong> ' + escapeHtml(row['スコアの根拠']).replace(/ \/ /g, '<br>') +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    if (filtered.length === 0) {
+      rankingsEl.innerHTML = '<p style="text-align: center; color: var(--text-sub);">該当する銘柄がありません</p>';
+    }
+  }
+
+  function filterRankingData(query) {
+    if (!query) return rankingState.allData;
+    var q = query.toLowerCase();
+    return rankingState.allData.filter(function (row) {
+      return (row['子会社コード'] || '').toLowerCase().includes(q) ||
+             (row['子会社名'] || '').toLowerCase().includes(q) ||
+             (row['親会社'] || '').toLowerCase().includes(q);
+    });
+  }
+
+  function switchView(viewName) {
+    state.currentView = viewName;
+    var listView = document.getElementById('list-view');
+    var rankingView = document.getElementById('ranking-view');
+    var tabs = document.querySelectorAll('.tab-btn');
+
+    tabs.forEach(function (tab) {
+      if (tab.dataset.view === viewName) {
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+      } else {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+      }
+    });
+
+    if (viewName === 'ranking') {
+      listView.classList.remove('active');
+      rankingView.classList.add('active');
+      if (rankingState.allData.length > 0) {
+        renderRankings();
+      }
+    } else {
+      rankingView.classList.remove('active');
+      listView.classList.add('active');
+    }
+  }
+
+  // View tab click handlers
+  document.querySelectorAll('.tab-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      switchView(this.dataset.view);
+    });
+  });
+
+  // Ranking view event handlers
+  document.getElementById('ranking-filter').addEventListener('input', function (event) {
+    rankingState.term = event.target.value.trim().toLowerCase();
+    renderRankings();
+  });
+
+  document.getElementById('ranking-sort').addEventListener('change', function (event) {
+    rankingState.sort = event.target.value;
+    renderRankings();
+  });
+
   fetch(DATA_URL)
     .then(function (response) {
       if (!response.ok) throw new Error('データを読み込めませんでした (' + response.status + ')');
@@ -133,5 +244,18 @@
     })
     .catch(function (error) {
       updatedEl.textContent = error.message;
+    });
+
+  // Load ranking data
+  fetch(RANKING_URL)
+    .then(function (response) {
+      if (!response.ok) throw new Error('ランキングデータを読み込めませんでした');
+      return response.text();
+    })
+    .then(function (csv) {
+      rankingState.allData = parseRankingCSV(csv);
+    })
+    .catch(function (error) {
+      console.error('ランキングデータの読み込みに失敗しました:', error);
     });
 })();
