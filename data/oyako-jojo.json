@@ -21,7 +21,8 @@
    "as_of": "2025-09-25",
    "source": "https://www.ipokiso.com/company/2025/gmo-c.html",
    "note": "2025-09-25東証グロース上場。数値はIPO情報サイト記載の「上場後の親会社保有比率」（ロックアップ180日）。一次情報（目論見書・有報）は未確認",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "4784",
@@ -38,7 +39,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/4784/大株主",
    "note": "グループ会社2社の保有を含むと約92%",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "4178",
@@ -55,7 +57,8 @@
    "as_of": "不明",
    "source": "https://www.strike.co.jp/ma_news/detail.html?id=20260825d",
    "note": "関係あり。2026-08-25に株式交換（簡易株式交換、比率1:0.478）による完全子会社化を発表。現在の保有71.46%。効力発生日2026-11-30、上場廃止予定日2026-11-26のため親子上場は解消見込み。比率の基準日は開示に明記なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "9445",
@@ -72,7 +75,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/フォーバルテレコム/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "2653",
@@ -89,7 +93,8 @@
    "as_of": "2026-08-31",
    "source": "https://www.aeon-kyushu.info/ir/stock/stock_information",
    "note": "24,307千株。2026年3月にトキハインダストリーを完全子会社化",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 9
   },
   {
    "code": "4059",
@@ -106,7 +111,8 @@
    "as_of": "2025-09-30",
    "source": "https://kitaishihon.com/company/4059/board-of-director",
    "note": "親子関係あり。有価証券報告書の関係会社欄に親会社エアトリ69.34%と記載。まぐまぐ自身のプレスリリースでもエアトリを「当社親会社」と表記",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "6040",
@@ -123,7 +129,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%E6%97%A5%E6%9C%AC%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4%E9%96%8B%E7%99%BA/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主。ullet表示は2025年時点だが基準日の明示なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "7079",
@@ -140,7 +147,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/7079/stockholders/",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "7177",
@@ -157,7 +165,8 @@
    "as_of": "2026-06-30",
    "source": "https://www.gmofh.com/ir/stock/shareholders.html",
    "note": "公式IR",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "7512",
@@ -174,7 +183,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%E3%82%A4%E3%82%AA%E3%83%B3%E5%8C%97%E6%B5%B7%E9%81%93/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主。ullet表示は2026年時点(2月期)だが基準日の明示なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 8
   },
   {
    "code": "4262",
@@ -191,7 +201,8 @@
    "as_of": "2026-03-31",
    "source": "https://kitaishihon.com/company/4262/board-of-director",
    "note": "親子関係あり（間接）。直接の親会社はニフティ(株)で65.3%、ニフティはノジマの100%子会社のためノジマは孫会社として間接保有（有報上ノジマも議決権所有割合65.3%と記載）",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "5587",
@@ -208,7 +219,8 @@
    "as_of": "2025-09-30",
    "source": "https://kitaishihon.com/company/5587/board-of-director",
    "note": "親子関係あり。有価証券報告書の関係会社欄に親会社エアトリ（被所有）65.1%と記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "2003",
@@ -225,7 +237,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E6%97%A5%E6%9D%B1%E5%AF%8C%E5%A3%AB%E8%A3%BD%E7%B2%89/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 8
   },
   {
    "code": "8198",
@@ -242,7 +255,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9%E3%83%90%E3%83%AA%E3%83%A5%E6%9D%B1%E6%B5%B7/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主。ullet表示は2026年時点だが基準日の明示なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 8
   },
   {
    "code": "9158",
@@ -259,7 +273,8 @@
    "as_of": "2026-03-31",
    "source": "https://kitaishihon.com/company/9158/board-of-director",
    "note": "親子関係あり。有価証券報告書に親会社エムスリー（被所有）63.46%、当社は同社の連結子会社と記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "2327",
@@ -276,7 +291,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/2327/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "8244",
@@ -293,7 +309,8 @@
    "as_of": "2026年",
    "source": "https://www.ullet.com/近鉄百貨店/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "6180",
@@ -310,7 +327,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/ＧＭＯメディア/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "4270",
@@ -327,7 +345,8 @@
    "as_of": "2026-02-28",
    "source": "https://s.kabutan.jp/stocks/4270/stockholders/",
    "note": "テラスカイは2025年2月の変更報告書で69.56%→68.08%と段階的に保有比率を引き下げ中",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": -1
   },
   {
    "code": "303A",
@@ -344,7 +363,8 @@
    "as_of": "2026-01-01",
    "source": "https://maonline.jp/kabuhoyu/sh-s100xe9z",
    "note": "関係確認。2026/1/6提出の変更報告書(大量保有)で53.01%→62.49%に買い増し。基準日は報告義務発生日",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "7198",
@@ -361,7 +381,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/7198/stockholders",
    "note": "直接の保有者は非上場のSBIノンバンクホールディングス（SBIホールディングス傘下）",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "4689",
@@ -378,7 +399,8 @@
    "as_of": "2026-03-31",
    "source": "https://the-shashi.com/tse/4689/shareholders/",
    "note": "直接の筆頭株主は非上場のAホールディングス。ソフトバンク(9434)はAホールディングスを通じた間接保有で、9434自身の直接持分は別途。2024-2025年にLINEヤフーの自己株式公開買付けにAホールディングスが応募する資本異動あり",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "5834",
@@ -395,7 +417,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0583400",
    "note": "2024年3月にSBIホールディングスが親会社異動（SBIノンバンクHDへ）を発表。直接の親会社はSBIノンバンクHDで上場親会社はSBI HD(8473)。FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "4812",
@@ -412,7 +435,8 @@
    "as_of": "2026-06-30",
    "source": "https://s.kabutan.jp/stocks/4812/stockholders/",
    "note": "2026年7月に電通グループが株式非公開化を検討していると報じられている／2026年7月3日に株式非公開化検討の報道あり（株探）。TOB等の可能性があり要追跡",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "7115",
@@ -429,7 +453,8 @@
    "as_of": "2025-12-31",
    "source": "https://kitaishihon.com/company/7115/board-of-director",
    "note": "親子関係あり。有価証券報告書の関係会社欄に親会社アスクル（被所有）61.43%と記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "9414",
@@ -446,7 +471,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0941400",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "2892",
@@ -463,7 +489,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.nisshoku.co.jp/ir/stock/stock-information.html",
    "note": "関係あり。会社IRの大株主情報で三菱商事2,942千株・議決権比率60.68%。上場継続中でTOB・完全子会社化の発表は確認されず（2025年の三菱商事TOBは三菱食品であり日本食品化工ではない）",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 9
   },
   {
    "code": "9057",
@@ -480,7 +507,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%E9%81%A0%E5%B7%9E%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主。ullet表示は2026年時点だが基準日の明示なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "4343",
@@ -497,7 +525,8 @@
    "as_of": "2026-02-28",
    "source": "https://www.fantasy.co.jp/company/ircontent/stock_bond/stock_bond_04.html",
    "note": "公式IR。2月決算",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "6366",
@@ -514,7 +543,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%96%E5%B7%A5%E5%BB%BA%E8%A8%AD/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 8
   },
   {
    "code": "4356",
@@ -531,7 +561,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/%E5%BF%9C%E7%94%A8%E6%8A%80%E8%A1%93/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主(3,438千株)",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "7678",
@@ -548,7 +579,8 @@
    "as_of": "2026-07-31",
    "source": "https://s.kabutan.jp/stocks/7678/stockholders/",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "3484",
@@ -565,7 +597,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%82%A4%E3%83%8E%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "関係確認。クロップスが筆頭株主で過半数保有",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "7326",
@@ -582,7 +615,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.kabutore.biz/genzaikabuka/okabunushi7326.html",
    "note": "第2位に光通信9.49%",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "9325",
@@ -599,7 +633,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/9325/stockholders/",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "9160",
@@ -616,7 +651,8 @@
    "as_of": "2026-04-01",
    "source": "https://s.kabutan.jp/news/n202604070637/",
    "note": "関係確認。2026/4/7提出の変更報告書No.2でTKPの保有割合が60.0%→57.74%に減少(報告義務発生日2026/4/1)。TKPのTOBで傘下入り。売却により比率が下がっている点に注意",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "7774",
@@ -633,7 +669,8 @@
    "as_of": "2026-03-31",
    "source": "https://strainer.jp/companies/JP-7774/ownership",
    "note": "第2位ニデック10.4%",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "1850",
@@ -650,7 +687,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E5%8D%97%E6%B5%B7%E8%BE%B0%E6%9D%91%E5%BB%BA%E8%A8%AD/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社(南海電気鉄道=NANKAI)が筆頭株主。TOB等の直近発表は確認されず",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "6662",
@@ -667,7 +705,8 @@
    "as_of": "2025-06-30",
    "source": "https://www.ullet.com/ユビテック/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "2573",
@@ -684,7 +723,8 @@
    "as_of": "2024-12-31",
    "source": "https://www.hokkaido.ccbc.co.jp/ir/stock-information/",
    "note": "公式IRの掲載が2024年12月期基準のまま。12月決算のためより新しい基準日の開示は未確認",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "3976",
@@ -701,7 +741,8 @@
    "as_of": "2026-06-30",
    "source": "https://www.kabutore.biz/genzaikabuka/okabunushi3976.html",
    "note": "親会社はリスト記載の伊藤忠商事ではない。2025年1月21日に株式会社イノベーション(3970)のTOBが成立し親会社・筆頭株主が異動（3,360,800株）。2025年9月にグループ再編（Innovation X Solutionsの完全子会社化等）を発表",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": -4
   },
   {
    "code": "4051",
@@ -718,7 +759,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/4051/stockholders/",
    "note": "直接の親会社はGMOペイメントゲートウェイ(3769)。GMOインターネットグループ(9449)は間接的な親会社であり、リスト記載の親会社名は要修正",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "4498",
@@ -735,7 +777,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%82%B5%E3%82%A4%E3%83%90%E3%83%BC%E3%83%88%E3%83%A9%E3%82%B9%E3%83%88/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "直接の保有者はSBテクノロジー（非上場）56.44%。ソフトバンクは間接保有／関係確認(間接)。直接の筆頭株主はSBテクノロジー(4726)で56.44%。ソフトバンク(9434)はSBテクノロジー経由の間接保有でありソフトバンク本体の直接保有比率は不明",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "8133",
@@ -752,7 +795,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.itcenex.com/ja/ir/stockholder/info/index.html",
    "note": "公式IR",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "5449",
@@ -769,7 +813,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E5%A4%A7%E9%98%AA%E8%A3%BD%E9%90%B5/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "日本製鉄の持分は65.85%（2025-03-31）から55.58%（2026-03-31）へ低下。第2位にINTERTRUST TRUSTEES (CAYMAN) 17.48%／親会社が筆頭株主。前年2025-03-31の65.85%から低下。2位にINTERTRUST TRUSTEES(CAYMAN)17.48%",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 9
   },
   {
    "code": "7215",
@@ -786,7 +831,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0721500",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "3326",
@@ -803,7 +849,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/3326/stockholders/",
    "note": "2022年に第三者割当増資でAOKIHDが子会社化",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "3633",
@@ -820,7 +867,8 @@
    "as_of": "2025-12-31",
    "source": "https://s.kabutan.jp/stocks/3633/stockholders/",
    "note": "別途GMOインターネット(株)が1.97%を保有",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "5753",
@@ -837,7 +885,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E6%97%A5%E6%9C%AC%E4%BC%B8%E9%8A%85/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "4151",
@@ -854,7 +903,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/協和キリン/大株主",
    "note": "親会社が筆頭株主。ullet表示は2025年時点だが基準日の明示なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "6099",
@@ -871,7 +921,8 @@
    "as_of": "2025-12-31",
    "source": "https://kitaishihon.com/company/6099/board-of-director",
    "note": "親子関係あり。有価証券報告書の関係会社欄に「（親会社）エムスリー株式会社」被所有55.02%と記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "1429",
@@ -888,7 +939,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.n-aqua.jp/ir/shareholders.html",
    "note": "直接の親会社は非上場のヒノキヤグループ（54.95%）。同社IRページに「ヤマダホールディングスグループ企業」と明記されており、上場親会社はヤマダHD(9831)。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "3159",
@@ -905,7 +957,8 @@
    "as_of": "2026-01-31",
    "source": "https://www.maruzen-chi.co.jp/ja/ir/stock/shareholder.html",
    "note": "会社IR「株式の状況」。発行済株式総数92,554,085株中50,828,336株",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "9423",
@@ -922,7 +975,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.forval.co.jp/investor_report/up_img/20260619_r2.pdf",
    "note": "フォーバルの2026年3月期有価証券報告書「関係会社の状況」に連結子会社として記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "9216",
@@ -939,7 +993,8 @@
    "as_of": "2025-05-31",
    "source": "https://www.ullet.com/ビーウィズ/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "299A",
@@ -956,7 +1011,8 @@
    "as_of": "2026-03-31",
    "source": "https://finance.biggo.jp/news/jpx_tdnet_140120260630584982",
    "note": "親子関係あり。TDnet「支配株主等に関する事項について」。直接39.1%＋子会社ZVenture Capital組成のYJ2号投資事業組合15.4%の合算で親会社",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "2211",
@@ -973,7 +1029,8 @@
    "as_of": "2026-06-30",
    "source": "https://www.fujiya-peko.co.jp/company/ir/stock/stock.html",
    "note": "不二家公式IR。自己株式9,157株を控除して算出",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "4483",
@@ -990,7 +1047,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%EF%BC%AA%EF%BC%AD%EF%BC%A4%EF%BC%A3/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "第4位にノーリツ鋼機4.55%",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "7614",
@@ -1007,7 +1065,8 @@
    "as_of": "2026-01-31",
    "source": "https://www.ullet.com/7614.html",
    "note": "関係確認。エスフーズが3,584千株53.83%で筆頭株主。1月期決算のため基準日は1月末",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "6185",
@@ -1024,7 +1083,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%EF%BC%B3%EF%BC%AD%EF%BC%AE/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "直接の保有者はソニーネットワークコミュニケーションズ（非上場）53.74%／関係確認(間接)。直接の筆頭株主はソニーネットワークコミュニケーションズ(ソニーグループ傘下)で7,861千株53.74%。ソニーグループ本体の直接保有比率は不明",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "9726",
@@ -1041,7 +1101,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/ＫＮＴ－ＣＴホールディングス/大株主",
    "note": "親会社が筆頭株主。2位に日本マスタートラスト信託銀行17.39%。ullet表示は2026年時点だが基準日の明示なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "7970",
@@ -1058,7 +1119,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E4%BF%A1%E8%B6%8A%E3%83%9D%E3%83%AA%E3%83%9E%E3%83%BC/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主(42,986千株)",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "2148",
@@ -1075,7 +1137,8 @@
    "as_of": "2025-03-31",
    "source": "https://corp.itmedia.co.jp/ir/stock/info/",
    "note": "会社IRが「親会社：SBメディアホールディングス（持株比率53.4%）」と明記。SBメディアHDとソフトバンク(9434)の資本関係は本調査では一次情報で未確認。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "5025",
@@ -1092,7 +1155,8 @@
    "as_of": "2026-02-28",
    "source": "https://www.ullet.com/5025.html",
    "note": "関係確認。GA technologiesが1,424千株53.34%で筆頭株主。マーキュリーは2月期決算のため基準日は2月末",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "9436",
@@ -1109,7 +1173,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/9436/stockholders/",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "9827",
@@ -1126,7 +1191,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/%E3%83%AA%E3%83%AA%E3%82%AB%E3%83%A9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "関係確認。TKPが6,529千株53.01%で筆頭株主(2023年の26.69%から買い増し)。12月期決算のため基準日は12月末",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "6548",
@@ -1143,7 +1209,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0654800",
    "note": "関係あり。2023-10-31の第三者割当増資引受により子会社化（当時の議決権所有割合58.24%、出所 https://www.nihon-ma.co.jp/news/20230810_6030-15/ ）。FISCO最新大株主表では53.00%。基準日不明",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "4107",
@@ -1160,7 +1227,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0410700",
    "note": "FISCOは基準日を表示しないため基準日不明。2026-03-27にTDnetで「支配株主等に関する事項について」の開示があるが、掲載ページ（日経）がrobots.txtで取得できず議決権割合・基準日は未確認。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "9632",
@@ -1177,7 +1245,8 @@
    "as_of": "2024-01-31",
    "source": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%90%E3%83%AB%E8%88%88%E6%A5%AD",
    "note": "出所がWikipedia(四季報等の二次情報)で基準日が2024-01-31と古い。株探・IRBANK・J-LiC等が403で最新値を確認できず(1月決算)",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 7
   },
   {
    "code": "3922",
@@ -1194,7 +1263,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%EF%BC%B0%EF%BC%B2%E3%80%80%EF%BC%B4%EF%BC%A9%EF%BC%AD%EF%BC%A5%EF%BC%B3/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主。ullet表示は2026年時点(2月期)だが基準日の明示なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "4293",
@@ -1211,7 +1281,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/%E3%82%BB%E3%83%97%E3%83%86%E3%83%BC%E3%83%8B%E3%83%BB%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "12月決算",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "8014",
@@ -1228,7 +1299,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/8014.html",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "3788",
@@ -1245,7 +1317,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/ＧＭＯグローバルサイン・ホールディングス/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "8060",
@@ -1262,7 +1335,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/%E3%82%AD%E3%83%A4%E3%83%8E%E3%83%B3%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "12月決算",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "3092",
@@ -1279,7 +1353,8 @@
    "as_of": "不明",
    "source": "https://japanir.jp/company/company-3092/ir/3092-20260629-01_wp_general_ir/",
    "note": "関係あり。2026年6月開示「支配株主等に関する事項」で支配株主＝LINEヤフー、議決権所有割合（直接・間接合算）51.9%。基準日は当該開示に明記なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "3280",
@@ -1296,7 +1371,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%E3%82%A8%E3%82%B9%E3%83%88%E3%83%A9%E3%82%B9%E3%83%88/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9",
    "note": "ullet時系列(3,145千株保有)で2026年時点51.9%。基準日の明示なし。2017年TOBで西部ガス傘下入り",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "6744",
@@ -1313,7 +1389,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E8%83%BD%E7%BE%8E%E9%98%B2%E7%81%BD/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "4506",
@@ -1330,7 +1407,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0450600",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "3628",
@@ -1347,7 +1425,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%9B%E3%83%A9%E3%82%A4%E3%82%BE%E3%83%B3/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "6,535千株",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "3841",
@@ -1364,7 +1443,8 @@
    "as_of": "2024-03-31",
    "source": "https://www.jedat.co.jp/wp-content/uploads/2024/06/yuukasyoukenhoukokusyo22nd.pdf",
    "note": "親子関係あり。第22期有価証券報告書に「アルゴグラフィックスが当社の親会社であり当社は同社の連結子会社」と明記。1,980,000株・51.4%（自己株式控除後）。2026年6月19日付で「支配株主等に関する事項について」を開示しており関係は継続中だが、最新比率は本文取得できず基準日は2024-03-31",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "9565",
@@ -1381,7 +1461,8 @@
    "as_of": "2025-10-31",
    "source": "https://kitaishihon.com/company/9565/board-of-director",
    "note": "親子関係あり。有価証券報告書の関係会社欄に親会社カヤック51.4%と記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "1948",
@@ -1398,7 +1479,8 @@
    "as_of": "2026-07-07",
    "source": "https://finance.biggo.jp/news/jpx_tdnet_140120260707588701",
    "note": "2026年5月にきんでんがTOBを実施し42.53%を取得（三菱電機は不応募で51.36%維持）、2026年9月25日に上場廃止予定／2026年5月25日にきんでん(1944)がTOBを発表し2026年7月に成立、きんでんが42.53%取得（三菱電機は不応募合意で51.36%を継続保有、両社合計93.89%）。2026年8月25日付株式併合、2026年9月25日に上場廃止予定",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "9691",
@@ -1415,7 +1497,8 @@
    "as_of": "2026-05-15",
    "source": "https://maonline.jp/db/tob/2026/3380",
    "note": "2026年5月にミツバと中部電力が共同TOBを発表（買付期間〜7月8日）。9月中旬時点では東証で売買が継続している／2026-05-15にミツバと中部電力(9502)が共同でTOBを発表（買付期間2026-05-15〜07-08）、成立後は議決権をミツバ80%・中部電力20%として非公開化する予定。2026-09時点では既に上場廃止となっている可能性が高い。数値はTOB前のミツバの保有比率",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "3969",
@@ -1432,7 +1515,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%82%A8%E3%82%A4%E3%83%88%E3%83%AC%E3%83%83%E3%83%89/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "関係確認。ソフトクリエイトHDが3,840千株51.29%で筆頭株主。会社IRの株式情報ページは基準日が古く(2022年)大株主表なし、Ullet(有報ベース)を採用",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "6391",
@@ -1449,7 +1533,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.kajitech.com/ir/ir-shareholders/",
    "note": "公式IR",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "7630",
@@ -1466,7 +1551,8 @@
    "as_of": "2026年",
    "source": "https://www.ullet.com/壱番屋/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "4714",
@@ -1483,7 +1569,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0471400",
    "note": "関係あり。2024-05-28のTOB成立＋第三者割当増資払込により親会社異動（当時の議決権所有割合51.00%、出所 https://www.riso-kyoikugroup.com/img/20240528_01_02.pdf ）。FISCO最新大株主表では51.01%。基準日不明",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "4997",
@@ -1500,7 +1587,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.nichino.co.jp/ir/page_10093.html",
    "note": "公式IR。発行済株式総数に対する割合",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "3909",
@@ -1517,7 +1605,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0390900",
    "note": "関係あり。2024年11-12月のTOB（成立、決済2024-12-19）と第三者割当増資により連結子会社化。FISCO大株主表で51.00%。上場は維持。基準日不明",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "4326",
@@ -1534,7 +1623,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0432600",
    "note": "2023年のNTTドコモによるTOBで子会社化。直接の親会社はNTTドコモで、上場親会社はNTT(9432)。FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "7102",
@@ -1551,7 +1641,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0710200",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "4479",
@@ -1568,7 +1659,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/4479/stockholders/",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "2806",
@@ -1585,7 +1677,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%83%A6%E3%82%BF%E3%82%AB%E3%83%95%E3%83%BC%E3%82%BA/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "Ullet（EDINET由来の二次情報）。公式IR・株探・IRBANKは403等で取得不可のため一次情報未確認",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "4847",
@@ -1602,7 +1695,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0484700",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "8278",
@@ -1619,7 +1713,8 @@
    "as_of": "2026年",
    "source": "https://www.ullet.com/フジ/大株主",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 8
   },
   {
    "code": "4091",
@@ -1636,7 +1731,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E6%97%A5%E6%9C%AC%E9%85%B8%E7%B4%A0%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": -1
   },
   {
    "code": "4113",
@@ -1653,7 +1749,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.taoka-chem.co.jp/ir/shareholders.html",
    "note": "関係確認。会社IR「株主・株式情報」で住友化学が7,247,000株50.58%の筆頭株主",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 9
   },
   {
    "code": "7421",
@@ -1670,7 +1767,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.kappa-create.co.jp/company/governance.pdf",
    "note": "コーポレートガバナンス報告書（2026-06-25更新）。直接の親会社はSPCカッパ（コロワイドが普通株式100%保有）。所有株式数ベースでは50.54%（24,943,302株）",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "3178",
@@ -1687,7 +1785,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%83%81%E3%83%A0%E3%83%8B%E3%83%BC/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "7513",
@@ -1704,7 +1803,8 @@
    "as_of": "2025-08-31",
    "source": "https://kitaishihon.com/company/7513/board-of-director",
    "note": "親子関係あり。有価証券報告書の関係会社欄に親会社ビックカメラ（被所有）50.47%と記載。完全子会社化の観測記事はあるが正式な発表は確認できず",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 1
   },
   {
    "code": "5659",
@@ -1721,7 +1821,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E6%97%A5%E6%9C%AC%E7%B2%BE%E7%B7%9A/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "関係確認。大同特殊鋼が50.37%で筆頭株主(2021年のTOBで出資比率を51%に引き上げ済)。直近の追加TOB・完全子会社化の発表は確認できず",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 5
   },
   {
    "code": "8892",
@@ -1738,7 +1839,8 @@
    "as_of": "2026-03-31",
    "source": "https://en.es-conjapan.co.jp/investor/stock/",
    "note": "関係確認。会社IR(英文)の大株主表で中部電力が49,599,000株50.3%。2021年に中部電力が連結子会社化。上場は継続中",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "1871",
@@ -1755,7 +1857,8 @@
    "as_of": "2026-06-26",
    "source": "https://japanir.jp/company/company-1871/ir/1871-20260626-01_wp_disclosure_update/",
    "note": "2023年12月の大成建設によるTOBで親会社化。2024年7月5日付コーポレートガバナンス報告書では50.19%（https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20240705/20240618530927.pdf）。基準日は開示更新日",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 3
   },
   {
    "code": "3391",
@@ -1772,7 +1875,8 @@
    "as_of": "2026-01-14",
    "source": "https://www.aeon.info/wp-content/uploads/news/pdf/2026/01/260107R_1.pdf",
    "note": "2026年1月のTOB成立でイオンの連結子会社化(決済開始日2026-01-14)。数値は公開買付け後の株券等所有割合(議決権2,286,323個)",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "4615",
@@ -1789,7 +1893,8 @@
    "as_of": "2025-03-31",
    "source": "https://www.shintopaint.co.jp/ir/pdf/meeting/2025_0630.pdf",
    "note": "関係あり。2025年2月の大日本塗料によるTOBで子会社化。第131回定時株主総会招集通知の大株主の状況で17,052千株・50.10%（2025年3月31日現在）。議決権ベースではなく所有株式数ベース",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "8570",
@@ -1806,7 +1911,8 @@
    "as_of": "2025-02-28",
    "source": "https://www.aeonfinancial.co.jp/-/media/AeonGroup/Aeonfinancial/Files/activity/governance/governance/2025/govenance250526.pdf?sc_lang=ja-JP",
    "note": "議決権49.99%（間接所有含む）。イオンの連結子会社／イオングループ各社による間接所有を含む議決権比率。2025年5月26日付コーポレートガバナンス報告書の記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 7
   },
   {
    "code": "7182",
@@ -1823,7 +1929,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/ゆうちょ銀行/大株主",
    "note": "日本郵政の保有は49.87%だが、実質支配力基準で連結子会社",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": -2
   },
   {
    "code": "6050",
@@ -1840,7 +1947,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0605000?fm=mj",
    "note": "議決権49.70%だが、チェンジHDは実質支配力基準で連結子会社と公表／関係あり（要注意）。2023年10月のTOB結果開示の表題は「その他の関係会社及び主要株主である筆頭株主の異動」で「親会社の異動」ではない。チェンジHDは連結子会社化を公表。FISCO大株主表で49.70%と議決権50%未満のため、親会社該当かは会社側資料で要再確認。基準日不明",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "4645",
@@ -1857,7 +1965,8 @@
    "as_of": "2026-02-28",
    "source": "https://kitaishihon.com/company/4645/board-of-director",
    "note": "議決権49.7%だが実質支配力基準で連結子会社／親子関係あり。2023年7月に学研HDが市進HDを連結子会社化。有報の関係会社欄に被所有49.7%。50%未満だが実質支配力基準で連結子会社。直近のTOB・完全子会社化の発表は確認できず",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "3929",
@@ -1874,7 +1983,8 @@
    "as_of": "2026-03-31",
    "source": "https://kitaishihon.com/company/3929/board-of-director",
    "note": "議決権49.0%だが有報上「親会社」と記載／親子関係あり。2024年7月1日の第三者割当増資でジーニーが49%取得、取締役過半数派遣により実質支配力基準で連結子会社・親会社の異動を開示済み。50%未満だが有報上「親会社」と記載",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": -1
   },
   {
    "code": "9946",
@@ -1891,7 +2001,8 @@
    "as_of": "2026-02-28",
    "source": "https://www.ullet.com/ミニストップ/大株主",
    "note": "イオン直接48.71%＋イオンフィナンシャルサービス1.39%でグループ計約50.1%。イオンの連結子会社／イオンフィナンシャルサービス1.39%を含めるとグループ計約50.1%",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 6
   },
   {
    "code": "5282",
@@ -1908,7 +2019,8 @@
    "as_of": "2025-03-31",
    "source": "https://www.geostr.co.jp/wp-content/uploads/20250515_controlling_stockholder.pdf",
    "note": "議決権44.10%だが有報の支配株主等開示で日本製鉄を親会社と記載／関係あり。会社開示「支配株主等に関する事項」で日本製鉄の議決権所有割合44.10%（直接40.70%＋間接3.40%）。過半数未満だが実質支配基準により親会社扱い",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 9
   },
   {
    "code": "8891",
@@ -1925,7 +2037,8 @@
    "as_of": "2026-03-31",
    "source": "https://kitaishihon.com/company/8891/board-of-director",
    "note": "議決権43.49%だが有報上「親会社」と記載／親子関係あり。有価証券報告書の「（親会社）」欄にVTホールディングス43.49%と記載。50%未満だが実質支配力基準により親会社",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "9049",
@@ -1942,7 +2055,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0904900",
    "note": "議決権43.17%だが京阪HDを親会社と記載／関係あり。FISCO大株主表で京阪HD 43.17%の筆頭株主。日本語版Wikipediaでも2024-03-31時点で43.17%。議決権過半数未満だが京阪HDの連結子会社。FISCO側の基準日は記載なし",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 2
   },
   {
    "code": "2737",
@@ -1959,7 +2073,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0273700",
    "note": "豊田通商直接26.62%＋ネクスティエレクトロニクス23.51%でグループ計約50.1%／豊田通商の直接保有は26.62%。別に第2位株主ネクスティエレクトロニクス（豊田通商グループ）が23.51%を保有し合計約50.1%。FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "3222",
@@ -1976,7 +2091,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0322200",
    "note": "イオン直接18.44%＋イオンマーケットインベストメント34.33%でグループ計約52.8%／イオンの直接保有は18.44%。筆頭株主はイオンマーケットインベストメント34.33%で、イオングループ計約52.8%。FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 9
   },
   {
    "code": "9636",
@@ -1993,7 +2109,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0963600",
    "note": "近鉄GHD直接5.87%＋退職給付信託口45.55%＋近鉄保険サービス9.00%でグループ計約60.4%／近鉄GHDの直接保有は5.87%。筆頭株主は日本マスタートラスト信託銀行（近畿日本鉄道退職給付信託口）45.55%、ほかに近鉄保険サービス9.00%があり近鉄グループ合計は約60.4%。FISCOは基準日を表示しないため基準日不明。",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 4
   },
   {
    "code": "4765",
@@ -2010,7 +2127,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%EF%BC%B3%EF%BC%A2%EF%BC%A9%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "SBI HD名義の直接保有はないが、SBIアセットマネジメントグループ43.7%＋SBIファイナンシャルサービシーズ12.6%でグループ計約56.3%／SBIホールディングス名義の直接保有は上位5位に不在。SBIアセットマネジメントグループ43.7%+SBIファイナンシャルサービシーズ12.6%(いずれもSBI HD傘下)で合計約56.3%。間接保有比率は未確認",
-   "category": "連結子会社(50%超)"
+   "category": "連結子会社(50%超)",
+   "score": 0
   },
   {
    "code": "7222",
@@ -2027,7 +2145,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.nissan-shatai.co.jp/IR/STOCK/SHARES/index.html",
    "note": "公式IR。ちょうど50.00%。第2位にエフィッシモ関連とみられるイーシーエム エムエフ22.59%",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "7181",
@@ -2044,7 +2163,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%81%8B%E3%82%93%E3%81%BD%E7%94%9F%E5%91%BD%E4%BF%9D%E9%99%BA/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主だが50%をわずかに下回る。株探(2026-03-31)では48.38%/179,898千株=発行済株式数ベース、ullet49.75%は自己株式を除くベース。https://s.kabutan.jp/stocks/7181/stockholders/",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "1930",
@@ -2061,7 +2181,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.kabutore.biz/genzaikabuka/okabunushi1930.html",
    "note": "2025年8月に北陸電力の連結子会社から持分法適用会社（その他の関係会社）へ異動／2025年8月に北陸電力の連結子会社から持分法適用会社（その他の関係会社）へ異動し親子上場は解消済み（日経報道「北陸電気工事、北陸電力の持ち分法適用会社に」2025-08-22適時開示）",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "5838",
@@ -2078,7 +2199,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/5838/stockholders/",
    "note": "保有比率は既に50%未満。2026-05-20に楽天銀行が楽天カード・楽天証券HDを株式交付で子会社化するフィンテック事業再編の最終合意が発表されており（https://corp.rakuten.co.jp/news/press/2026/0520_11.html ）、資本関係が変動する見込み",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 0
   },
   {
    "code": "7849",
@@ -2095,7 +2217,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0784900",
    "note": "比率はFISCO。会社IR（https://starts-pub.jp/ir/stockholder ・2025-12-31現在）でスターツコーポレーション1,865,600株が筆頭株主、関係会社スターツアメニティーが806,000株（20.99%）を保有。FISCOの比率には基準日表示がないため基準日は不明とした。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "7299",
@@ -2112,7 +2235,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%83%95%E3%82%B8%E3%82%AA%E3%83%BC%E3%82%BC%E3%83%83%E3%82%AF%E3%82%B9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "関係確認だが単独では過半数未満。大同特殊鋼47.9%が筆頭株主、第2位の大同興業5.51%を合わせると大同グループで過半数。直近のTOB・完全子会社化の発表は確認できず",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 7
   },
   {
    "code": "7942",
@@ -2129,7 +2253,8 @@
    "as_of": "2023-12-22",
    "source": "https://www.mgc.co.jp/corporate/news/2023/231031.html",
    "note": "2023年に資本業務提携を解消しJSPの自己株式公開買付けに応募、2023-12-22付でJSPは連結子会社から外れ持分法適用関連会社に。数値は応募後見込み。現時点（2026年）の最新比率は一次情報を確認できず（株探・IRBANK・日経・みんかぶが403/robots拒否、Web検索回数上限）",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "2678",
@@ -2146,7 +2271,8 @@
    "as_of": "2026-05-20",
    "source": "https://www.askul.co.jp/corp/investor/stock/infomation/",
    "note": "関係確認。アスクルIR「株式の状況」でLINEヤフーが筆頭株主(41,980,900株/発行済89,771,300株)。TOB・完全子会社化の発表は確認できず",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "2705",
@@ -2163,7 +2289,8 @@
    "as_of": "2023-03-31",
    "source": "https://www.ullet.com/%E5%A4%A7%E6%88%B8%E5%B1%8B%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "閲覧できたデータが2023年3月期と古い。株探・バフェットコード・日経等が403/robots制限で最新基準日を確認できず",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "2281",
@@ -2180,7 +2307,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/2281/stockholders/",
    "note": "伊藤忠食品も4.48%保有。伊藤忠商事は連結子会社として開示（2026年5月8日適時開示で「当社子会社（プリマハム）」と記載）",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 6
   },
   {
    "code": "2226",
@@ -2197,7 +2325,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E6%B9%96%E6%B1%A0%E5%B1%8B/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主。2位は一般社団法人湖池の会15.01%",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "3686",
@@ -2214,7 +2343,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0368600?fm=mj",
    "note": "関係解消済み（親子上場に該当しない）。2024年5月に朝日放送GHDが2.00%売却し51.75%→49.75%となり、連結子会社から持分法適用関連会社へ異動。現在FISCO大株主表で45.00%の筆頭株主だが親会社ではない。基準日不明",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "1946",
@@ -2231,7 +2361,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%83%88%E3%83%BC%E3%82%A8%E3%83%8D%E3%83%83%E3%82%AF/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主。ullet大株主(2026年3月31日基準)",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 1
   },
   {
    "code": "6368",
@@ -2248,7 +2379,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0636800",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 0
   },
   {
    "code": "8700",
@@ -2265,7 +2397,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E4%B8%B8%E5%85%AB%E8%A8%BC%E5%88%B8/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "50%未満",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "9369",
@@ -2282,7 +2415,8 @@
    "as_of": "2025-11-30",
    "source": "https://www.krs.co.jp/ir/ratio.html",
    "note": "会社IR開示。50%未満",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "1941",
@@ -2299,7 +2433,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.chudenko.co.jp/info/stock/",
    "note": "会社IRの「株主・株式情報」記載の持株比率。議決権ベースの数値は未確認。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": -2
   },
   {
    "code": "7412",
@@ -2316,7 +2451,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0741200",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "7036",
@@ -2333,7 +2469,8 @@
    "as_of": "2025-12-31",
    "source": "https://www.ullet.com/イーエムネットジャパン/大株主",
    "note": "",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "3769",
@@ -2350,7 +2487,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0376900",
    "note": "FISCOは基準日を表示しないため基準日不明。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": -2
   },
   {
    "code": "9434",
@@ -2367,7 +2505,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/9434/stockholders/",
    "note": "保有名義はソフトバンクグループジャパン(SBG100%子会社)。SBG本体名義の直接保有は上位に不在",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 0
   },
   {
    "code": "3461",
@@ -2384,7 +2523,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0346100",
    "note": "【リスト誤りの可能性】上位10大株主に中部電力は存在せず、中部電力との資本関係を示す情報は確認できなかった。筆頭株主はディア・ライフ(3245)39.29%、次いで日本郵政キャピタル18.92%。持株比率が過半に満たないため「親会社」該当かは未確認。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "1934",
@@ -2401,7 +2541,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%83%A6%E3%82%A2%E3%83%86%E3%83%83%E3%82%AF/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 0
   },
   {
    "code": "2393",
@@ -2418,7 +2559,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E6%97%A5%E6%9C%AC%E3%82%B1%E3%82%A2%E3%82%B5%E3%83%97%E3%83%A9%E3%82%A4/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "三菱商事が筆頭株主だが50%未満。第2位はALSOK(綜合警備保障)30.57%",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 8
   },
   {
    "code": "8844",
@@ -2435,7 +2577,8 @@
    "as_of": "2025-03-31",
    "source": "https://www.cigr.co.jp/irinfo/stock/constitution/",
    "note": "2024-01-11に大和ハウスが保有株式の一部を共立メンテナンスへ譲渡（共立メンテナンス25.02%）。大和ハウスは38.21%で過半に達せず。公式IRの掲載が2025-03-31基準のままで、2026年基準のデータは未確認",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "8572",
@@ -2452,7 +2595,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.acom.co.jp/corp/ir/stock/outline/",
    "note": "三菱UFJ信託銀行2.01%を含めると約39.6%",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "8254",
@@ -2469,7 +2613,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0825400",
    "note": "関係あり。2021-05-26の第三者割当増資でAFC-HDの連結子会社化。FISCO大株主表で184千単位・37.08%の筆頭株主。2026年5月にAFC-HDが保有割合減少の変更報告書No.4を提出。株式交換によりAFC-HDが完全親会社となる予定で2027-03-01上場廃止予定。基準日不明",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 3
   },
   {
    "code": "2698",
@@ -2486,7 +2631,8 @@
    "as_of": "2026-02-28",
    "source": "https://s.kabutan.jp/stocks/2698/stockholders/",
    "note": "2021年10月にイオンがTOBを発表し子会社化。株探掲載の直近大株主データでは35.55%と過半数未満で、有報ベースの議決権比率は未確認",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 8
   },
   {
    "code": "5016",
@@ -2503,7 +2649,8 @@
    "as_of": "2026-07-09",
    "source": "https://www.hd.eneos.co.jp/news/release_information/upload/20260511_01_01_mr02.pdf",
    "note": "株式保有はあるが親子（連結子会社）関係は解消済み。2025年3月19日の上場時にENEOSは持分法適用会社へ移行。2026年5-6月のJX金属による自己株式公開買付けに応募し42.38%→35.27%（決済開始日2026-07-09）。JX金属の有報では「その他の関係会社」として2026-03-31現在42.44%と記載",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": -2
   },
   {
    "code": "1942",
@@ -2520,7 +2667,8 @@
    "as_of": "2026-03-31",
    "source": "https://the-shashi.com/tse/1942/shareholders/",
    "note": "直接の筆頭株主は東京電力パワーグリッド（東京電力HDの完全子会社）。2025年3月時点46.35%→2026年3月34.46%へ低下しており、TEPCO側の保有株式売却があった可能性。一次情報（関電工有報）は未確認",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": -2
   },
   {
    "code": "4816",
@@ -2537,7 +2685,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E6%9D%B1%E6%98%A0%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "東映単体は50%未満(第2位テレビ朝日20%、第4位東映ビデオ3.31%)",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 0
   },
   {
    "code": "8566",
@@ -2554,7 +2703,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%B9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主だが過半数未満。2位にみずほリース19.92%",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 1
   },
   {
    "code": "8410",
@@ -2571,7 +2721,8 @@
    "as_of": "2026-03-31",
    "source": "https://finance.biggo.jp/news/jpx_tdnet_140120260508519112",
    "note": "【関係変化】2025年6月にセブン＆アイが保有比率を39.9%へ引き下げ持分法適用会社化。TDnet「支配株主等に関する事項について」（2026-03-31基準）ではセブン＆アイは「その他の関係会社」で議決権33.40%（間接）、セブン-イレブン・ジャパンが直接33.40%、伊藤忠商事20.43%。親会社には該当しない。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 1
   },
   {
    "code": "248A",
@@ -2588,7 +2739,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0248A00?fm=mj",
    "note": "関係あり。2024年9月上場時はくふうカンパニーHDの連結子会社（TDnet「連結子会社（株式会社キッズスター）の上場承認に関するお知らせ」2024-08-23）。FISCO大株主表で33.40%だが基準日記載なし。QUICK見出しではくふうカンパニーの大量保有62.71%（創業者穐田誉輝氏26.94%との共同保有とみられる）。議決権ベース・基準日は未確認",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 0
   },
   {
    "code": "3116",
@@ -2605,7 +2757,8 @@
    "as_of": "2026-03-31",
    "source": "https://strainer.jp/companies/JP-3116/ownership",
    "note": "トヨタ単独では50%未満。トヨタ不動産10.27%、豊田自動織機4.34%等グループ保有あり（ullet https://www.ullet.com/%E3%83%88%E3%83%A8%E3%82%BF%E7%B4%A1%E7%B9%94/%E5%A4%A7%E6%A0%AA%E4%B8%BB でも同値）",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "4685",
@@ -2622,7 +2775,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E8%8F%B1%E5%8F%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%BA/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "関係確認だが過半数未満。三菱重工が3,980千株31.21%で筆頭株主(第2位は従業員持株会20.43%)。連結子会社か持分法適用関連会社かは本調査では未確認",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "2588",
@@ -2639,7 +2793,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "光通信本体の直接保有は29.62%（第2位）。筆頭はHCMAアルファ40.44%で、光通信グループ合算は約69.6%との報道／光通信本体は第2位。筆頭はHCMAアルファ40.44%(光通信系)。光通信グループ合算は大量保有報告ベースで約69.56%との報道あり。ullet表示は2026年時点だが基準日の明示なし",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 7
   },
   {
    "code": "7211",
@@ -2656,7 +2811,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E4%B8%89%E8%8F%B1%E8%87%AA%E5%8B%95%E8%BB%8A%E5%B7%A5%E6%A5%AD/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "筆頭株主は日産自動車26.67%。リスト記載の三菱商事は第2位で22.23%。いずれも50%未満で連結子会社ではない",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 7
   },
   {
    "code": "5482",
@@ -2673,7 +2829,8 @@
    "as_of": "2026年",
    "source": "https://www.ullet.com/愛知製鋼/大株主",
    "note": "豊田自動織機（非上場化済み）8.47%を含むとトヨタグループ計約33%",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "6473",
@@ -2690,7 +2847,8 @@
    "as_of": "不明",
    "source": "https://www.ullet.com/%E3%82%B8%E3%82%A7%E3%82%A4%E3%83%86%E3%82%AF%E3%83%88/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主だが過半数未満(持分法適用関連会社の可能性)。ullet表示は2026年時点だが基準日の明示なし",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "8425",
@@ -2707,7 +2865,8 @@
    "as_of": "2026-03-31",
    "source": "https://edinetdb.jp/company/E05426/shareholders",
    "note": "みずほFGは23.09%で過半に達せず、丸紅が20.00%を保有する共同出資に近い構造。連結子会社ではなく持分法適用関連会社とみられる。EDINET DBの表記は「FY2026」",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 3
   },
   {
    "code": "1959",
@@ -2724,7 +2883,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/1959/stockholders/",
    "note": "九州電力の持分22.55%。連結子会社ではなく持分法適用関連会社／旧・九電工。九州電力の保有は22.55%で過半数未満のため子会社ではなく持分法適用関連会社",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": -2
   },
   {
    "code": "3315",
@@ -2741,7 +2901,8 @@
    "as_of": "不明",
    "source": "https://edinetdb.jp/company/E00030/shareholders",
    "note": "65,628,595株。住友商事も19.43%保有。日本製鉄は50%未満で筆頭株主（その他の関係会社）。出所は有報FY2026データだが具体的な基準日が明記されておらず未確認",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 7
   },
   {
    "code": "7259",
@@ -2758,7 +2919,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.ullet.com/%E3%82%A2%E3%82%A4%E3%82%B7%E3%83%B3/%E5%A4%A7%E6%A0%AA%E4%B8%BB",
    "note": "親会社が筆頭株主だが過半数未満。株探(2026-03-31)では21.32%/161,828千株=発行済株式数ベース、ullet22.34%は自己株式を除くベース。豊田自動織機3.2%も保有。https://s.kabutan.jp/stocks/7259/stockholders/",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "6902",
@@ -2775,7 +2937,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.denso.com/jp/ja/about-us/investors/stock/overview/",
    "note": "トヨタ単独では22.24%で過半に遠く、デンソーはトヨタの連結子会社ではなく持分法適用関連会社。豊田自動織機5.85%・トヨタ不動産4.94%等を含めたトヨタグループ合計では比率が上がる",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "3850",
@@ -2792,7 +2955,8 @@
    "as_of": "2026-03-31",
    "source": "https://www.intra-mart.jp/ir/stock.html",
    "note": "直接の保有者は非上場のNTTデータ（21.75%）。NTTは間接保有／資本関係はあるが「親子」と言えるかは要注意。直接の筆頭株主は(株)NTTデータ(NTTデータグループ9613傘下=NTT9432の間接保有)で1,059,400株21.75%。過半数未満で連結子会社ではなく持分法適用関連会社水準。NTT本体の直接保有は確認できず",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "7282",
@@ -2809,7 +2973,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/7282/stockholders/",
    "note": "トヨタの保有は21.65%で過半数未満（持分法適用関連会社）。連結子会社ではない",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "8015",
@@ -2826,7 +2991,8 @@
    "as_of": "2026-03-31",
    "source": "https://s.kabutan.jp/stocks/8015/stockholders/",
    "note": "トヨタの保有は21.57%で過半数未満（持分法適用関連会社）。豊田自動織機も11.12%保有",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 2
   },
   {
    "code": "7276",
@@ -2843,7 +3009,8 @@
    "as_of": "2026年",
    "source": "https://www.ullet.com/小糸製作所/大株主",
    "note": "",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 4
   },
   {
    "code": "8075",
@@ -2860,7 +3027,8 @@
    "as_of": "不明",
    "source": "https://web.fisco.jp/platform/companies/0807500",
    "note": "神戸製鋼所の直接保有13.32%＋退職給付信託21.53%でグループ計約34.9%／神戸製鋼所の直接保有は13.32%。筆頭株主はみずほ信託銀行（退職給付信託神戸製鋼所口）21.53%で、合算すると約34.9%。FISCOは基準日を表示しないため基準日不明。",
-   "category": "持分法適用など(20〜50%)"
+   "category": "持分法適用など(20〜50%)",
+   "score": 5
   },
   {
    "code": "415A",
@@ -2877,7 +3045,8 @@
    "as_of": "不明",
    "source": "",
    "note": "セッションのWeb検索回数上限（200回）に達し新規検索ができず、WebFetchは検索結果に出たURLしか取得できないため情報源に到達できなかった。未確認",
-   "category": "比率未確認"
+   "category": "比率未確認",
+   "score": -2
   },
   {
    "code": "3695",
@@ -2894,7 +3063,8 @@
    "as_of": "不明",
    "source": "https://group.gmo/pdf/news/gmo_news_9710.pdf",
    "note": "株探・IRBANK・バフェット・コード・J-LiC・自社IRサイトがいずれも403等で閲覧できず比率を確認できず。2025-10-01にGMOリサーチ&AIから商号変更。GMOインターネットグループが3695株式の変更報告書(保有減少)を提出との報道あり(数値未確認)",
-   "category": "比率未確認"
+   "category": "比率未確認",
+   "score": -2
   },
   {
    "code": "4394",
@@ -2911,7 +3081,8 @@
    "as_of": "不明",
    "source": "",
    "note": "同上（Web検索上限到達により未確認）",
-   "category": "比率未確認"
+   "category": "比率未確認",
+   "score": -2
   }
  ],
  "excluded": [
