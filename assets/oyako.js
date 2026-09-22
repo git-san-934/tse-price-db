@@ -13,6 +13,17 @@
   var statsEl = document.getElementById('stats');
   var excludedEl = document.getElementById('excluded');
   var updatedEl = document.getElementById('updated-at');
+  var tableScrollTop = document.getElementById('table-scroll-top');
+  var tableScrollBottom = document.getElementById('table-scroll-bottom');
+
+  // Sync scroll between top and bottom
+  tableScrollTop.addEventListener('scroll', function () {
+    tableScrollBottom.scrollLeft = tableScrollTop.scrollLeft;
+  });
+
+  tableScrollBottom.addEventListener('scroll', function () {
+    tableScrollTop.scrollLeft = tableScrollBottom.scrollLeft;
+  });
 
   function num(value) {
     if (value === null || value === undefined) return '―';

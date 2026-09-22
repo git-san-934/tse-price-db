@@ -53,6 +53,20 @@
 
 .count { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 0.5rem; }
 
+.table-scroll-top {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 0;
+  height: 1rem;
+}
+
+.table-scroll-top::before {
+  content: '';
+  display: block;
+  width: 60rem;
+  height: 1px;
+}
+
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
