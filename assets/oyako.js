@@ -6,6 +6,7 @@
   var RANKING_URL = 'data/dissolution-rankings.csv';
   var state = { pairs: [], excluded: [], category: '', term: '', sort: 'ratio', currentView: 'list' };
   var rankingState = { allData: [], term: '', sort: 'score' };
+  var scoreMap = {};
 
   var tbody = document.getElementById('oyako-body');
   var countEl = document.getElementById('count');
@@ -58,6 +59,7 @@
       var source = row.source
         ? '<a href="' + escapeHtml(row.source) + '" target="_blank" rel="noopener">出所</a>'
         : '';
+      var score = scoreMap[row.code] || '―';
       return '<tr>' +
         '<td><span class="tag ' + tag[0] + '">' + tag[1] + '</span></td>' +
         '<td><span class="name">' + escapeHtml(row.name) + '</span>' +
@@ -68,6 +70,7 @@
           '<span class="sub">' + escapeHtml(row.parent_code) + '・' + escapeHtml(row.parent_market || '') + '</span></td>' +
         '<td class="num">' + num(row.parent_mcap) + '<span class="sub">億円</span></td>' +
         '<td class="num"><span class="ratio">' + ratio + '</span></td>' +
+        '<td class="num">' + score + '</td>' +
         '<td><span class="sub">' + escapeHtml(row.as_of || '不明') + '</span>' + source + '</td>' +
         '<td class="note">' + escapeHtml(row.note || '') + '</td>' +
         '</tr>';
@@ -254,6 +257,10 @@
     })
     .then(function (csv) {
       rankingState.allData = parseRankingCSV(csv);
+      rankingState.allData.forEach(function (row) {
+        scoreMap[row['子会社コード']] = row['スコア'];
+      });
+      render();
     })
     .catch(function (error) {
       console.error('ランキングデータの読み込みに失敗しました:', error);
