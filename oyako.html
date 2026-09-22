@@ -6,8 +6,8 @@
   <title>親子上場ウォッチリスト</title>
   <meta name="description" content="東証に上場している親会社と上場子会社の組み合わせを、持株比率・基準日・出所つきでまとめた一覧" />
   <meta name="theme-color" content="#f7f5f0" />
-  <link rel="stylesheet" href="assets/style.css?v=20260921a" />
-  <link rel="stylesheet" href="assets/oyako.css?v=20260921a" />
+  <link rel="stylesheet" href="assets/style.css?v=20260922a" />
+  <link rel="stylesheet" href="assets/oyako.css?v=20260922a" />
 </head>
 <body>
   <div class="wrap">
@@ -20,42 +20,63 @@
 
     <div class="stats" id="stats"></div>
 
-    <div class="toolbar">
-      <input type="search" id="filter" placeholder="会社名・証券コードで絞り込み" autocomplete="off" />
-      <div class="legend" id="cat-filter">
-        <button type="button" class="chip" data-cat="" aria-pressed="true">すべて</button>
-        <button type="button" class="chip" data-cat="連結子会社(50%超)" aria-pressed="false">50%超</button>
-        <button type="button" class="chip" data-cat="持分法適用など(20〜50%)" aria-pressed="false">20〜50%</button>
-        <button type="button" class="chip" data-cat="比率未確認" aria-pressed="false">未確認</button>
+    <div class="view-tabs">
+      <button type="button" class="tab-btn active" data-view="list" aria-selected="true">親子上場一覧</button>
+      <button type="button" class="tab-btn" data-view="ranking" aria-selected="false">解消予測ランキング</button>
+    </div>
+
+    <div id="list-view" class="view-content active">
+      <div class="toolbar">
+        <input type="search" id="filter" placeholder="会社名・証券コードで絞り込み" autocomplete="off" />
+        <div class="legend" id="cat-filter">
+          <button type="button" class="chip" data-cat="" aria-pressed="true">すべて</button>
+          <button type="button" class="chip" data-cat="連結子会社(50%超)" aria-pressed="false">50%超</button>
+          <button type="button" class="chip" data-cat="持分法適用など(20〜50%)" aria-pressed="false">20〜50%</button>
+          <button type="button" class="chip" data-cat="比率未確認" aria-pressed="false">未確認</button>
+        </div>
+        <select id="sort" aria-label="並べ替え">
+          <option value="ratio">持株比率が高い順</option>
+          <option value="mcap">子会社の時価総額が大きい順</option>
+          <option value="pmcap">親会社の時価総額が大きい順</option>
+          <option value="code">証券コード順</option>
+        </select>
       </div>
-      <select id="sort" aria-label="並べ替え">
-        <option value="ratio">持株比率が高い順</option>
-        <option value="mcap">子会社の時価総額が大きい順</option>
-        <option value="pmcap">親会社の時価総額が大きい順</option>
-        <option value="code">証券コード順</option>
-      </select>
+
+      <p class="count" id="count"></p>
+
+      <div class="table-scroll">
+        <table id="oyako-table">
+          <thead>
+            <tr>
+              <th>区分</th>
+              <th>上場子会社</th>
+              <th class="num">時価総額</th>
+              <th class="num">PBR</th>
+              <th>上場親会社</th>
+              <th class="num">親の時価総額</th>
+              <th class="num">持株比率</th>
+              <th>基準日・出所</th>
+              <th>備考</th>
+            </tr>
+          </thead>
+          <tbody id="oyako-body"></tbody>
+        </table>
+      </div>
     </div>
 
-    <p class="count" id="count"></p>
+    <div id="ranking-view" class="view-content">
+      <div class="ranking-toolbar">
+        <input type="search" id="ranking-filter" placeholder="銘柄コード・名前で検索..." autocomplete="off" />
+        <select id="ranking-sort" aria-label="ランキング順">
+          <option value="score">スコアが高い順</option>
+          <option value="mcap">子会社の時価総額が大きい順</option>
+        </select>
+      </div>
 
-    <div class="table-scroll">
-      <table id="oyako-table">
-        <thead>
-          <tr>
-            <th>区分</th>
-            <th>上場子会社</th>
-            <th class="num">時価総額</th>
-            <th class="num">PBR</th>
-            <th>上場親会社</th>
-            <th class="num">親の時価総額</th>
-            <th class="num">持株比率</th>
-            <th>基準日・出所</th>
-            <th>備考</th>
-          </tr>
-        </thead>
-        <tbody id="oyako-body"></tbody>
-      </table>
+      <p class="ranking-info" id="ranking-info"></p>
+      <div id="rankings" class="rankings"></div>
     </div>
+
 
     <section class="prose">
       <h2>この一覧の作り方</h2>
@@ -92,6 +113,6 @@
       <p class="disclaimer">投資助言ではありません。売買の判断はご自身で行ってください。</p>
     </section>
   </div>
-  <script src="assets/oyako.js?v=20260921a"></script>
+  <script src="assets/oyako.js?v=20260922a"></script>
 </body>
 </html>
