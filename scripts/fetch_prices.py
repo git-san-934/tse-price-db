@@ -104,7 +104,7 @@ def upsert_code_frame_weekly(conn: sqlite3.Connection, code: str, df) -> bool:
     rows = [
         (
             code,
-            idx.strftime("%Y-%m-%d"),
+            int(idx.strftime("%Y%m%d")),
             float(r.Close),
             None if pd.isna(r.Volume) else int(r.Volume),
         )
