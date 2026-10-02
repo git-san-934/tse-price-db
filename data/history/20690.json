@@ -78,5 +78,15 @@
   "volume": 1,
   "ma25": null,
   "ma75": null
+ },
+ {
+  "date": "2026-10-02",
+  "open": 22235.0,
+  "high": 22235.0,
+  "low": 22235.0,
+  "close": 22235.0,
+  "volume": 15,
+  "ma25": null,
+  "ma75": null
  }
 ]
