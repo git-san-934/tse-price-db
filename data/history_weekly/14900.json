@@ -1,1302 +1,1302 @@
 [
  {
   "date": "2021-10-18",
-  "close": 6763.6,
+  "close": 6691.5,
   "volume": 0
  },
  {
   "date": "2021-10-25",
-  "close": 6754.7,
+  "close": 6682.7,
   "volume": 30
  },
  {
   "date": "2021-11-01",
-  "close": 6620.3,
+  "close": 6549.7,
   "volume": 20
  },
  {
   "date": "2021-11-08",
-  "close": 6620.3,
+  "close": 6549.7,
   "volume": 0
  },
  {
   "date": "2021-11-15",
-  "close": 6620.3,
+  "close": 6549.7,
   "volume": 0
  },
  {
   "date": "2021-11-22",
-  "close": 6620.3,
+  "close": 6549.7,
   "volume": 0
  },
  {
   "date": "2021-11-29",
-  "close": 6620.3,
+  "close": 6549.7,
   "volume": 0
  },
  {
   "date": "2021-12-06",
-  "close": 6575.5,
+  "close": 6505.4,
   "volume": 10
  },
  {
   "date": "2021-12-13",
-  "close": 6575.5,
+  "close": 6505.4,
   "volume": 0
  },
  {
   "date": "2021-12-20",
-  "close": 6629.3,
+  "close": 6558.6,
   "volume": 20
  },
  {
   "date": "2021-12-27",
-  "close": 6629.3,
+  "close": 6558.6,
   "volume": 0
  },
  {
   "date": "2022-01-03",
-  "close": 6678.0,
+  "close": 6606.8,
   "volume": 40
  },
  {
   "date": "2022-01-10",
-  "close": 6711.2,
+  "close": 6639.7,
   "volume": 60
  },
  {
   "date": "2022-01-17",
-  "close": 6796.5,
+  "close": 6724.0,
   "volume": 290
  },
  {
   "date": "2022-01-24",
-  "close": 6863.8,
+  "close": 6790.6,
   "volume": 20
  },
  {
   "date": "2022-01-31",
-  "close": 6899.6,
+  "close": 6826.1,
   "volume": 70
  },
  {
   "date": "2022-02-07",
-  "close": 6899.6,
+  "close": 6826.1,
   "volume": 0
  },
  {
   "date": "2022-02-14",
-  "close": 6959.8,
+  "close": 6885.5,
   "volume": 140
  },
  {
   "date": "2022-02-21",
-  "close": 6908.6,
+  "close": 6835.0,
   "volume": 320
  },
  {
   "date": "2022-02-28",
-  "close": 6949.9,
+  "close": 6875.8,
   "volume": 80
  },
  {
   "date": "2022-03-07",
-  "close": 6950.8,
+  "close": 6876.7,
   "volume": 180
  },
  {
   "date": "2022-03-14",
-  "close": 6948.1,
+  "close": 6874.0,
   "volume": 100
  },
  {
   "date": "2022-03-21",
-  "close": 6942.7,
+  "close": 6868.7,
   "volume": 30
  },
  {
   "date": "2022-03-28",
-  "close": 6942.7,
+  "close": 6868.7,
   "volume": 0
  },
  {
   "date": "2022-04-04",
-  "close": 7021.5,
+  "close": 6946.6,
   "volume": 0
  },
  {
   "date": "2022-04-11",
-  "close": 7021.5,
+  "close": 6946.6,
   "volume": 0
  },
  {
   "date": "2022-04-18",
-  "close": 7021.5,
+  "close": 6946.6,
   "volume": 0
  },
  {
   "date": "2022-04-25",
-  "close": 7021.5,
+  "close": 6946.6,
   "volume": 0
  },
  {
   "date": "2022-05-02",
-  "close": 6946.2,
+  "close": 6872.1,
   "volume": 30
  },
  {
   "date": "2022-05-09",
-  "close": 7055.9,
+  "close": 6980.7,
   "volume": 80
  },
  {
   "date": "2022-05-16",
-  "close": 7055.9,
+  "close": 6980.7,
   "volume": 0
  },
  {
   "date": "2022-05-23",
-  "close": 7055.9,
+  "close": 6980.7,
   "volume": 0
  },
  {
   "date": "2022-05-30",
-  "close": 7055.9,
+  "close": 6980.7,
   "volume": 0
  },
  {
   "date": "2022-06-06",
-  "close": 7055.9,
+  "close": 6980.7,
   "volume": 0
  },
  {
   "date": "2022-06-13",
-  "close": 7055.9,
+  "close": 6980.7,
   "volume": 0
  },
  {
   "date": "2022-06-20",
-  "close": 7055.9,
+  "close": 6980.7,
   "volume": 0
  },
  {
   "date": "2022-06-27",
-  "close": 7238.3,
+  "close": 7161.2,
   "volume": 100
  },
  {
   "date": "2022-07-04",
-  "close": 7254.1,
+  "close": 7176.7,
   "volume": 80
  },
  {
   "date": "2022-07-11",
-  "close": 7254.1,
+  "close": 7176.7,
   "volume": 0
  },
  {
   "date": "2022-07-18",
-  "close": 7233.2,
+  "close": 7156.0,
   "volume": 40
  },
  {
   "date": "2022-07-25",
-  "close": 7092.1,
+  "close": 7016.5,
   "volume": 60
  },
  {
   "date": "2022-08-01",
-  "close": 7092.1,
+  "close": 7016.5,
   "volume": 0
  },
  {
   "date": "2022-08-08",
-  "close": 7039.4,
+  "close": 6964.3,
   "volume": 40
  },
  {
   "date": "2022-08-15",
-  "close": 7039.4,
+  "close": 6964.3,
   "volume": 0
  },
  {
   "date": "2022-08-22",
-  "close": 7039.4,
+  "close": 6964.3,
   "volume": 0
  },
  {
   "date": "2022-08-29",
-  "close": 7039.4,
+  "close": 6964.3,
   "volume": 0
  },
  {
   "date": "2022-09-05",
-  "close": 7039.4,
+  "close": 6964.3,
   "volume": 0
  },
  {
   "date": "2022-09-12",
-  "close": 7039.4,
+  "close": 6964.3,
   "volume": 0
  },
  {
   "date": "2022-09-19",
-  "close": 7039.4,
+  "close": 6964.3,
   "volume": 0
  },
  {
   "date": "2022-09-26",
-  "close": 7198.6,
+  "close": 7121.8,
   "volume": 80
  },
  {
   "date": "2022-10-03",
-  "close": 7176.1,
+  "close": 7099.6,
   "volume": 0
  },
  {
   "date": "2022-10-10",
-  "close": 7268.9,
+  "close": 7191.4,
   "volume": 0
  },
  {
   "date": "2022-10-17",
-  "close": 7268.9,
+  "close": 7191.4,
   "volume": 0
  },
  {
   "date": "2022-10-24",
-  "close": 7126.5,
+  "close": 7050.5,
   "volume": 20
  },
  {
   "date": "2022-10-31",
-  "close": 7126.5,
+  "close": 7050.5,
   "volume": 0
  },
  {
   "date": "2022-11-07",
-  "close": 7008.9,
+  "close": 6934.1,
   "volume": 10
  },
  {
   "date": "2022-11-14",
-  "close": 7047.5,
+  "close": 6972.3,
   "volume": 20
  },
  {
   "date": "2022-11-21",
-  "close": 7070.4,
+  "close": 6995.0,
   "volume": 10
  },
  {
   "date": "2022-11-28",
-  "close": 7070.4,
+  "close": 6995.0,
   "volume": 0
  },
  {
   "date": "2022-12-05",
-  "close": 7070.4,
+  "close": 6995.0,
   "volume": 0
  },
  {
   "date": "2022-12-12",
-  "close": 7079.6,
+  "close": 7004.1,
   "volume": 140
  },
  {
   "date": "2022-12-19",
-  "close": 7071.3,
+  "close": 6995.9,
   "volume": 20
  },
  {
   "date": "2022-12-26",
-  "close": 6933.5,
+  "close": 6859.6,
   "volume": 50
  },
  {
   "date": "2023-01-02",
-  "close": 7020.2,
+  "close": 6945.3,
   "volume": 10
  },
  {
   "date": "2023-01-09",
-  "close": 7186.4,
+  "close": 7109.8,
   "volume": 0
  },
  {
   "date": "2023-01-16",
-  "close": 7165.2,
+  "close": 7088.8,
   "volume": 10
  },
  {
   "date": "2023-01-23",
-  "close": 6979.0,
+  "close": 6904.5,
   "volume": 20
  },
  {
   "date": "2023-01-30",
-  "close": 6969.7,
+  "close": 6895.4,
   "volume": 10
  },
  {
   "date": "2023-02-06",
-  "close": 6969.7,
+  "close": 6895.4,
   "volume": 0
  },
  {
   "date": "2023-02-13",
-  "close": 6969.7,
+  "close": 6895.4,
   "volume": 0
  },
  {
   "date": "2023-02-20",
-  "close": 6939.3,
+  "close": 6865.3,
   "volume": 10
  },
  {
   "date": "2023-02-27",
-  "close": 7062.9,
+  "close": 6987.6,
   "volume": 20
  },
  {
   "date": "2023-03-06",
-  "close": 7102.5,
+  "close": 7026.8,
   "volume": 10
  },
  {
   "date": "2023-03-13",
-  "close": 7102.5,
+  "close": 7026.8,
   "volume": 10
  },
  {
   "date": "2023-03-20",
-  "close": 7102.5,
+  "close": 7026.8,
   "volume": 0
  },
  {
   "date": "2023-03-27",
-  "close": 6979.9,
+  "close": 6905.5,
   "volume": 20
  },
  {
   "date": "2023-04-03",
-  "close": 7097.1,
+  "close": 7021.4,
   "volume": 0
  },
  {
   "date": "2023-04-10",
-  "close": 7061.6,
+  "close": 6986.3,
   "volume": 0
  },
  {
   "date": "2023-04-17",
-  "close": 7135.3,
+  "close": 7059.2,
   "volume": 20
  },
  {
   "date": "2023-04-24",
-  "close": 7212.7,
+  "close": 7135.8,
   "volume": 100
  },
  {
   "date": "2023-05-01",
-  "close": 7212.7,
+  "close": 7135.8,
   "volume": 0
  },
  {
   "date": "2023-05-08",
-  "close": 7204.4,
+  "close": 7127.5,
   "volume": 10
  },
  {
   "date": "2023-05-15",
-  "close": 7204.4,
+  "close": 7127.5,
   "volume": 0
  },
  {
   "date": "2023-05-22",
-  "close": 7204.4,
+  "close": 7127.5,
   "volume": 0
  },
  {
   "date": "2023-05-29",
-  "close": 7204.4,
+  "close": 7127.5,
   "volume": 0
  },
  {
   "date": "2023-06-05",
-  "close": 7053.2,
+  "close": 6978.0,
   "volume": 20
  },
  {
   "date": "2023-06-12",
-  "close": 7053.2,
+  "close": 6978.0,
   "volume": 0
  },
  {
   "date": "2023-06-19",
-  "close": 7056.0,
+  "close": 6980.8,
   "volume": 10
  },
  {
   "date": "2023-06-26",
-  "close": 7124.1,
+  "close": 7048.2,
   "volume": 10
  },
  {
   "date": "2023-07-03",
-  "close": 7099.2,
+  "close": 7023.5,
   "volume": 0
  },
  {
   "date": "2023-07-10",
-  "close": 7123.5,
+  "close": 7047.5,
   "volume": 100
  },
  {
   "date": "2023-07-17",
-  "close": 7123.5,
+  "close": 7047.5,
   "volume": 0
  },
  {
   "date": "2023-07-24",
-  "close": 7157.1,
+  "close": 7080.8,
   "volume": 240
  },
  {
   "date": "2023-07-31",
-  "close": 7147.7,
+  "close": 7071.5,
   "volume": 20
  },
  {
   "date": "2023-08-07",
-  "close": 7147.7,
+  "close": 7071.5,
   "volume": 0
  },
  {
   "date": "2023-08-14",
-  "close": 7281.3,
+  "close": 7203.7,
   "volume": 10
  },
  {
   "date": "2023-08-21",
-  "close": 7258.0,
+  "close": 7180.6,
   "volume": 20
  },
  {
   "date": "2023-08-28",
-  "close": 7258.0,
+  "close": 7180.6,
   "volume": 40
  },
  {
   "date": "2023-09-04",
-  "close": 7285.0,
+  "close": 7207.4,
   "volume": 620
  },
  {
   "date": "2023-09-11",
-  "close": 7286.9,
+  "close": 7209.2,
   "volume": 10
  },
  {
   "date": "2023-09-18",
-  "close": 7350.4,
+  "close": 7272.0,
   "volume": 10
  },
  {
   "date": "2023-09-25",
-  "close": 7486.8,
+  "close": 7407.0,
   "volume": 180
  },
  {
   "date": "2023-10-02",
-  "close": 7309.7,
+  "close": 7231.8,
   "volume": 0
  },
  {
   "date": "2023-10-09",
-  "close": 7163.7,
+  "close": 7087.3,
   "volume": 50
  },
  {
   "date": "2023-10-16",
-  "close": 7305.9,
+  "close": 7228.0,
   "volume": 40
  },
  {
   "date": "2023-10-23",
-  "close": 7305.9,
+  "close": 7228.0,
   "volume": 0
  },
  {
   "date": "2023-10-30",
-  "close": 7305.9,
+  "close": 7228.0,
   "volume": 0
  },
  {
   "date": "2023-11-06",
-  "close": 7305.9,
+  "close": 7228.0,
   "volume": 0
  },
  {
   "date": "2023-11-13",
-  "close": 7289.9,
+  "close": 7212.2,
   "volume": 30
  },
  {
   "date": "2023-11-20",
-  "close": 7289.9,
+  "close": 7212.2,
   "volume": 0
  },
  {
   "date": "2023-11-27",
-  "close": 7424.7,
+  "close": 7345.5,
   "volume": 5570
  },
  {
   "date": "2023-12-04",
-  "close": 7301.2,
+  "close": 7223.4,
   "volume": 30
  },
  {
   "date": "2023-12-11",
-  "close": 7301.2,
+  "close": 7223.4,
   "volume": 0
  },
  {
   "date": "2023-12-18",
-  "close": 7301.2,
+  "close": 7223.4,
   "volume": 0
  },
  {
   "date": "2023-12-25",
-  "close": 7406.8,
+  "close": 7327.8,
   "volume": 10
  },
  {
   "date": "2024-01-01",
-  "close": 7406.8,
+  "close": 7327.8,
   "volume": 0
  },
  {
   "date": "2024-01-08",
-  "close": 7418.1,
+  "close": 7339.0,
   "volume": 0
  },
  {
   "date": "2024-01-15",
-  "close": 7431.3,
+  "close": 7352.1,
   "volume": 10
  },
  {
   "date": "2024-01-22",
-  "close": 7431.3,
+  "close": 7352.1,
   "volume": 0
  },
  {
   "date": "2024-01-29",
-  "close": 7431.3,
+  "close": 7352.1,
   "volume": 0
  },
  {
   "date": "2024-02-05",
-  "close": 7431.3,
+  "close": 7352.1,
   "volume": 0
  },
  {
   "date": "2024-02-12",
-  "close": 7437.0,
+  "close": 7357.7,
   "volume": 10
  },
  {
   "date": "2024-02-19",
-  "close": 7437.0,
+  "close": 7357.7,
   "volume": 0
  },
  {
   "date": "2024-02-26",
-  "close": 7210.5,
+  "close": 7133.6,
   "volume": 20
  },
  {
   "date": "2024-03-04",
-  "close": 7053.8,
+  "close": 6978.6,
   "volume": 60
  },
  {
   "date": "2024-03-11",
-  "close": 7053.8,
+  "close": 6978.6,
   "volume": 0
  },
  {
   "date": "2024-03-18",
-  "close": 7106.7,
+  "close": 7030.9,
   "volume": 120
  },
  {
   "date": "2024-03-25",
-  "close": 7127.4,
+  "close": 7051.4,
   "volume": 120
  },
  {
   "date": "2024-04-01",
-  "close": 7186.9,
+  "close": 7110.2,
   "volume": 10
  },
  {
   "date": "2024-04-08",
-  "close": 7200.5,
+  "close": 7123.7,
   "volume": 10
  },
  {
   "date": "2024-04-15",
-  "close": 7241.5,
+  "close": 7164.3,
   "volume": 10
  },
  {
   "date": "2024-04-22",
-  "close": 7263.4,
+  "close": 7186.0,
   "volume": 110
  },
  {
   "date": "2024-04-29",
-  "close": 7263.4,
+  "close": 7186.0,
   "volume": 0
  },
  {
   "date": "2024-05-06",
-  "close": 7263.4,
+  "close": 7186.0,
   "volume": 0
  },
  {
   "date": "2024-05-13",
-  "close": 7263.4,
+  "close": 7186.0,
   "volume": 0
  },
  {
   "date": "2024-05-20",
-  "close": 7263.4,
+  "close": 7186.0,
   "volume": 0
  },
  {
   "date": "2024-05-27",
-  "close": 7263.4,
+  "close": 7186.0,
   "volume": 0
  },
  {
   "date": "2024-06-03",
-  "close": 7182.4,
+  "close": 7105.8,
   "volume": 10
  },
  {
   "date": "2024-06-10",
-  "close": 7182.4,
+  "close": 7105.8,
   "volume": 0
  },
  {
   "date": "2024-06-17",
-  "close": 7387.3,
+  "close": 7308.5,
   "volume": 10
  },
  {
   "date": "2024-06-24",
-  "close": 7099.5,
+  "close": 7023.8,
   "volume": 10
  },
  {
   "date": "2024-07-01",
-  "close": 7099.5,
+  "close": 7023.8,
   "volume": 0
  },
  {
   "date": "2024-07-08",
-  "close": 7084.1,
+  "close": 7008.6,
   "volume": 40
  },
  {
   "date": "2024-07-15",
-  "close": 7151.9,
+  "close": 7075.7,
   "volume": 1030
  },
  {
   "date": "2024-07-22",
-  "close": 7216.9,
+  "close": 7139.9,
   "volume": 20
  },
  {
   "date": "2024-07-29",
-  "close": 7216.9,
+  "close": 7139.9,
   "volume": 0
  },
  {
   "date": "2024-08-05",
-  "close": 7253.2,
+  "close": 7175.8,
   "volume": 110
  },
  {
   "date": "2024-08-12",
-  "close": 7185.3,
+  "close": 7108.7,
   "volume": 10
  },
  {
   "date": "2024-08-19",
-  "close": 7205.4,
+  "close": 7128.6,
   "volume": 2910
  },
  {
   "date": "2024-08-26",
-  "close": 7205.4,
+  "close": 7128.6,
   "volume": 0
  },
  {
   "date": "2024-09-02",
-  "close": 7205.4,
+  "close": 7128.6,
   "volume": 0
  },
  {
   "date": "2024-09-09",
-  "close": 7349.6,
+  "close": 7271.3,
   "volume": 30
  },
  {
   "date": "2024-09-16",
-  "close": 7349.6,
+  "close": 7271.3,
   "volume": 0
  },
  {
   "date": "2024-09-23",
-  "close": 7349.6,
+  "close": 7271.3,
   "volume": 0
  },
  {
   "date": "2024-09-30",
-  "close": 7336.2,
+  "close": 7258.0,
   "volume": 130
  },
  {
   "date": "2024-10-07",
-  "close": 7412.2,
+  "close": 7333.2,
   "volume": 0
  },
  {
   "date": "2024-10-14",
-  "close": 7412.2,
+  "close": 7333.2,
   "volume": 0
  },
  {
   "date": "2024-10-21",
-  "close": 7276.1,
+  "close": 7198.6,
   "volume": 70
  },
  {
   "date": "2024-10-28",
-  "close": 7276.1,
+  "close": 7198.6,
   "volume": 0
  },
  {
   "date": "2024-11-04",
-  "close": 7276.1,
+  "close": 7198.6,
   "volume": 0
  },
  {
   "date": "2024-11-11",
-  "close": 7276.1,
+  "close": 7198.6,
   "volume": 0
  },
  {
   "date": "2024-11-18",
-  "close": 7276.1,
+  "close": 7198.6,
   "volume": 0
  },
  {
   "date": "2024-11-25",
-  "close": 7276.1,
+  "close": 7198.6,
   "volume": 0
  },
  {
   "date": "2024-12-02",
-  "close": 7276.1,
+  "close": 7198.6,
   "volume": 0
  },
  {
   "date": "2024-12-09",
-  "close": 7212.4,
+  "close": 7135.5,
   "volume": 1000
  },
  {
   "date": "2024-12-16",
-  "close": 7212.4,
+  "close": 7135.5,
   "volume": 0
  },
  {
   "date": "2024-12-23",
-  "close": 7212.4,
+  "close": 7135.5,
   "volume": 0
  },
  {
   "date": "2024-12-30",
-  "close": 7212.4,
+  "close": 7135.5,
   "volume": 0
  },
  {
   "date": "2025-01-06",
-  "close": 7224.1,
+  "close": 7147.1,
   "volume": 0
  },
  {
   "date": "2025-01-13",
-  "close": 7224.1,
+  "close": 7147.1,
   "volume": 0
  },
  {
   "date": "2025-01-20",
-  "close": 7133.3,
+  "close": 7057.2,
   "volume": 10
  },
  {
   "date": "2025-01-27",
-  "close": 7423.2,
+  "close": 7344.1,
   "volume": 10
  },
  {
   "date": "2025-02-03",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 50
  },
  {
   "date": "2025-02-10",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-02-17",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-02-24",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-03-03",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-03-10",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-03-17",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-03-24",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-03-31",
-  "close": 7115.9,
+  "close": 7040.0,
   "volume": 0
  },
  {
   "date": "2025-04-07",
-  "close": 7295.3,
+  "close": 7217.5,
   "volume": 16
  },
  {
   "date": "2025-04-14",
-  "close": 7291.3,
+  "close": 7213.6,
   "volume": 46
  },
  {
   "date": "2025-04-21",
-  "close": 7291.3,
+  "close": 7213.6,
   "volume": 0
  },
  {
   "date": "2025-04-28",
-  "close": 7291.3,
+  "close": 7213.6,
   "volume": 0
  },
  {
   "date": "2025-05-05",
-  "close": 7291.3,
+  "close": 7213.6,
   "volume": 0
  },
  {
   "date": "2025-05-12",
-  "close": 7074.2,
+  "close": 6998.8,
   "volume": 68
  },
  {
   "date": "2025-05-19",
-  "close": 7145.6,
+  "close": 7069.4,
   "volume": 125
  },
  {
   "date": "2025-05-26",
-  "close": 7099.6,
+  "close": 7023.9,
   "volume": 21
  },
  {
   "date": "2025-06-02",
-  "close": 7176.9,
+  "close": 7100.4,
   "volume": 136
  },
  {
   "date": "2025-06-09",
-  "close": 7212.1,
+  "close": 7135.2,
   "volume": 15
  },
  {
   "date": "2025-06-16",
-  "close": 7243.4,
+  "close": 7166.2,
   "volume": 41
  },
  {
   "date": "2025-06-23",
-  "close": 7188.6,
+  "close": 7112.0,
   "volume": 1
  },
  {
   "date": "2025-06-30",
-  "close": 7120.2,
+  "close": 7044.3,
   "volume": 1
  },
  {
   "date": "2025-07-07",
-  "close": 7315.2,
+  "close": 7237.2,
   "volume": 162
  },
  {
   "date": "2025-07-14",
-  "close": 7315.2,
+  "close": 7237.2,
   "volume": 0
  },
  {
   "date": "2025-07-21",
-  "close": 7315.2,
+  "close": 7237.2,
   "volume": 0
  },
  {
   "date": "2025-07-28",
-  "close": 7347.5,
+  "close": 7269.2,
   "volume": 20
  },
  {
   "date": "2025-08-04",
-  "close": 7449.4,
+  "close": 7370.0,
   "volume": 43
  },
  {
   "date": "2025-08-11",
-  "close": 7385.7,
+  "close": 7307.0,
   "volume": 9
  },
  {
   "date": "2025-08-18",
-  "close": 7385.7,
+  "close": 7307.0,
   "volume": 0
  },
  {
   "date": "2025-08-25",
-  "close": 7559.1,
+  "close": 7478.5,
   "volume": 1
  },
  {
   "date": "2025-09-01",
-  "close": 7559.1,
+  "close": 7478.5,
   "volume": 0
  },
  {
   "date": "2025-09-08",
-  "close": 7559.1,
+  "close": 7478.5,
   "volume": 0
  },
  {
   "date": "2025-09-15",
-  "close": 7522.9,
+  "close": 7442.7,
   "volume": 117
  },
  {
   "date": "2025-09-22",
-  "close": 7221.1,
+  "close": 7144.1,
   "volume": 7
  },
  {
   "date": "2025-09-29",
-  "close": 7939.3,
+  "close": 7854.6,
   "volume": 96
  },
  {
   "date": "2025-10-06",
-  "close": 8353.9,
+  "close": 8264.8,
   "volume": 94
  },
  {
   "date": "2025-10-13",
-  "close": 7326.9,
+  "close": 7248.8,
   "volume": 1371
  },
  {
   "date": "2025-10-20",
-  "close": 7267.6,
+  "close": 7190.1,
   "volume": 248
  },
  {
   "date": "2025-10-27",
-  "close": 7209.3,
+  "close": 7132.4,
   "volume": 361
  },
  {
   "date": "2025-11-03",
-  "close": 7434.7,
+  "close": 7355.4,
   "volume": 160
  },
  {
   "date": "2025-11-10",
-  "close": 7319.0,
+  "close": 7241.0,
   "volume": 20
  },
  {
   "date": "2025-11-17",
-  "close": 7470.2,
+  "close": 7390.6,
   "volume": 481
  },
  {
   "date": "2025-11-24",
-  "close": 7345.7,
+  "close": 7267.4,
   "volume": 6
  },
  {
   "date": "2025-12-01",
-  "close": 7451.5,
+  "close": 7372.0,
   "volume": 17
  },
  {
   "date": "2025-12-08",
-  "close": 7458.4,
+  "close": 7378.9,
   "volume": 112
  },
  {
   "date": "2025-12-15",
-  "close": 7552.3,
+  "close": 7471.8,
   "volume": 27
  },
  {
   "date": "2025-12-22",
-  "close": 7569.1,
+  "close": 7488.4,
   "volume": 15
  },
  {
   "date": "2025-12-29",
-  "close": 7599.7,
+  "close": 7518.7,
   "volume": 3
  },
  {
   "date": "2026-01-05",
-  "close": 7567.1,
+  "close": 7486.4,
   "volume": 105
  },
  {
   "date": "2026-01-12",
-  "close": 7527.5,
+  "close": 7447.3,
   "volume": 6
  },
  {
   "date": "2026-01-19",
-  "close": 7559.2,
+  "close": 7478.6,
   "volume": 152
  },
  {
   "date": "2026-01-26",
-  "close": 7566.1,
+  "close": 7485.4,
   "volume": 2
  },
  {
   "date": "2026-02-02",
-  "close": 7269.4,
+  "close": 7191.9,
   "volume": 2
  },
  {
   "date": "2026-02-09",
-  "close": 7714.4,
+  "close": 7632.2,
   "volume": 285
  },
  {
   "date": "2026-02-16",
-  "close": 7774.8,
+  "close": 7691.9,
   "volume": 108
  },
  {
   "date": "2026-02-23",
-  "close": 7848.0,
+  "close": 7764.3,
   "volume": 2
  },
  {
   "date": "2026-03-02",
-  "close": 7735.2,
+  "close": 7652.7,
   "volume": 381
  },
  {
   "date": "2026-03-09",
-  "close": 7691.7,
+  "close": 7609.7,
   "volume": 62
  },
  {
   "date": "2026-03-16",
-  "close": 7589.8,
+  "close": 7508.9,
   "volume": 12
  },
  {
   "date": "2026-03-23",
-  "close": 7615.5,
+  "close": 7534.3,
   "volume": 3
  },
  {
   "date": "2026-03-30",
-  "close": 7867.7,
+  "close": 7783.9,
   "volume": 26
  },
  {
   "date": "2026-04-06",
-  "close": 7774.9,
+  "close": 7692.0,
   "volume": 92
  },
  {
   "date": "2026-04-13",
-  "close": 7651.1,
+  "close": 7569.5,
   "volume": 49
  },
  {
   "date": "2026-04-20",
-  "close": 7838.8,
+  "close": 7755.3,
   "volume": 12
  },
  {
   "date": "2026-04-27",
-  "close": 7556.2,
+  "close": 7475.7,
   "volume": 9
  },
  {
   "date": "2026-05-04",
-  "close": 7688.0,
+  "close": 7606.1,
   "volume": 1
  },
  {
   "date": "2026-05-11",
-  "close": 7544.2,
+  "close": 7463.8,
   "volume": 12
  },
  {
   "date": "2026-05-18",
-  "close": 7610.2,
+  "close": 7529.0,
   "volume": 3
  },
  {
   "date": "2026-05-25",
-  "close": 7503.3,
+  "close": 7423.3,
   "volume": 2
  },
  {
   "date": "2026-06-01",
-  "close": 7389.5,
+  "close": 7310.7,
   "volume": 12
  },
  {
   "date": "2026-06-08",
-  "close": 7389.5,
+  "close": 7310.7,
   "volume": 6
  },
  {
   "date": "2026-06-15",
-  "close": 7389.5,
+  "close": 7310.7,
   "volume": 50
  },
  {
   "date": "2026-06-22",
-  "close": 7389.5,
+  "close": 7310.7,
   "volume": 0
  },
  {
   "date": "2026-06-29",
-  "close": 7719.0,
+  "close": 7636.7,
   "volume": 8
  },
  {
   "date": "2026-07-06",
-  "close": 7730.0,
+  "close": 7647.6,
   "volume": 0
  },
  {
   "date": "2026-07-13",
-  "close": 7730.0,
+  "close": 7647.6,
   "volume": 0
  },
  {
   "date": "2026-07-20",
-  "close": 7730.0,
+  "close": 7647.6,
   "volume": 0
  },
  {
   "date": "2026-07-27",
-  "close": 7820.0,
+  "close": 7736.6,
   "volume": 23
  },
  {
   "date": "2026-08-03",
-  "close": 7816.0,
+  "close": 7732.7,
   "volume": 2
  },
  {
   "date": "2026-08-10",
-  "close": 7600.0,
+  "close": 7519.0,
   "volume": 2
  },
  {
   "date": "2026-08-17",
-  "close": 7731.0,
+  "close": 7648.6,
   "volume": 14
  },
  {
   "date": "2026-08-24",
-  "close": 7877.0,
+  "close": 7793.0,
   "volume": 12
  },
  {
   "date": "2026-08-31",
-  "close": 7970.0,
+  "close": 7885.0,
   "volume": 146
  },
  {
   "date": "2026-09-07",
-  "close": 7970.0,
+  "close": 7885.0,
   "volume": 0
  },
  {
   "date": "2026-09-14",
-  "close": 7970.0,
+  "close": 7885.0,
   "volume": 0
  },
  {
   "date": "2026-09-21",
-  "close": 7990.0,
+  "close": 7904.8,
   "volume": 1
  },
  {
   "date": "2026-09-28",
-  "close": 7986.0,
+  "close": 7900.9,
   "volume": 3
  },
  {
   "date": "2026-10-05",
-  "close": 7777.0,
-  "volume": 3
+  "close": 7597.0,
+  "volume": 7
  }
 ]
