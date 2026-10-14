@@ -1,107 +1,112 @@
 [
  {
   "date": "2026-05-18",
-  "close": 500.0,
+  "close": 498.5,
   "volume": 0
  },
  {
   "date": "2026-05-25",
-  "close": 501.5,
+  "close": 500.0,
   "volume": 420
  },
  {
   "date": "2026-06-01",
-  "close": 502.0,
+  "close": 500.5,
   "volume": 50
  },
  {
   "date": "2026-06-08",
-  "close": 502.6,
+  "close": 501.1,
   "volume": 70
  },
  {
   "date": "2026-06-15",
-  "close": 503.5,
+  "close": 502.0,
   "volume": 10
  },
  {
   "date": "2026-06-22",
-  "close": 504.8,
+  "close": 503.3,
   "volume": 4560
  },
  {
   "date": "2026-06-29",
-  "close": 502.7,
+  "close": 501.2,
   "volume": 7450
  },
  {
   "date": "2026-07-06",
-  "close": 501.9,
+  "close": 500.4,
   "volume": 170
  },
  {
   "date": "2026-07-13",
-  "close": 504.0,
+  "close": 502.5,
   "volume": 250
  },
  {
   "date": "2026-07-20",
-  "close": 501.9,
+  "close": 500.4,
   "volume": 450
  },
  {
   "date": "2026-07-27",
-  "close": 502.1,
+  "close": 500.6,
   "volume": 70
  },
  {
   "date": "2026-08-03",
-  "close": 501.6,
+  "close": 500.1,
   "volume": 420
  },
  {
   "date": "2026-08-10",
-  "close": 500.0,
+  "close": 498.5,
   "volume": 2470
  },
  {
   "date": "2026-08-17",
-  "close": 500.1,
+  "close": 498.6,
   "volume": 480
  },
  {
   "date": "2026-08-24",
-  "close": 499.1,
+  "close": 497.6,
   "volume": 2440
  },
  {
   "date": "2026-08-31",
-  "close": 496.2,
+  "close": 494.7,
   "volume": 45600
  },
  {
   "date": "2026-09-07",
-  "close": 497.8,
+  "close": 496.3,
   "volume": 288050
  },
  {
   "date": "2026-09-14",
-  "close": 495.7,
+  "close": 494.2,
   "volume": 46310
  },
  {
   "date": "2026-09-21",
-  "close": 494.1,
+  "close": 492.6,
   "volume": 40220
  },
  {
   "date": "2026-09-28",
-  "close": 495.2,
+  "close": 493.7,
   "volume": 22020
  },
  {
   "date": "2026-10-05",
   "close": 496.0,
   "volume": 50
+ },
+ {
+  "date": "2026-10-12",
+  "close": 494.5,
+  "volume": 920
  }
 ]
