@@ -1,45 +1,5 @@
 [
  {
-  "date": "2026-04-21",
-  "open": 44.0,
-  "high": 44.0,
-  "low": 43.0,
-  "close": 44.0,
-  "volume": 32500,
-  "ma25": null,
-  "ma75": null
- },
- {
-  "date": "2026-04-22",
-  "open": 44.0,
-  "high": 44.0,
-  "low": 43.0,
-  "close": 44.0,
-  "volume": 34800,
-  "ma25": null,
-  "ma75": null
- },
- {
-  "date": "2026-04-23",
-  "open": 44.0,
-  "high": 44.0,
-  "low": 43.0,
-  "close": 43.0,
-  "volume": 32400,
-  "ma25": null,
-  "ma75": null
- },
- {
-  "date": "2026-04-24",
-  "open": 43.0,
-  "high": 44.0,
-  "low": 43.0,
-  "close": 43.0,
-  "volume": 55900,
-  "ma25": null,
-  "ma75": null
- },
- {
   "date": "2026-04-27",
   "open": 43.0,
   "high": 44.0,
